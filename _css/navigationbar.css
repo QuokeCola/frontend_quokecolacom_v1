@@ -1,16 +1,18 @@
 @charset "UTF-8";
 @import url("../webfonts/SourceSansPro_Regular/stylesheet.css");
+@import url("../webfonts/SourceSansPro_Black/stylesheet.css");
+@import url("../webfonts/NanumGothic_Bold/stylesheet.css");
 /*universal components*/
 .navi_title {
     font-family: "SourceSansPro SemiBold";
-	color: #FFFFFF;
-	font-size: 20px; 
-	padding-left: 10px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	transition: 0.4s;
-	display: flex;
-	align-items: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
 }
 
 .navi_title:before {
@@ -37,6 +39,7 @@
 }
 
 .navi_logo_union {
+	border-radius: 3px;
 	transition: 0.4s;
 	margin-bottom: -5px;
 	margin-top: -5px;
@@ -46,21 +49,21 @@
 	background-color: rgba(12, 40, 82, 0.9);
 }
 /*pc components*/
+
 .navi_page_button_pc_bg {
+	overflow:hidden;
+	font-size: 0px;
+	display:inline-flex;
     font-family: "SourceSansPro Bold";
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(19,32,62,0.9);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(20px);
     color: white;
-    /* [disabled]padding-right: 0%; */
-    /* [disabled]padding-left: 0%; */
-    padding-bottom: 0.5px;
-    margin-top: 0px;
-    margin-right: -20px;
-    margin-left: -20px;
-    margin-bottom: 0px;
-    text-align: center;
-    padding-top: 20px;
-	padding-bottom: 20px;
-	vertical-align: middle;
+	width: 434px;
+	height: auto;
+	vertical-align: top;
+	transition: 0.4s;
+	border-radius: 7px;
 }
 .navi_page_button_pc{
     color: white;
@@ -69,15 +72,31 @@
 	padding-top: 20px;
 	padding-bottom: 20px;
     text-decoration: none;
-	transition: 0.4s;
+	transition: all 0.4s;
 	border-width: -5;
 	border-color: orangered;
+	font-size: 17px;
+	vertical-align: top;
 }
 .navi_page_button_pc:hover{
 	background-color: rgba(255,255,255,0.05);
 	border-bottom: 5px inset orangered;
 	padding-bottom: 15px;
 } 
+
+.navi_pc_decoration {
+    float: right;
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    font-family: "NanumGothic Bold";
+    font-style: normal;
+    font-weight: 400;
+    color: black;
+	transition: 0.2s;
+}
 
 /*mobile_component*/
 
