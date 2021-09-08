@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-<link href="_css/navigationbar.css" rel="stylesheet" type="text/css">
-<link href="_css/testbody.css" rel="stylesheet" type="text/css">
-<link href="webfonts/SourceSansPro_Bold/stylesheet.css" rel="stylesheet" type="text/css">
-<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="_css/navigationbar.css" rel="stylesheet" type="text/css">
+	<link href="_css/testbody.css" rel="stylesheet" type="text/css">
+	<link href="webfonts/SourceSansPro_Bold/stylesheet.css" rel="stylesheet" type="text/css">
+	<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<!-- navigation box  -->
-	<div class="navigation_box">
+	<div class="navi_box" id="navi_background_obj">
 		<div class="navi_title" id="navi_title_obj">
-			<div id="navi_title_union">QUOKECOLA <div class="navi_titleline" id="navi_titleline_obj"></div></div>
+			<div id="navi_title_union" class="navi_logo_union">
+				<p style="margin-bottom: 0px; margin-top: 0px">QUOKECOLA</p> 
+				<div class="navi_titleline" id="navi_titleline_obj"></div>
+			</div>
+			<input type="checkbox" id="navi_mobile_menu_state_obj" class="navi_mobile_menu_state"/>
+			<label for="navi_mobile_menu_state_obj" id="navi_mobile_menu_button" class="navi_mobile_menu_button_box">
+				<span class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top" id = "navi_mobile_menu_button_bread_top_obj">
+					<span class="navi_mobile_menu_button_line navi_mobile_button_line_top" id="navi_mobile_button_line_top_obj"></span>
+				</span>
+				<span class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom" id = "navi_mobile_menu_button_bread_bottom_obj">
+					<span class="navi_mobile_menu_button_line navi_mobile_button_line_bottom" id="navi_mobile_button_line_bottom_obj"></span>
+				</span>
+			</label>
 		</div>
 		
-		<nav class="navi_buttonbg" id="navi_buttonbox">
-			<a class="navi_button" href="index.html">HOME</a> 
-			<a class="navi_button" href="index.html">PASSAGES</a> 
-			<a class="navi_button" href="index.html">WEBSERVICE</a> 
-			<a class="navi_button" href="index.html">ABOUT&nbsp;</a>
+		<nav class="navi_page_button_pc_bg" id="navi_page_button_pcbox">
+			<a class="navi_page_button_pc" href="index.html">HOME</a> 
+			<a class="navi_page_button_pc" href="index.html">PASSAGES</a> 
+			<a class="navi_page_button_pc" href="webservice.html">WEBSERVICE</a> 
+			<a class="navi_page_button_pc" href="index.html">ABOUT&nbsp;</a>
 		</nav>
 	</div>
 	<!-- main body  -->
@@ -27,6 +39,8 @@
 		<h1>Hello, world!</h1>
 	</div>
 	
+	<script src="./_scripts/isPC.js"> </script>
 	<script src="./_scripts/navigationbar.js"> </script>
+
 </body>
 </html>
