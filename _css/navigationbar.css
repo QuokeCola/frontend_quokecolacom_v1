@@ -3,6 +3,18 @@
 @import url("../webfonts/SourceSansPro_Black/stylesheet.css");
 @import url("../webfonts/NanumGothic_Bold/stylesheet.css");
 /*universal components*/
+
+.navi_background{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: rgba(255,255,255,0.0);
+	-webkit-backdrop-filter: blur(0px);
+	backdrop-filter: blur(0px);
+	transition: 0.4s;
+}
+
 .navi_title {
     font-family: "SourceSansPro SemiBold";
     color: #FFFFFF;
@@ -27,17 +39,6 @@
     transition: 0.4s;
 }
 
-.navi_box{
-	width: 100%;
-	position: fixed;
-	left: 0;
-	top: 0;
-	background-color: rgba(255,255,255,0.0);
-	-webkit-backdrop-filter: blur(0px);
-	backdrop-filter: blur(0px);
-	transition: 0.4s;
-}
-
 .navi_logo_union {
 	border-radius: 3px;
 	transition: 0.4s;
@@ -50,10 +51,10 @@
 }
 /*pc components*/
 
-.navi_page_button_pc_bg {
+.navi_pc_page_button_box {
 	overflow:hidden;
 	font-size: 0px;
-	display:inline-flex;
+	display:flex;
     font-family: "SourceSansPro Bold";
     background-color: rgba(19,32,62,0.9);
 	-webkit-backdrop-filter: blur(10px);
@@ -65,23 +66,28 @@
 	transition: 0.4s;
 	border-radius: 7px;
 }
-.navi_page_button_pc{
+
+.navi_pc_page_button{
     color: white;
+	background-color: transparent;
+	top: 0px;
+	bottom: 0px;
     padding-right: 20px;
     padding-left: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	margin: 0px;
     text-decoration: none;
 	transition: all 0.4s;
-	border-width: -5;
+	border-width: 0px;
 	border-color: orangered;
 	font-size: 17px;
 	vertical-align: top;
+	font-family: "SourceSansPro Bold";
 }
-.navi_page_button_pc:hover{
+
+.navi_pc_page_button:hover{
 	background-color: rgba(255,255,255,0.05);
 	border-bottom: 5px inset orangered;
-	padding-bottom: 15px;
+	padding-top: 5px;
 } 
 
 .navi_pc_decoration {
@@ -109,6 +115,7 @@
 	position: relative;
 	background-color: orangered;
 	border-width: 0px;
+	border-radius: 5px;
 	
 	display: flex;
 	flex-wrap: wrap;
@@ -150,25 +157,25 @@
     transition:all 0.15s 0.0s ease-in-out;
 }
 
-.navi_mobile_button_line_top{
+.navi_mobile_menu_button_line_top{
 	top: 8px;
 	-webkit-transition: transform 0.15s 0.15s;
 	transition: transform 0.15s 0.15s;
 }
 
-.navi_mobile_button_line_bottom{
+.navi_mobile_menu_button_line_bottom{
 	bottom: 8px;
 	-webkit-transition: transform 0.15s 0.15s;
 	transition: transform 0.15s 0.15s;
 }
 
-#navi_mobile_menu_state_obj:checked ~ * .navi_mobile_button_line_top {
+#navi_mobile_menu_state_obj:checked ~ * .navi_mobile_menu_button_line_top {
 	-webkit-transition: all 0.15s;
 	transition: all 0.15s;
 	transform: translateY(5.5px);
 }
 
-#navi_mobile_menu_state_obj:checked ~ * .navi_mobile_button_line_bottom {
+#navi_mobile_menu_state_obj:checked ~ * .navi_mobile_menu_button_line_bottom {
 	-webkit-transition: all 0.15s;
 	transition: all 0.15s;
 	transform: translateY(-5.5px);

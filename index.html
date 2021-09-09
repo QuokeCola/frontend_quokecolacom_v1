@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<link href="_css/navigationbar.css" rel="stylesheet" type="text/css">
+	<link href="_css/universal_comp.css" rel="stylesheet" type="text/css">
 	<link href="_css/testbody.css" rel="stylesheet" type="text/css">
 	<link href="webfonts/SourceSansPro_Bold/stylesheet.css" rel="stylesheet" type="text/css">
 	<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
@@ -12,34 +13,35 @@
 <script src="http://use.edgefonts.net/ubuntu-mono:n4,i4:default;didact-gothic:n4:default;m-1m:n4,n7:default;open-sans:n6:default;abel:n4:default;allerta:n4:default;alfa-slab-one:n4:default;kelly-slab:n4:default;pt-mono:n4:default;bebas-neue:n4:default.js" type="text/javascript"></script>
 
 </head>
-<body>
+<body onLoad="navi_initiate()">
 	<!-- navigation box  -->
-	<div class="navi_box" id="navi_background_obj">
-		<div class="navi_title" id="navi_title_obj">
+	<div id="navi_background_obj" class="navi_background disable_select">
+		<div id="navi_title_obj" class="navi_title">
 			<div id="navi_title_union" class="navi_logo_union">
 				<p style="margin-bottom: 0px; margin-top: 0px">QUOKECOLA</p> 
-				<div class="navi_titleline" id="navi_titleline_obj"></div>
+				<div id="navi_titleline_obj" class="navi_titleline"></div>
 			</div>
-			<h3 id="navi_pc_decoration_obj" class="navi_pc_decoration">&lt;/&gt;</h3>
-			<input type="checkbox" id="navi_mobile_menu_state_obj" class="navi_mobile_menu_state"/>
-			<label for="navi_mobile_menu_state_obj" id="navi_mobile_menu_button" class="navi_mobile_menu_button_box">
-				<span class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top" id = "navi_mobile_menu_button_bread_top_obj">
-					<span class="navi_mobile_menu_button_line navi_mobile_button_line_top" id="navi_mobile_button_line_top_obj"></span>
+			<h3 id="navi_pc_decoration_obj"			class="navi_pc_decoration">&lt;/&gt;</h3>
+			<input id="navi_mobile_menu_state_obj"	class="navi_mobile_menu_state"		type="checkbox"/>
+			<label id="navi_mobile_menu_button"		class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="navi_mobile_menu_button_clk()">
+				<span id = "navi_mobile_menu_button_bread_top_obj" class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
+					<span id="navi_mobile_menu_button_line_top_obj" class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
 				</span>
-				<span class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom" id = "navi_mobile_menu_button_bread_bottom_obj">
-					<span class="navi_mobile_menu_button_line navi_mobile_button_line_bottom" id="navi_mobile_button_line_bottom_obj"></span>
+				<span id = "navi_mobile_menu_button_bread_bottom_obj" class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom">
+					<span id="navi_mobile_menu_button_line_bottom_obj" class="navi_mobile_menu_button_line navi_mobile_menu_button_line_bottom"></span>
 				</span>
 			</label>
 		</div>
-		<div style="display: flex; justify-content: center; height: 60px" id="navi_pc_strip">
-			<nav class="navi_page_button_pc_bg" id="navi_page_button_pcbox">
-				<a class="navi_page_button_pc" href="index.html">HOME</a> 
-				<a class="navi_page_button_pc" href="index.html">PASSAGES</a> 
-				<a class="navi_page_button_pc" href="webservice.html">WEBSERVICE</a> 
-				<a class="navi_page_button_pc" href="index.html">ABOUT&nbsp;</a>
+		<div id="navi_pc_strip" style="display: flex; justify-content: center; height: 60px">
+			<nav id="navi_pc_page_button_background" class="navi_pc_page_button_box">
+				<button class="navi_pc_page_button" href="index.html">HOME</button> 
+				<button class="navi_pc_page_button" href="index.html">PASSAGES</button> 
+				<button class="navi_pc_page_button" href="webservice.html">WEBSERVICE</button> 
+				<button class="navi_pc_page_button" href="index.html">ABOUT&nbsp;</button>
 			</nav>
 		</div>
 	</div>
+	
 	<!-- main body  -->
 	<div id = "bodyy" class="bodyd">
 		<h1>Hello, world!</h1>
