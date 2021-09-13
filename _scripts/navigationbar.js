@@ -50,10 +50,10 @@ function set_title_bar_colored() {
 	navi_background.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
 	navi_pc_page_button_background.style.width=String(screen.width)+"px";
 	navi_pc_page_button_background.style.borderRadius = "0px";
-	navi_pc_page_button_background.style["-webkit-backdrop-filter"]='blur(0px)';
+	navi_pc_page_button_background.style['-webkit-backdrop-filter']='blur(0px)';
 	navi_pc_page_button_background.style['backdrop-filter']='blur(0px)';
 	navi_title.style.backgroundColor="rgba(0,0,0,0.0)";
-	navi_logo_union.style["-webkit-backdrop-filter"]='blur(0px)';
+	navi_logo_union.style['-webkit-backdrop-filter']='blur(0px)';
 	navi_logo_union.style['backdrop-filter']='blur(0px)';
 	navi_logo_union.style.backgroundColor="rgba(0,0,0,0.0)";
 }
@@ -68,7 +68,7 @@ function set_title_bar_transparent() {
 	navi_background.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
 	navi_pc_page_button_background.style.width=navi_pc_page_button_background_width+"px";
 	navi_pc_page_button_background.style.borderRadius = "7px";
-	navi_pc_page_button_background.style["-webkit-backdrop-filter"]='blur(10px)';
+	navi_pc_page_button_background.style['-webkit-backdrop-filter']='blur(10px)';
 	navi_pc_page_button_background.style['backdrop-filter']='blur(20px)';
 	navi_title.style.backgroundColor="rgba(255,255,255,0.0)";
 	navi_logo_union.style["-webkit-backdrop-filter"]='blur(10px)';
