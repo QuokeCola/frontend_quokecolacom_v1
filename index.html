@@ -15,31 +15,34 @@
 </head>
 <body onLoad="navi_initiate()">
 	<!-- navigation box  -->
-	<input id="navi_in_passage_state">
-	<div id="navi_background_obj" class="navi_background disable_select">
-		<div id="navi_title_obj" class="navi_title">
-			<div id="navi_title_union" class="navi_logo_union">
-				<p style="margin-bottom: 0px; margin-top: 0px">QUOKECOLA</p> 
-				<div id="navi_titleline_obj" class="navi_titleline"></div>
+	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
+	<div id="navi_background_obj"		class="navi_background disable_select">
+		<div id="navi_title_obj"		class="navi_title">
+			<div id="navi_title_union"				class="navi_logo_union">
+				<p style="margin-bottom: 0px; margin-top: 0px">QUOKECOLA</p>
+				<div id="navi_titleline_obj"		class="navi_titleline"></div>
 			</div>
 			<h3		id="navi_pc_decoration_obj"		class="navi_pc_decoration">&lt;/&gt;</h3>
 			<input	id="navi_mobile_menu_state_obj"	class="invisible_checkbox"			type="checkbox"/>
 			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="navi_mobile_menu_button_clk()">
-				<span id = "navi_mobile_menu_button_bread_top_obj" class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
-					<span id="navi_mobile_menu_button_line_top_obj" class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
+				<span id = "navi_mobile_menu_button_bread_top_obj"		class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
+					<span id="navi_mobile_menu_button_line_top_obj"		class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
 				</span>
-				<span id = "navi_mobile_menu_button_bread_bottom_obj" class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom">
-					<span id="navi_mobile_menu_button_line_bottom_obj" class="navi_mobile_menu_button_line navi_mobile_menu_button_line_bottom"></span>
+				<span id = "navi_mobile_menu_button_bread_bottom_obj"	class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom">
+					<span id="navi_mobile_menu_button_line_bottom_obj"	class="navi_mobile_menu_button_line navi_mobile_menu_button_line_bottom"></span>
 				</span>
 			</label>
 		</div>
 		<div id="navi_pc_strip" style="display: flex; justify-content: center; height: 60px">
-			<nav id="navi_pc_page_button_background" class="navi_pc_page_button_box">
-				<button class="navi_pc_page_button" href="index.html">HOME</button> 
-				<button class="navi_pc_page_button" href="index.html">PASSAGES</button> 
-				<button class="navi_pc_page_button" href="webservice.html">WEBSERVICE</button> 
-				<button class="navi_pc_page_button" href="index.html">ABOUT&nbsp;</button>
+			<nav id="navi_pc_page_button_background"	class="navi_pc_page_button_box">
+				<button class="navi_pc_page_button"		href="index.html">HOME</button> 
+				<button class="navi_pc_page_button"		href="index.html">PASSAGES</button> 
+				<button class="navi_pc_page_button"		href="webservice.html">WEBSERVICE</button> 
+				<button class="navi_pc_page_button"		href="index.html">ABOUT&nbsp;</button>
 			</nav>
+		</div>
+		<div id="navi_mobile_panel" style = "display: none; justify-content: center; height: 0px">
+			<nav id="navi_mobile_page_button_background"	class = "navi_mobile_page_button_box"></nav>
 		</div>
 	</div>
 	

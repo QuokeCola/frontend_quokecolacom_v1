@@ -169,6 +169,22 @@
 	transition: transform 0.15s 0.15s;
 }
 
+.navi_mobile_page_button_box{
+	overflow:hidden;
+	font-size: 0px;
+	display:flex;
+    font-family: "SourceSansPro Bold";
+    background-color: rgba(19,32,62,0.9);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(20px);
+    color: white;
+	width: 100%;
+	height: 200px;
+	vertical-align: top;
+	transition: 0.4s;
+	border-radius: 7px;
+}
+
 #navi_mobile_menu_state_obj:checked ~ * .navi_mobile_menu_button_line_top {
 	-webkit-transition: all 0.15s;
 	transition: all 0.15s;
