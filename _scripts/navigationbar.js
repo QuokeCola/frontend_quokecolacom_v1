@@ -57,8 +57,7 @@ function set_title_bar_colored() {
 	// Navigation Background
 	navi_background.style['-webkit-backdrop-filter']='blur(10px)';
 	navi_background.style['backdrop-filter']='blur(20px)';
-	navi_background.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
-	
+
 	// Navigation button background
 	navi_pc_page_button_background.style.width=String(screen.width)+"px";
 	navi_pc_page_button_background.style.borderRadius = "0px";
@@ -66,7 +65,8 @@ function set_title_bar_colored() {
 	navi_pc_page_button_background.style['backdrop-filter']='blur(0px)';
 	
 	// Change color for navigation title.
-	navi_title.style.backgroundColor="rgba(0,0,0,0.0)";
+	navi_title.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
+	//navi_title.style.backgroundColor="rgba(0,0,0,0.0)";
 	
 	// Change color for navigation title background.
 	navi_logo_union.style['-webkit-backdrop-filter']='blur(0px)';
@@ -84,7 +84,6 @@ function set_title_bar_transparent() {
 	// Navigation Background
 	navi_background.style['-webkit-backdrop-filter']="blur(0px)";
 	navi_background.style['backdrop-filter']="blur(0px)";
-	navi_background.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
 	
 	// Navigation button background
 	navi_pc_page_button_background.style.width=navi_pc_page_button_background_width+"px";
@@ -93,7 +92,8 @@ function set_title_bar_transparent() {
 	navi_pc_page_button_background.style['backdrop-filter']='blur(20px)';
 	
 	// Change color for navigation title.
-	navi_title.style.backgroundColor="rgba(255,255,255,0.0)";
+	navi_title.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+	//navi_title.style.backgroundColor="rgba(255,255,255,0.0)";
 	
 	// Change color for navigation title background.
 	navi_logo_union.style["-webkit-backdrop-filter"]='blur(10px)';
