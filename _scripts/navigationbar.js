@@ -36,7 +36,7 @@ window.onscroll = function(e) {
 			set_title_bar_colored();
 		} else if (diff < 0){
 			set_title_bar_transparent();
-				set_title_bar_expanded();
+			set_title_bar_expanded();
 		}
 		previousY = currentY;
 	}
@@ -55,18 +55,17 @@ function set_title_bar_colored() {
 	navi_pc_decoration.style['backdrop-filter']='blur(0px)';
 	
 	// Navigation Background
-	navi_background.style['-webkit-backdrop-filter']='blur(10px)';
-	navi_background.style['backdrop-filter']='blur(20px)';
+	navi_title.style['-webkit-backdrop-filter']='blur(10px)';
+	navi_title.style['backdrop-filter']='blur(20px)';
 
 	// Navigation button background
-	navi_pc_page_button_background.style.width=String(screen.width)+"px";
-	navi_pc_page_button_background.style.borderRadius = "0px";
-	navi_pc_page_button_background.style['-webkit-backdrop-filter']='blur(0px)';
-	navi_pc_page_button_background.style['backdrop-filter']='blur(0px)';
+	if(isPC()){
+		navi_pc_page_button_background.style.width=String(screen.width)+"px";
+		navi_pc_page_button_background.style.borderRadius = "0px";
+	}
 	
 	// Change color for navigation title.
 	navi_title.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
-	//navi_title.style.backgroundColor="rgba(0,0,0,0.0)";
 	
 	// Change color for navigation title background.
 	navi_logo_union.style['-webkit-backdrop-filter']='blur(0px)';
@@ -82,18 +81,17 @@ function set_title_bar_transparent() {
 	navi_pc_decoration.style.color="black";
 	
 	// Navigation Background
-	navi_background.style['-webkit-backdrop-filter']="blur(0px)";
-	navi_background.style['backdrop-filter']="blur(0px)";
+	navi_title.style['-webkit-backdrop-filter']="blur(0px)";
+	navi_title.style['backdrop-filter']="blur(0px)";
 	
 	// Navigation button background
-	navi_pc_page_button_background.style.width=navi_pc_page_button_background_width+"px";
-	navi_pc_page_button_background.style.borderRadius = "7px";
-	navi_pc_page_button_background.style['-webkit-backdrop-filter']='blur(10px)';
-	navi_pc_page_button_background.style['backdrop-filter']='blur(20px)';
+	if(isPC()){
+		navi_pc_page_button_background.style.width=navi_pc_page_button_background_width+"px";
+		navi_pc_page_button_background.style.borderRadius = "7px";
+	}
 	
 	// Change color for navigation title.
 	navi_title.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
-	//navi_title.style.backgroundColor="rgba(255,255,255,0.0)";
 	
 	// Change color for navigation title background.
 	navi_logo_union.style["-webkit-backdrop-filter"]='blur(10px)';
@@ -113,6 +111,32 @@ function set_title_bar_expanded() {
 	navi_logo_line.height ="5px";
 }
 
+function set_mobile_menu_box_expanded() {
+	navi_mobile_menu_box.style["-webkit-backdrop-filter"] = "blur(10px)";
+	navi_mobile_menu_box.style["backdrop-filter"] = "blur(20px)";
+	navi_mobile_menu_box.style.height = "100%";
+	for (var i=0; i < navi_mobile_menu_box.children.length; i++) {
+		navi_mobile_menu_box.children[i].style.opacity = "1";
+		if(i>2){
+			navi_mobile_menu_box.children[i].style.height = "15vh";
+		}
+	}
+	navi_mobile_menu_box.style.backgroundColor="rgba(255,255,255,0.7)";
+}
+
+function set_mobile_menu_box_collapse() {
+	navi_mobile_menu_box.style["-webkit-backdrop-filter"] = "blur(0px)";
+	navi_mobile_menu_box.style["backdrop-filter"] = "blur(0px)";
+	navi_mobile_menu_box.style.height = "0px";
+	for (var i=0; i < navi_mobile_menu_box.children.length; i++) {
+		navi_mobile_menu_box.children[i].style.opacity = "0";
+		if(i>2){
+			navi_mobile_menu_box.children[i].style.height = "10vh";
+		}
+	}
+	navi_mobile_menu_box.style.backgroundColor="rgba(255,255,255,0.0)";
+}
+
 function navi_mobile_menu_button_clk() {
 	if(navi_mobile_menu_state.checked) {	// Click to uncheck
 		if(window.pageYOffset>0) {
@@ -121,12 +145,16 @@ function navi_mobile_menu_button_clk() {
 			set_title_bar_transparent();
 		}
 		navi_enable_expanded.checked = 1;
-		navi_mobile_menu_box.style.height = "0px";
+		if(!isPC()) {
+			set_mobile_menu_box_collapse();
+		}
 	} else {								// Click to check
 		set_title_bar_expanded();
 		set_title_bar_colored();
 		navi_enable_expanded.checked = 0;
-		navi_mobile_menu_box.style.height = "200px";
+		if(!isPC()) {
+			set_mobile_menu_box_expanded();
+		}
 	}
 }
 

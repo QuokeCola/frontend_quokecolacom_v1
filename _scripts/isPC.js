@@ -11,8 +11,5 @@ function isPC () {
             break;
         }
     }
-	if(flag) {
-		flag = !(navigator.maxTouchPoints && navigator.maxTouchPoints > 3); // identify iPad for its touch screen.
-	}
     return flag;
 }
