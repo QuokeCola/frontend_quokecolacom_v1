@@ -60,7 +60,7 @@ function set_title_bar_colored() {
 
 	// Navigation button background
 	if(isPC()){
-		navi_pc_page_button_background.style.width=String(screen.width)+"px";
+		navi_pc_page_button_background.style.width=String(document.body.offsetWidth+30)+"px";
 		navi_pc_page_button_background.style.borderRadius = "0px";
 	}
 	
