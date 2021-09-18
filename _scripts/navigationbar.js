@@ -8,6 +8,7 @@ var navi_enable_expanded 	= document.getElementById("navi_enable_expanded");
 navi_enable_expanded.checked= 1;
 var navi_mobile_menu_button = document.getElementById("navi_mobile_menu_button");
 var navi_mobile_menu_state 	= document.getElementById("navi_mobile_menu_state_obj");
+var navi_mobile_menu_box	= document.getElementById("navi_mobile_page_button_background");
 var navi_pc_decoration 		= document.getElementById("navi_pc_decoration_obj");
 var navi_pc_strip 			= document.getElementById("navi_pc_strip");
 var navi_pc_page_button_background 			= document.getElementById("navi_pc_page_button_background");
@@ -15,6 +16,7 @@ var navi_pc_page_button_background_width 	= 0;
 
 if(isPC()) {
 	navi_mobile_menu_button.style.display = "none";
+	navi_mobile_menu_box.style.display = "none";
 	navi_pc_page_button_background.style.width = get_navi_pc_page_button_background_width();
 	navi_pc_page_button_background_width = get_navi_pc_page_button_background_width();
 } else {
@@ -24,6 +26,7 @@ if(isPC()) {
 }
 
 var previousY = window.pageYOffset;
+
 window.onscroll = function(e) {
 	if(navi_enable_expanded.checked) {
 		var currentY = window.pageYOffset;
@@ -118,10 +121,12 @@ function navi_mobile_menu_button_clk() {
 			set_title_bar_transparent();
 		}
 		navi_enable_expanded.checked = 1;
+		navi_mobile_menu_box.style.height = "0px";
 	} else {								// Click to check
 		set_title_bar_expanded();
 		set_title_bar_colored();
 		navi_enable_expanded.checked = 0;
+		navi_mobile_menu_box.style.height = "200px";
 	}
 }
 
