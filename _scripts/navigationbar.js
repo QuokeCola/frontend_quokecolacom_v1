@@ -52,7 +52,6 @@ function set_title_bar_colored() {
 	navi_pc_decoration.style['-webkit-backdrop-filter']='blur(0px)';
 	navi_pc_decoration.style['backdrop-filter']='blur(0px)';
 	navi_pc_decoration.style.color="white";
-	navi_pc_decoration.style['backdrop-filter']='blur(0px)';
 	
 	// Navigation Background
 	navi_title.style['-webkit-backdrop-filter']='blur(10px)';
