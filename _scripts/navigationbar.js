@@ -9,6 +9,7 @@ navi_enable_expanded.checked= 1;
 var navi_mobile_menu_button = document.getElementById("navi_mobile_menu_button");
 var navi_mobile_menu_state 	= document.getElementById("navi_mobile_menu_state_obj");
 var navi_mobile_menu_box	= document.getElementById("navi_mobile_page_button_background");
+var navi_mobile_menu_title	= document.getElementById("navi_mobile_menu_title");
 var navi_pc_decoration 		= document.getElementById("navi_pc_decoration_obj");
 var navi_pc_strip 			= document.getElementById("navi_pc_strip");
 var navi_pc_page_button_background 			= document.getElementById("navi_pc_page_button_background");
@@ -120,6 +121,7 @@ function set_mobile_menu_box_expanded() {
 			navi_mobile_menu_box.children[i].style.height = "15vh";
 		}
 	}
+	navi_mobile_menu_title.style.height="30px";
 	navi_mobile_menu_box.style.backgroundColor="rgba(255,255,255,0.7)";
 }
 
@@ -133,6 +135,7 @@ function set_mobile_menu_box_collapse() {
 			navi_mobile_menu_box.children[i].style.height = "10vh";
 		}
 	}
+	navi_mobile_menu_title.style.height="10px";
 	navi_mobile_menu_box.style.backgroundColor="rgba(255,255,255,0.0)";
 }
 
