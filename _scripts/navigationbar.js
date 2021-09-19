@@ -15,18 +15,24 @@ var navi_pc_strip 			= document.getElementById("navi_pc_strip");
 var navi_pc_page_button_background 			= document.getElementById("navi_pc_page_button_background");
 var navi_pc_page_button_background_width 	= 0;
 
-if(isPC()) {
-	navi_mobile_menu_button.style.display = "none";
-	navi_mobile_menu_box.style.display = "none";
-	navi_pc_page_button_background.style.width = get_navi_pc_page_button_background_width();
-	navi_pc_page_button_background_width = get_navi_pc_page_button_background_width();
-} else {
-	navi_pc_page_button_background.style.display = "none";
-	navi_pc_decoration.style.display = "none";
-	navi_pc_strip.style.display = "none";
-}
+switch_view();
 
 var previousY = window.pageYOffset;
+var previousIsPC = isPC();
+
+window.onresize = function(e) {
+	var currentIsPC = isPC();
+	if(currentIsPC!=previousIsPC) {
+		switch_view();
+	}
+	previousIsPC = currentIsPC;
+	if(window.pageYOffset > 0){
+		navi_pc_page_button_background.style.width=String(document.body.offsetWidth+30)+"px";
+		navi_pc_page_button_background.style.borderRadius="0px";
+	} else {
+		navi_pc_page_button_background.style.borderRadius="7px";
+	}
+}
 
 window.onscroll = function(e) {
 	if(navi_enable_expanded.checked) {
@@ -147,16 +153,12 @@ function navi_mobile_menu_button_clk() {
 			set_title_bar_transparent();
 		}
 		navi_enable_expanded.checked = 1;
-		if(!isPC()) {
-			set_mobile_menu_box_collapse();
-		}
+		set_mobile_menu_box_collapse();
 	} else {								// Click to check
 		set_title_bar_expanded();
 		set_title_bar_colored();
 		navi_enable_expanded.checked = 0;
-		if(!isPC()) {
-			set_mobile_menu_box_expanded();
-		}
+		set_mobile_menu_box_expanded();
 	}
 }
 
@@ -168,4 +170,54 @@ function get_navi_pc_page_button_background_width(){
 		console.log(bound.width);
 	}
 	return width;
+}
+
+function switch_view() {
+	if(isPC()==2) {
+		navi_mobile_menu_button.style.display = "none";
+		navi_mobile_menu_box.style.display = "none";
+		navi_pc_page_button_background.style.display = "flex";
+		navi_pc_decoration.style.display = "block";
+		navi_pc_strip.style.display = "flex";
+		navi_pc_page_button_background.style.width = get_navi_pc_page_button_background_width();
+		navi_pc_page_button_background_width = get_navi_pc_page_button_background_width();
+		if(navi_mobile_menu_state.checked) {
+			navi_mobile_menu_button_clk();
+		}
+	} else {
+		navi_pc_page_button_background.style.display = "none";
+		navi_pc_decoration.style.display = "none";
+		navi_pc_strip.style.display = "none";
+		navi_mobile_menu_button.style.display = "flex";
+		navi_mobile_menu_box.style.display = "flex";
+		if(navi_mobile_menu_state.checked) {
+			set_title_bar_expanded();
+			set_title_bar_colored();
+			navi_enable_expanded.checked = 0;
+			set_mobile_menu_box_expanded();
+		}
+		if(isPC()==1){
+			for (var i=0; i < navi_mobile_menu_box.children.length; i++) {
+				if(i>2){
+					navi_mobile_menu_box.children[i].style.width = "23.75vw";
+					navi_mobile_menu_box.children[i].style.borderTopWidth = "1px";
+					if(i == 4) {
+						navi_mobile_menu_box.children[i].style.borderRightWidth = "0px";
+					}
+				}
+			}
+		} else {
+			for (var i=0; i < navi_mobile_menu_box.children.length; i++) {
+				if(i>2){
+					if(i>4){
+						navi_mobile_menu_box.children[i].style.borderTopWidth = "0px";
+					}
+					if(i == 4) {
+						navi_mobile_menu_box.children[i].style.borderRightWidth = "1px";
+					}
+					navi_mobile_menu_box.children[i].style.width = "47.5vw";
+				}
+			}
+		}
+	}
 }

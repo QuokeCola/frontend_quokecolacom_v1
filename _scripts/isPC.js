@@ -1,15 +1,11 @@
 // JavaScript Document
 function isPC () { 
-    var userAgentInfo = navigator.userAgent;
-    var Agents = ["Android", "iPhone",
-                "SymbianOS", "Windows Phone",
-                "iPad", "iPod"];
-    var flag = true;
-    for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) {
-            flag = false;
-            break;
-        }
-    }
-    return flag;
+	if(window.outerWidth>window.outerHeight) {
+		return 2;
+	} else if(window.outerWidth>0.7*window.outerHeight) {
+		return 1;
+	} else {
+		return 0;
+	}
+
 }
