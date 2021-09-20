@@ -20,7 +20,12 @@ switch_view();
 var previousY = window.pageYOffset;
 var previousIsPC = isPC();
 
-window.onresize = function(e) {
+window.addEventListener("orientationchange", function() {
+	setTimeout(function(){switch_view();}, 20);
+    // Announce the new orientation number
+}, false);
+
+window.onresize = function() {
 	var currentIsPC = isPC();
 	if(currentIsPC!=previousIsPC) {
 		switch_view();
@@ -34,7 +39,7 @@ window.onresize = function(e) {
 	}
 }
 
-window.onscroll = function(e) {
+window.onscroll = function() {
 	if(navi_enable_expanded.checked) {
 		var currentY = window.pageYOffset;
 		var diff = currentY - previousY;
@@ -65,7 +70,7 @@ function set_title_bar_colored() {
 	navi_title.style['backdrop-filter']='blur(20px)';
 
 	// Navigation button background
-	if(isPC()){
+	if(isPC()==2){
 		navi_pc_page_button_background.style.width=String(document.body.offsetWidth+30)+"px";
 		navi_pc_page_button_background.style.borderRadius = "0px";
 	}
@@ -91,7 +96,7 @@ function set_title_bar_transparent() {
 	navi_title.style['backdrop-filter']="blur(0px)";
 	
 	// Navigation button background
-	if(isPC()){
+	if(isPC()==2){
 		navi_pc_page_button_background.style.width=navi_pc_page_button_background_width+"px";
 		navi_pc_page_button_background.style.borderRadius = "7px";
 	}
