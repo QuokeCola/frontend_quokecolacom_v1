@@ -13,7 +13,7 @@
 <script src="http://use.edgefonts.net/ubuntu-mono:n4,i4:default;didact-gothic:n4:default;m-1m:n4,n7:default;open-sans:n6:default;abel:n4:default;allerta:n4:default;alfa-slab-one:n4:default;kelly-slab:n4:default;pt-mono:n4:default;bebas-neue:n4:default.js" type="text/javascript"></script>
 	
 </head>
-<body onLoad="navi_initiate()">
+<body onLoad="navi_initiate(); bodypage_initiate();" style="margin: 0px;">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select">
@@ -66,12 +66,12 @@
 	</div>
 	
 	<!-- main body  -->
-	<div id = "bodyy" class="bodyd">
-		<h1>Hello, world!</h1>
-	</div>
-	
-	<script src="./_scripts/isPC.js"> </script>
-	<script src="./_scripts/navigationbar.js"> </script>
+	<iframe id = "bodypage" src="_htmls/homepage.html"
+			style="border-width: 0px; width: 100vw; height: 100vh" ></iframe>
 
+<!--	onload="this.style.width=window.outerWidth+'px';this.style.height=this.contentWindow.document.body.scrollHeight + 'px';"-->
+	<script src="./_scripts/common_macro.js"> </script>
+	<script src="./_scripts/navigationbar.js"> </script>
+	<script src="./_scripts/bodypage.js"></script>
 </body>
 </html>

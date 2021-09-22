@@ -113,6 +113,7 @@
     font-weight: 400;
     color: black;
 	transition: 0.2s;
+	border-radius: 3px;
 }
 
 /*mobile_component*/
