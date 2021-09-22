@@ -21,6 +21,7 @@ let navi_pc_bottom_box_collapse_radius		= 0;
 let navi_mobile_title_padding_bottom		= "5vh";
 let navi_mobile_menu_linkbutton_collapse_height = "10vh";
 let navi_mobile_menu_linkbutton_expanded_height = "15vh";
+let navi_collapse_threshold = 1;
 
 
 let unblur									= "blur(0px)"
@@ -46,7 +47,7 @@ function navi_resize() {
 		navi_switch_view();
 	}
 	previousIsPC = currentIsPC;
-	if(window.pageYOffset > 200 || navi_enable_expanded.checked == 0){
+	if(window.pageYOffset > navi_collapse_threshold || navi_enable_expanded.checked == 0){
 		navi_pc_menu_box.style.width=String(document.body.offsetWidth+30)+"px";
 		set_title_bar_colored();
 		navi_pc_menu_box.style.borderRadius=String(navi_pc_bottom_box_collapse_radius)+"px";
@@ -57,7 +58,7 @@ function navi_resize() {
 
 function navi_scroll() {
 	let currentY = window.pageYOffset;
-	if(currentY > 200) {
+	if(currentY > navi_collapse_threshold) {
 		if(getLayoutID()==2 || (navi_mobile_menu_state.checked == 0 && navi_enable_expanded.checked == 1)){
 			set_title_bar_collapse();
 		}
@@ -193,7 +194,7 @@ function navi_switch_view() {
 		navi_pc_menu_box.style.width = get_navi_pc_menu_box_width();
 		navi_pc_menu_box_width = get_navi_pc_menu_box_width();
 
-		if(window.pageYOffset < 200 && navi_enable_expanded.checked == 1) {
+		if(window.pageYOffset < navi_collapse_threshold && navi_enable_expanded.checked == 1) {
 			set_title_bar_expanded();
 			set_title_bar_transparent();
 		} else {

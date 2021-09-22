@@ -11,7 +11,9 @@ function getLayoutID() {
 
 function iframeOptmizeHeight(iframe) {
 	if(iframe) {
-		var iframeContent = iframe.contentWindow;
-		iframe.height = iframeContent.document.body.scrollHeight;
+		var iframeContent = iframe.contentWindow || iframe.contentDocument.parentWindow;
+		if(iframeContent.document.body) {
+			iframe.height = iframeContent.document.documentElement.scrollHeight || iframeContent.document.body.scrollHeight;
+		}
 	}
 }

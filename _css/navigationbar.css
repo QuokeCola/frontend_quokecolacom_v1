@@ -10,7 +10,7 @@
 	left: 0;
 	top: 0;
 	background-color: rgba(255,255,255,0.0);
-	transition: 0.4s;
+	transition: 0.8s;
 }
 
 .navi_title::before{
@@ -18,7 +18,7 @@
 	height: 100%;
 	-webkit-backdrop-filter: blur(0px);
 	backdrop-filter: blur(0px);
-	transition: all 0.4s;
+	transition: all 0.8s;
 }
 
 .navi_title {
@@ -28,7 +28,7 @@
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 180px;
-    transition: 0.4s;
+    transition: 0.8s;
     display: flex;
     align-items: center;
 	-webkit-backdrop-filter: blur(0px);
@@ -74,7 +74,7 @@
 	width: 434px;
 	height: auto;
 	vertical-align: top;
-	transition: 0.4s;
+	transition: 0.8s;
 	border-radius: 7px;
 }
 

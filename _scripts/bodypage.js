@@ -2,6 +2,7 @@ var bodypage = document.getElementById("bodypage");
 
 function bodypage_initiate(){
     window.addEventListener('resize', bodypage_resize);
+    bodypage_resize();
 }
 
 function bodypage_resize() {

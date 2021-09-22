@@ -5,11 +5,20 @@
     stroke-dasharray: 20000;
     stroke-dashoffset: 20000;
     transition-duration: 0.5s;
+    stroke: white;
 }
+
+#homepage_banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #homepage_hello {
     transition-duration: 1.5s;
     stroke-dasharray: 20000;
     stroke-dashoffset: 20000;
+    stroke: white;
 }
 #homepage_line0 {
     transition: all ease-in;
@@ -64,4 +73,5 @@
 
 #homepage_title{
     padding: 10px;
+    text-align: left;
 }
