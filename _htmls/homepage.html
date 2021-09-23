@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="/_css/homepage.css" rel="stylesheet" type="text/css">
+    <link href="../_css/homepage.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
-<body style="margin: 0px;" onload="setTimeout(homepage_handwriting_initiate(), 50)">
+<body style="margin: 0px;" onload="homepage_handwriting_initiate()">
     <div id ="homepage_banner" style="height: 200px; display:flex; overflow:hidden;text-align: center;">
-        <img id="homepage_banner_img" src="/_images/homepage_background.jpeg" style="width: 100%;">
+        <img id="homepage_banner_img" src="/_images/homepage_background.jpeg" style="width: 100%; transition: all 0.5s">
         <!--aspect ratio 2.1689723831-->
-        <div id="homepage_title" style="position: absolute; background-color: rgba(19,32,62,0.7); top: 30vh; left: 5vw; height: 40vh; -webkit-backdrop-filter: blur(10px);border-radius: 10px">
+        <div id="homepage_title" style="position: absolute; background-color: rgba(19,32,62,0.7); top: 30vh; left: 5vw; height: 40vh; -webkit-backdrop-filter: blur(10px);backdrop-filter: blur(10px);border-radius: 10px">
             <svg style="left: 0" width="75%" height="50%" version="1.1" viewBox="-308.471 609.100 474.835 201.836" preserveAspectRatio="xMinYMax meet"
                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
                 <g id="Wire" opacity="1.000">
@@ -37,6 +37,6 @@
         </div>
     </div>
     <div style="height: 20000px"></div>
-    <script src="/_scripts/homepage.js"></script>
+    <script src="../_scripts/homepage.js"></script>
 </body>
 </html>

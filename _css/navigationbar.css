@@ -17,7 +17,6 @@
 	width: 100%;
 	height: 100%;
 	-webkit-backdrop-filter: blur(0px);
-	backdrop-filter: blur(0px);
 	transition: all 0.8s;
 }
 
@@ -32,7 +31,6 @@
     display: flex;
     align-items: center;
 	-webkit-backdrop-filter: blur(0px);
-	backdrop-filter: blur(0px);
 }
 
 .navi_titleline {
@@ -48,10 +46,9 @@
 	transition: 0.4s;
 	margin-bottom: -5px;
 	margin-top: -5px;
-	padding: 5px;	
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(20px);
-	background-color: rgba(12, 40, 82, 0.9);
+	padding: 5px;
+	/*background-color: rgba(12, 40, 82, 0.9);*/
+	background-color: transparent;
 }
 /*pc components*/
 
@@ -59,7 +56,6 @@
 	width: 100%;
 	height: 100%;
 	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(20px);
 }
 
 .navi_pc_page_button_box {
@@ -76,6 +72,7 @@
 	vertical-align: top;
 	transition: 0.8s;
 	border-radius: 7px;
+	justify-content: center;
 }
 
 .navi_pc_page_button{
@@ -111,7 +108,7 @@
     font-family: "NanumGothic Bold";
     font-style: normal;
     font-weight: 400;
-    color: black;
+    color: white;
 	transition: 0.2s;
 	border-radius: 3px;
 }

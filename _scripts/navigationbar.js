@@ -88,10 +88,8 @@ function navi_mobile_menu_button_clk() {
 
 function set_title_bar_colored() {
 	// PC navigation decoration "</>"
-	navi_pc_decoration.style.backgroundColor="rgba(255,255,255,0.0)";
-	navi_pc_decoration.style['-webkit-backdrop-filter']=unblur;
-	navi_pc_decoration.style['backdrop-filter']=unblur;
-	navi_pc_decoration.style.color="white";
+	// navi_pc_decoration.style.backgroundColor="rgba(255,255,255,0.0)";
+	// navi_pc_decoration.style.color="white";
 	
 	// Navigation Background
 	navi_title.style['-webkit-backdrop-filter']=blur;
@@ -101,17 +99,13 @@ function set_title_bar_colored() {
 	navi_title.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
 	
 	// Change color for navigation title background.
-	navi_logo_union.style['-webkit-backdrop-filter']=unblur;
-	navi_logo_union.style['backdrop-filter']=unblur;
-	navi_logo_union.style.backgroundColor="rgba(0,0,0,0.0)";
+	// navi_logo_union.style.backgroundColor="rgba(0,0,0,0.0)";
 }
 
 function set_title_bar_transparent() {
 	// PC navigation decoration "</>"
-	navi_pc_decoration.style.backgroundColor="rgba(255,255,255,0.9)";
-	navi_pc_decoration.style['-webkit-backdrop-filter']=blur;
-	navi_pc_decoration.style['backdrop-filter']=blur;
-	navi_pc_decoration.style.color="black";
+	// navi_pc_decoration.style.backgroundColor="rgba(255,255,255,0.9)";
+	// navi_pc_decoration.style.color="black";
 	
 	// Navigation Background
 	navi_title.style['-webkit-backdrop-filter']=unblur;
@@ -121,9 +115,7 @@ function set_title_bar_transparent() {
 	navi_title.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
 	
 	// Change color for navigation title background.
-	navi_logo_union.style["-webkit-backdrop-filter"]=blur;
-	navi_logo_union.style['backdrop-filter']=blur;
-	navi_logo_union.style.backgroundColor="rgb(12, 40, 82, 0.9)";
+	// navi_logo_union.style.backgroundColor="rgb(12, 40, 82, 0.0)";
 }
 
 function set_title_bar_collapse() {
