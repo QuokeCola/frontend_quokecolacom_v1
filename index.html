@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>QuokeCola's Blog</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<link href="_css/navigationbar.css" rel="stylesheet" type="text/css">
@@ -10,8 +11,6 @@
 	<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 <script>var __adobewebfontsappname__="dreamweaver"</script>
-<script src="http://use.edgefonts.net/ubuntu-mono:n4,i4:default;didact-gothic:n4:default;m-1m:n4,n7:default;open-sans:n6:default;abel:n4:default;allerta:n4:default;alfa-slab-one:n4:default;kelly-slab:n4:default;pt-mono:n4:default;bebas-neue:n4:default.js" type="text/javascript"></script>
-	
 </head>
 <body onLoad="navi_initiate(); bodypage_initiate();" style="margin: 0">
 	<!-- navigation box  -->
@@ -19,7 +18,7 @@
 	<div id="navi_background_obj"		class="navi_background disable_select">
 		<div id="navi_title_obj"		class="navi_title">
 			<div id="navi_title_union"				class="navi_logo_union">
-				<p style="margin-bottom: 0px; margin-top: 0px">QUOKECOLA</p>
+				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
 				<div id="navi_titleline_obj"		class="navi_titleline"></div>
 			</div>
 			<h3		id="navi_pc_decoration_obj"		class="navi_pc_decoration">&lt;/&gt;</h3>
@@ -37,29 +36,29 @@
 			<nav id="navi_pc_menu_box"	class="navi_pc_page_button_box">
 				<button class="navi_pc_page_button"	onclick="homepagebtn_pressed();">HOME</button>
 				<button class="navi_pc_page_button"	onclick="passagebtn_pressed();">PASSAGES</button>
-				<button class="navi_pc_page_button"		href="webservice.html">WEBSERVICE</button> 
-				<button class="navi_pc_page_button"		href="index.html">ABOUT&nbsp;</button>
+				<button class="navi_pc_page_button"	>WEBSERVICE</button>
+				<button class="navi_pc_page_button"	>ABOUT&nbsp;</button>
 			</nav>
 		</div>
 
 		<nav id="navi_mobile_page_button_background"	class = "navi_mobile_page_button_box">
-			<div style="width: 100%; height: 0px"></div>
+			<div style="width: 100%; height: 0"></div>
 			<h4 id = "navi_mobile_menu_title"		class="navi_mobile_menu_title">NAVIGATION</h4>
-			<div style="width: 100%; height: 0px"></div>
-			<button id = "navi_mobile_page_button1"		class="navi_mobile_page_button"			href="index.html">
-				<img src="./_images/_icons/main.svg" 		style="width: 20px; height: 20px; opacity: 0.8"/>
+			<div style="width: 100%; height: 0"></div>
+			<button id = "navi_mobile_page_button1"		class="navi_mobile_page_button"	>
+				<img src="./_images/_icons/main.svg" 		style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>HOME</div>
 			</button>
-			<button id = "navi_mobile_page_button2"		class="navi_mobile_page_button"			href="index.html">
-				<img src="./_images/_icons/passages.svg" 	style="width: 20px; height: 20px; opacity: 0.8"/>
+			<button id = "navi_mobile_page_button2"		class="navi_mobile_page_button" >
+				<img src="./_images/_icons/passages.svg" 	style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>PASSAGES</div>
 			</button>
-			<button id = "navi_mobile_page_button3"		 class="navi_mobile_page_button"			href="index.html">
-				<img src="./_images/_icons/services.svg" 	style="width: 20px; height: 20px; opacity: 0.8"/>
+			<button id = "navi_mobile_page_button3"		 class="navi_mobile_page_button">
+				<img src="./_images/_icons/services.svg" 	style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>WEBSERVICE</div>
 			</button>
-			<button id = "navi_mobile_page_button4"		 class="navi_mobile_page_button"			href="index.html">
-				<img src="./_images/_icons/about.svg" 		style="width: 20px; height: 20px; opacity: 0.8"/>
+			<button id = "navi_mobile_page_button4"		 class="navi_mobile_page_button">
+				<img src="./_images/_icons/about.svg" 		style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>ABOUT</div>
 			</button>
 		</nav>
@@ -67,7 +66,7 @@
 	
 	<!-- main body  -->
 	<iframe id = "bodypage" src="_htmls/homepage.html"
-			style="border-width: 0px; width: 100vw;" ></iframe>
+			style="border-width: 0; width: 100vw;" ></iframe>
 	<div id ="bodypage_reference" style="height: 100vh; width:100vw; position: absolute; top: -999em;"></div>
 
 <!--	onload="this.style.width=window.outerWidth+'px';this.style.height=this.contentWindow.document.body.scrollHeight + 'px';"-->

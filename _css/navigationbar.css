@@ -10,27 +10,28 @@
 	left: 0;
 	top: 0;
 	background-color: rgba(255,255,255,0.0);
-	transition: 0.8s;
+	transition: 0.4s;
 }
 
 .navi_title::before{
 	width: 100%;
 	height: 100%;
 	-webkit-backdrop-filter: blur(0px);
-	transition: all 0.8s;
 }
 
 .navi_title {
-    font-family: "SourceSansPro SemiBold";
+	font-family: "SourceSansPro SemiBold", serif;
     color: #FFFFFF;
     font-size: 20px;
     padding-left: 10px;
     padding-top: 20px;
     padding-bottom: 180px;
-    transition: 0.8s;
     display: flex;
     align-items: center;
 	-webkit-backdrop-filter: blur(0px);
+	transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
+	transition-duration: 0.4s, 0.4s, 0.4s;
+	transition-delay: 0.0s, 0.2s, 0.2s;
 }
 
 .navi_titleline {
@@ -60,9 +61,9 @@
 
 .navi_pc_page_button_box {
 	overflow:hidden;
-	font-size: 0px;
+	font-size: 0;
 	display:flex;
-    font-family: "SourceSansPro Bold";
+    font-family: "SourceSansPro SemiBold", serif;
     background-color: rgba(19,32,62,0.9);
 	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(20px);
@@ -70,7 +71,7 @@
 	width: 434px;
 	height: auto;
 	vertical-align: top;
-	transition: 0.8s;
+	transition: 0.4s;
 	border-radius: 7px;
 	justify-content: center;
 }
@@ -78,18 +79,18 @@
 .navi_pc_page_button{
     color: white;
 	background-color: transparent;
-	top: 0px;
-	bottom: 0px;
+	top: 0;
+	bottom: 0;
     padding-right: 20px;
     padding-left: 20px;
-	margin: 0px;
+	margin: 0;
     text-decoration: none;
 	transition: all 0.4s;
-	border-width: 0px;
+	border-width: 0;
 	border-color: orangered;
 	font-size: 17px;
 	vertical-align: top;
-	font-family: "SourceSansPro Bold";
+	font-family: "SourceSansPro SemiBold", serif;
 }
 
 .navi_pc_page_button:hover{
@@ -105,7 +106,7 @@
     margin-right: 20px;
     margin-top: -10px;
     margin-bottom: -10px;
-    font-family: "NanumGothic Bold";
+	font-family: "NanumGothic Bold", serif;
     font-style: normal;
     font-weight: 400;
     color: white;
@@ -118,44 +119,42 @@
 .navi_mobile_page_button_box::before{
 	width: 100%;
 	height: 100%;
-	-webkit-backdrop-filter: blur(0px);
-	backdrop-filter: blur(0px);
+	-webkit-backdrop-filter: blur(0);
+	backdrop-filter: blur(0);
 	transition: all 0.4s;
 }
 
 .navi_mobile_page_button_box{
 	align-content: flex-start;
 	overflow:hidden;
-	font-size: 0px;
+	font-size: 0;
 	display:flex;
 	flex-wrap: wrap;
-    font-family: "SourceSansPro Bold";
+    font-family: "SourceSansPro SemiBold", serif;
     background-color: rgba(255,255,255,0.7);
     color: white;
 	width: 100%;
-	height: 0px;
+	height: 0;
 	justify-content: center;
 	vertical-align: top;
-	transition: 0.8s;
+	transition: 0.4s;
 }
 
 .navi_mobile_page_button{
 	overflow:hidden;
-/*	box-shadow: inset 0px 0px 0 1px #ccc, inset 0px 0px 0 0px rgba(0,0,0,0.5);*/
 	display: block;
     color: rgba(0,28,68,1.00);
 	background-color: transparent;
-	height: auto;
 	width: 47.5vw;
 	height: 10vh;
-	margin: 0px;
+	margin: 0;
     text-decoration: none;
 	border-width: 1px;
 	border-style: solid;
 	border-color: rgba(100,100,100,0.60);
 	font-size: 14px;
 	vertical-align: center;
-	font-family: 'SourceSansPro SemiBold';
+	font-family: 'SourceSansPro SemiBold', serif;
 	letter-spacing: 0.5px;
 	opacity: 0;
 }
@@ -178,7 +177,7 @@
 
 #navi_mobile_page_button2 {
 	border-top-width: 1px;
-	border-left-width: 0px;
+	border-left-width: 0;
 	border-right-width: 1px;
 	transition-property: opacity, color,height, border-bottom;
 	transition-duration: 0.4s, 0.4s, 0.4s, 0.4s;
@@ -186,7 +185,7 @@
 }
 
 #navi_mobile_page_button3 {
-	border-top-width: 0px;
+	border-top-width: 0;
 	border-left-width: 1px;
 	border-right-width: 1px;
 	transition-property: opacity, color,height, border-bottom;
@@ -195,8 +194,8 @@
 }
 
 #navi_mobile_page_button4 {
-	border-top-width: 0px;
-	border-left-width: 0px;
+	border-top-width: 0;
+	border-left-width: 0;
 	border-right-width: 1px;
 	transition-property: opacity, color,height, border-bottom;
 	transition-duration: 0.4s, 0.4s, 0.4s, 0.4s;
@@ -211,7 +210,7 @@
 	float: right;
 	position: relative;
 	background-color: rgba(19,32,62,0.9);
-	border-width: 0px;
+	border-width: 0;
 	border-radius: 5px;
 	
 	display: flex;
@@ -249,7 +248,7 @@
 	height: 10px;
 	flex-direction: column;
 	justify-content: center;
-	font-family: 'SourceSansPro SemiBold';
+	font-family: 'SourceSansPro SemiBold', serif;
 }
 
 .navi_mobile_menu_state {

@@ -1,4 +1,4 @@
-let homepage_paths = new Array();
+let homepage_paths = [];
 let homepage_hello = document.getElementById("homepage_hello");
 let homepage_reference = parent.document.getElementById("bodypage_reference");
 let homepage_title = document.getElementById("homepage_title");
@@ -21,7 +21,6 @@ function homepage_handwriting_initiate() {
         homepage_hello.style.transition = "stroke-dashoffset 1.5s ease-out";
         for (let i = 0; i < 10; i++){
             homepage_paths[i].style.transition = stroke_animations[i];
-            console.log(homepage_paths[i].style.transition);
         }
     }, 10);
 
@@ -32,9 +31,9 @@ function homepage_handwriting_initiate() {
         }
     },100);
 
-    window.addEventListener('resize', homepage_resize);
+    parent.window.addEventListener('resize', homepage_resize);
     parent.document.addEventListener('scroll', homepage_scroll);
-    homepage_img.style.marginTop = -20+"%";
+    homepage_img.style.marginTop = 20+"%";
 }
 
 function homepage_resize() {

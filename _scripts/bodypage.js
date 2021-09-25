@@ -11,5 +11,7 @@ function bodypage_resize() {
 
 function bodypage_loadcontent(url) {
     bodypage.src = url;
-    iframeOptmizeHeight(bodypage);
+    setTimeout(function () {
+        iframeOptmizeHeight(bodypage);
+    },1);
 }
