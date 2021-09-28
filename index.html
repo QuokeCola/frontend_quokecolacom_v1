@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>QuokeCola's Blog</title>
+	<meta name="description" content="Welcome to QuokeCola's Blog!">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<link href="_css/navigationbar.css" rel="stylesheet" type="text/css">
@@ -12,7 +13,7 @@
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 <script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body onLoad="navi_initiate(); bodypage_initiate();" style="margin: 0">
+<body onLoad="let NavigationBar = new navigationbar(); NavigationBar.initiate(); bodypage_initiate();" style="margin: 0">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select">
@@ -23,7 +24,7 @@
 			</div>
 			<h3		id="navi_pc_decoration_obj"		class="navi_pc_decoration">&lt;/&gt;</h3>
 			<input	id="navi_mobile_menu_state_obj"	class="invisible_checkbox"			type="checkbox"/>
-			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="navi_mobile_menu_button_clk()">
+			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="NavigationBar.mobile_menu_button_clk()">
 				<span id = "navi_mobile_menu_button_bread_top_obj"		class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
 					<span id="navi_mobile_menu_button_line_top_obj"		class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
 				</span>
@@ -70,9 +71,9 @@
 	<div id ="bodypage_reference" style="height: 100vh; width:100vw; position: absolute; top: -999em;"></div>
 
 <!--	onload="this.style.width=window.outerWidth+'px';this.style.height=this.contentWindow.document.body.scrollHeight + 'px';"-->
-	<script src="./_scripts/common_macro.js"> </script>
-	<script src="./_scripts/navigationbar.js"> </script>
-	<script src="./_scripts/bodypage.js"></script>
-	<script src="./_scripts/navigationbuttonlinkjump.js"></script>
+	<script src="/_scripts/common_macro.js"> </script>
+	<script src="/_scripts/navigationbar.js"> </script>
+	<script src="/_scripts/bodypage.js"></script>
+	<script src="/_scripts/navigationbuttonlinkjump.js"></script>
 </body>
 </html>
