@@ -11,9 +11,9 @@
 	<link href="webfonts/SourceSansPro_Bold/stylesheet.css" rel="stylesheet" type="text/css">
 	<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-<script>var __adobewebfontsappname__="dreamweaver"</script>
+	<script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body onLoad="let NavigationBar = new navigationbar(); NavigationBar.initiate(); bodypage_initiate();" style="margin: 0">
+<body style="margin: 0" onLoad="NavigationBar = new navigationbar();NavigationBar.initiate(); bodypage_initiate();">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select">
@@ -24,7 +24,7 @@
 			</div>
 			<h3		id="navi_pc_decoration_obj"		class="navi_pc_decoration">&lt;/&gt;</h3>
 			<input	id="navi_mobile_menu_state_obj"	class="invisible_checkbox"			type="checkbox"/>
-			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="NavigationBar.mobile_menu_button_clk()">
+			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj" onClick="window.NavigationBar.mobile_menu_button_clk()">
 				<span id = "navi_mobile_menu_button_bread_top_obj"		class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
 					<span id="navi_mobile_menu_button_line_top_obj"		class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
 				</span>
@@ -72,8 +72,8 @@
 
 <!--	onload="this.style.width=window.outerWidth+'px';this.style.height=this.contentWindow.document.body.scrollHeight + 'px';"-->
 	<script src="/_scripts/common_macro.js"> </script>
-	<script src="/_scripts/navigationbar.js"> </script>
 	<script src="/_scripts/bodypage.js"></script>
 	<script src="/_scripts/navigationbuttonlinkjump.js"></script>
+	<script src="/_scripts/navigationbar.js"></script>
 </body>
 </html>
