@@ -60,12 +60,12 @@ function navigationbar () {
 	this.scroll = function() {
 		let currentY = window.pageYOffset;
 		if(currentY > collapse_threshold) {
-			if(getLayoutID()===2 || (mobile_menu_state.checked === 0 && this.enable_expanded.checked === true)){
+			if(getLayoutID()===2 || (mobile_menu_state.checked === false && enable_expanded.checked === true)){
 				set_title_bar_collapse();
 			}
 			set_title_bar_colored();
 		} else {
-			if(getLayoutID()===2 || (mobile_menu_state.checked === 0 && this.enable_expanded.checked === true)){
+			if(getLayoutID()===2 || (mobile_menu_state.checked === false && enable_expanded.checked === true)){
 				set_title_bar_transparent();
 				set_title_bar_expanded();
 			}
