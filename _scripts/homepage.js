@@ -37,12 +37,14 @@ function homepage_handwriting_initiate() {
 }
 
 function homepage_resize() {
+    if(parent===null) return;
     homepage_title.style.top = homepage_reference.clientHeight*0.3+"px";
     homepage_title.style.height = homepage_reference.clientHeight*0.4+"px";
     homepage_banner.style.height = homepage_reference.clientHeight*0.7+90+"px";
 }
 
 function homepage_scroll() {
+    if(parent===null) return;
     homepage_img_top = (100-parent.window.pageYOffset)*0.2;
     if (homepage_img_top<-20) {
         homepage_img_top = -20;

@@ -2,8 +2,6 @@
 document.write("<script language=javascript src='/_scripts/common_macro.js'></script>");
 function navigationbar () {
 	let title 				= document.getElementById("navi_title_obj");
-	let logo_line 			= document.getElementById("navi_titleline_obj");
-	let logo_union 			= document.getElementById("navi_title_union");
 	let enable_expanded 	= document.getElementById("navi_enable_expanded");
 	let mobile_menu_button 	= document.getElementById("navi_mobile_menu_button");
 	let mobile_menu_state 	= document.getElementById("navi_mobile_menu_state_obj");
@@ -65,7 +63,7 @@ function navigationbar () {
 			}
 			set_title_bar_colored();
 		} else {
-			if(getLayoutID()===2 || (mobile_menu_state.checked === false && enable_expanded.checked === true)){
+			if((getLayoutID()===2 || mobile_menu_state.checked === false) && enable_expanded.checked === true){
 				set_title_bar_transparent();
 				set_title_bar_expanded();
 			}
@@ -76,8 +74,10 @@ function navigationbar () {
 		if(mobile_menu_state.checked) {	// Click to uncheck
 			if(window.pageYOffset>0) {
 				set_title_bar_collapse();
-			} else {
+			} else if(enable_expanded.checked === true){
 				set_title_bar_transparent();
+			} else if(enable_expanded.checked === false) {
+				set_title_bar_collapse();
 			}
 			mobile_menu_box_collapse();
 		} else {								// Click to check
@@ -87,10 +87,24 @@ function navigationbar () {
 		}
 	}
 
+	/**
+	 * @abstract Set if the navigation bar is expanded
+	 * @param input (True/False), whether enable the expand function.
+	 * */
+	this.set_enable_expanded = function(input) {
+		if(window.pageYOffset < collapse_threshold) {
+			if(input === true) {
+				set_title_bar_transparent();
+				set_title_bar_expanded();
+			} else if (input === false) {
+				set_title_bar_collapse();
+				set_title_bar_colored();
+			}
+		}
+		enable_expanded.checked = input;
+	}
+
 	let set_title_bar_colored = function() {
-		// PC navigation decoration "</>"
-		// navi_pc_decoration.style.backgroundColor="rgba(255,255,255,0.0)";
-		// navi_pc_decoration.style.color="white";
 
 		// Navigation Background
 		title.style['-webkit-backdrop-filter']=blur;
@@ -99,8 +113,6 @@ function navigationbar () {
 		// Change color for navigation title.
 		title.style.backgroundColor = "rgba(12, 40, 82, 0.9)";
 
-		// Change color for navigation title background.
-		// navi_logo_union.style.backgroundColor="rgba(0,0,0,0.0)";
 	}
 
 	let set_title_bar_transparent = function() {
