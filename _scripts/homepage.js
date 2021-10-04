@@ -1,3 +1,6 @@
+// JavaScript Document
+// Author: Chen Qian
+
 let homepage_paths = [];
 let homepage_hello = document.getElementById("homepage_hello");
 let homepage_reference = parent.document.getElementById("bodypage_reference");

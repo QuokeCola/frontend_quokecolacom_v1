@@ -1,17 +1,22 @@
-var bodypage = document.getElementById("bodypage");
+// JavaScript Document
+// Author: Chen Qian
 
-function bodypage_initiate(){
-    window.addEventListener('resize', bodypage_resize);
-    bodypage_resize();
-}
+function bodypage() {
+    let bodypage_obj = document.getElementById("bodypage");
 
-function bodypage_resize() {
-    iframeOptmizeHeight(bodypage);
-}
+    this.initiate = function(){
+        window.addEventListener('resize', this.resize);
+        this.resize();
+    }
 
-function bodypage_loadcontent(url) {
-    bodypage.src = url;
-    setTimeout(function () {
-        iframeOptmizeHeight(bodypage);
-    },1);
+    this.resize = function (){
+        iframeOptmizeHeight(bodypage_obj);
+    }
+
+    this.loadcontent = function (url) {
+        bodypage_obj.src = url;
+        setTimeout(function () {
+            iframeOptmizeHeight(bodypage_obj);
+        },1);
+    }
 }
