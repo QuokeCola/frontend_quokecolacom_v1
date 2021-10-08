@@ -107,7 +107,7 @@ function navigationbar () {
 	 * @param input (True/False), whether enable the expand function.
 	 * */
 	this.set_enable_expanded = function(input) {
-		if(window.pageYOffset < shrink_threshold) {
+		if(window.pageYOffset < shrink_threshold && !mobile_menu_state.checked) {
 			if(input === true) {
 				set_title_bar_visible(false);
 				set_title_bar_shrink(false);
@@ -177,7 +177,7 @@ function navigationbar () {
 			mobile_menu_box.style.height = "100%";
 			for (let i=0; i < mobile_menu_box.children.length; i++) {
 				mobile_menu_box.children[i].style.opacity = "1";
-				if(i>2){
+				if(i > 2 && i < 7){
 					mobile_menu_box.children[i].style.height = mobile_menu_linkbutton_expanded_height;
 				}
 			}
@@ -189,7 +189,7 @@ function navigationbar () {
 			mobile_menu_box.style.height = "0px";
 			for (let i=0; i < mobile_menu_box.children.length; i++) {
 				mobile_menu_box.children[i].style.opacity = "0";
-				if(i>2){
+				if(i > 2 && i < 7){
 					mobile_menu_box.children[i].style.height = mobile_menu_linkbutton_shrink_height;
 				}
 			}
@@ -257,7 +257,7 @@ function navigationbar () {
 				}
 			}
 			if(getLayoutID() === 1){
-				for (let i=0; i < mobile_menu_box.children.length; i++) {
+				for (let i=0; i < 7; i++) {
 					if(i>2){
 						mobile_menu_box.children[i].style.width = "23.75vw";
 						mobile_menu_box.children[i].style.borderTopWidth = "1px";
@@ -267,7 +267,7 @@ function navigationbar () {
 					}
 				}
 			} else {
-				for (let i=0; i < mobile_menu_box.children.length; i++) {
+				for (let i=0; i < 7; i++) {
 					if(i>2){
 						if(i>4){
 							mobile_menu_box.children[i].style.borderTopWidth = "0px";

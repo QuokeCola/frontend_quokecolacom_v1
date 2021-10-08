@@ -137,7 +137,7 @@
 	height: 0;
 	justify-content: center;
 	vertical-align: top;
-	transition: 0.4s;
+	transition: all 0.4s;
 }
 
 .navi_mobile_page_button{
@@ -249,6 +249,17 @@
 	flex-direction: column;
 	justify-content: center;
 	font-family: 'SourceSansPro SemiBold', serif;
+}
+
+.navi_mobile_description {
+	display: flex;
+	font-size: 10px;
+	color: rgba(100,100,100,0.80);
+	transition: all 0.4s;
+	width: 95vw;
+	flex-direction: column;
+	justify-content: left;
+	font-family: "SourceSansPro Regular", serif;
 }
 
 .navi_mobile_menu_state {
