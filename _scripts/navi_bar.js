@@ -13,6 +13,7 @@ function navigationbar () {
 	let pc_decoration 		= document.getElementById("navi_pc_decoration_obj");
 	let pc_box_placeholder 	= document.getElementById("navi_pc_box_placeholder");
 	let pc_menu_box 		= document.getElementById("navi_pc_menu_box");
+	let bodypage_obj 		= document.getElementById("bodypage");
 
 	let pc_menu_box_width 					= 0;
 	let pc_title_padding_bottom				= "70vh";
@@ -38,7 +39,7 @@ function navigationbar () {
 			pc_menu_box_width = get_navi_pc_menu_box_width();
 		}, 100);
 		this.scroll();
-		document.addEventListener('scroll', this.scroll);
+		bodypage_obj.contentWindow.addEventListener('scroll', this.scroll);
 		window.addEventListener('resize', this.resize);
 		window.addEventListener('orientationchange', function() {
 			setTimeout(function(){switch_view();}, 20);
@@ -55,7 +56,7 @@ function navigationbar () {
 			switch_view();
 		}
 		this.previousIsPC = currentIsPC;
-		if(window.pageYOffset > shrink_threshold || enable_expanded.checked === false){
+		if(bodypage_obj.contentWindow.pageYOffset > shrink_threshold || enable_expanded.checked === false){
 			pc_menu_box.style.width=String(document.body.offsetWidth+30)+"px";
 			set_title_bar_visible(true);
 			pc_menu_box.style.borderRadius=String(pc_bottom_box_shrink_radius)+"px";
@@ -68,7 +69,7 @@ function navigationbar () {
 	 * @description Invoke when page scrolled. Control whether the navigation bar expand or not.
 	 * */
 	this.scroll = function() {
-		let currentY = window.pageYOffset;
+		let currentY = bodypage_obj.contentWindow.pageYOffset;
 		if(currentY > shrink_threshold) {
 			if(getLayoutID() === 2 || (mobile_menu_state.checked === false && enable_expanded.checked === true)){
 				set_title_bar_shrink(true);
@@ -87,7 +88,7 @@ function navigationbar () {
 	 * */
 	this.mobile_menu_button_clk = function () {
 		if(mobile_menu_state.checked) {	// Click to uncheck
-			if(window.pageYOffset>0) {
+			if(bodypage_obj.contentWindow.pageYOffset>0) {
 				set_title_bar_shrink(true);
 			} else if(enable_expanded.checked === true){
 				set_title_bar_visible(false);
@@ -107,7 +108,7 @@ function navigationbar () {
 	 * @param input (True/False), whether enable the expand function.
 	 * */
 	this.set_enable_expanded = function(input) {
-		if(window.pageYOffset < shrink_threshold && !mobile_menu_state.checked) {
+		if(bodypage_obj.contentWindow.pageYOffset < shrink_threshold && !mobile_menu_state.checked) {
 			if(input === true) {
 				set_title_bar_visible(false);
 				set_title_bar_shrink(false);
@@ -223,7 +224,7 @@ function navigationbar () {
 			pc_box_placeholder.style.display = "flex";
 			pc_menu_box.style.width = get_navi_pc_menu_box_width()+"px";
 			pc_menu_box_width = get_navi_pc_menu_box_width();
-			if(window.pageYOffset < shrink_threshold && enable_expanded.checked === true) {
+			if(bodypage_obj.contentWindow.pageYOffset < shrink_threshold && enable_expanded.checked === true) {
 				set_title_bar_shrink(false);
 				set_title_bar_visible(false);
 			} else {
@@ -238,7 +239,7 @@ function navigationbar () {
 			mobile_menu_button.style.display = "flex";
 			mobile_menu_box.style.display = "flex";
 
-			if(window.pageYOffset < 1 && enable_expanded.checked) {
+			if(bodypage_obj.contentWindow.pageYOffset < 1 && enable_expanded.checked) {
 				set_title_bar_visible(false);
 				set_title_bar_shrink(false);
 			} else if(!mobile_menu_state.checked){

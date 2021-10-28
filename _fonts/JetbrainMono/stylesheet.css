@@ -1,0 +1,128 @@
+@font-face {
+	font-family: 'JetBrainsMono-Bold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Bold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-BoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-BoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-ExtraBold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-ExtraBold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-ExtraBoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-ExtraBoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-ExtraLight';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-ExtraLight.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-ExtraLightItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-ExtraLightItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-Italic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Italic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-Light';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Light.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-LightItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-LightItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-Medium';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Medium.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-MediumItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-MediumItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-Regular';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Regular.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-SemiBold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-SemiBold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-SemiBoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-SemiBoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-Thin';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-Thin.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMono-ThinItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMono-ThinItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Bold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Bold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-BoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-BoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-ExtraBold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-ExtraBold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-ExtraBoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-ExtraBoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-ExtraLight';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-ExtraLight.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-ExtraLightItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-ExtraLightItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Italic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Italic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Light';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Light.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-LightItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-LightItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Medium';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Medium.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-MediumItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-MediumItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Regular';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Regular.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-SemiBold';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-SemiBold.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-SemiBoldItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-SemiBoldItalic.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-Thin';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-Thin.ttf');
+}
+@font-face {
+	font-family: 'JetBrainsMonoNL-ThinItalic';
+	src: url('/_fonts/JetbrainMono/JetBrainsMonoNL-ThinItalic.ttf');
+}

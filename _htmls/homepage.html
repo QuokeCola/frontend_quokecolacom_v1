@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <link href="../_css/homepage.css" rel="stylesheet" type="text/css">
     <link href="../_css/universal_comp.css" rel="stylesheet" type="text/css">
+    <link href="../_css/passage_stylesheet.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
-<body style="margin: 0;" onload="homepage_handwriting_initiate()">
-    <div id ="homepage_banner" style="height: 200px; display:flex; overflow:hidden;text-align: center;background-color: black">
-        <img id="homepage_banner_img" src="/_images/homepage_background.png" style="width: 100%" alt="Failed to load homepage banner image.">
+<body style="margin: 0" onload="homepage_handwriting_initiate()">
+    <div id ="homepage_banner" style="height: calc(70vh + 90px); display:flex; overflow:hidden;text-align: center; background: url(/_images/homepage_background.png) no-repeat fixed center center;background-size:100%">
+<!--        <img id="homepage_banner_img" src="/_images/homepage_background.png" style="width: 100%; transform: translateZ(-10px);" alt="Failed to load homepage banner image.">-->
         <!--aspect ratio 2.1689723831-->
-        <div id="homepage_title" style="position: absolute; display: flex; background-color: rgba(19,32,62,0.7); top: 30%; left: 5vw; height: 40%; min-width: 240px; -webkit-backdrop-filter: blur(5px);border-radius: 10px">
+        <div id="homepage_title" style="position: absolute; display: flex; background-color: rgba(19,32,62,0.7); top: 30vh; left: 5vw; height: 40vh; min-width: 240px; -webkit-backdrop-filter: blur(5px);border-radius: 10px">
             <img id = "homepage_aspect_ratio" class="ratio_width_based_on_height"
                  src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'&gt;&lt;/svg&gt;" alt="">
             <div class="hompage_banner_content">
@@ -42,6 +43,10 @@
                 </svg>
             </div>
         </div>
+    </div>
+    <div id = "intro" style="margin: 10vw">
+        <largetitle style = "width: 40vw">I'm Chen <br> A student trying to create <br> funny things</largetitle>
+        <div style="width: 40px; height: 5px; background-color: orangered"></div>
     </div>
     <div id ="homepage_intro" style="height: 20000px"></div>
     <script src="../_scripts/homepage.js"></script>

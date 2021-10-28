@@ -91,6 +91,7 @@
 	font-size: 17px;
 	vertical-align: top;
 	font-family: "SourceSansPro SemiBold", serif;
+	pointer-events: auto;
 }
 
 .navi_pc_page_button:hover{
@@ -138,6 +139,7 @@
 	justify-content: center;
 	vertical-align: top;
 	transition: all 0.4s;
+	pointer-events: auto;
 }
 
 .navi_mobile_page_button{
