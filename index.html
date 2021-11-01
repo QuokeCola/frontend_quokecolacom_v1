@@ -13,7 +13,7 @@
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 	<script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body style="margin: 0; position: fixed" onLoad="NavigationBar = new navigationbar();Bodypage = new bodypage(); NavigationBar.initiate(); ">
+<body style="margin: 0;" onLoad="NavigationBar = new navigationbar();Bodypage = new bodypage(); NavigationBar.initiate(); ">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none">
@@ -69,8 +69,7 @@
 	
 	<!-- main body  -->
 	<iframe id = "bodypage" src="_htmls/homepage.html"
-			style="border-width: 0; width: 100vw; height: 100vh" ></iframe>
-	<div id ="bodypage_reference" style="height: 100%; width:100%; position: absolute; top: -999em;"></div>
+			style="border-width: 0; width: 100vw; min-height: 100vh" ></iframe>
 
 <!--	onload="this.style.width=window.outerWidth+'px';this.style.height=this.contentWindow.document.body.scrollHeight + 'px';"-->
 	<script src="/_scripts/common_macro.js"> </script>

@@ -6,10 +6,29 @@
     transition: all 0.0s;
 }
 
-#homepage_banner{
+#homepage_banner_img{
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: calc(70vh + 90px);
+    z-index:-1;
+    display: block;
+    object-fit: cover;
+}
+
+#homepage_title{
+    position: absolute;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(19,32,62,0.7);
+    top: 30vh;
+    left: 5vw;
+    height: 40vh;
+    min-width: 240px;
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px
 }
 
 #homepage_hello {

@@ -30,8 +30,6 @@ function homepage_handwriting_initiate() {
             homepage_paths[i].style.strokeDashoffset = "0";
         }
     },100);
-
-    homepage_img.style.marginTop = 0+"%";
 }
 
 
