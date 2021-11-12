@@ -4,9 +4,14 @@
 document.write("<script language=javascript src='/_scripts/bodypage.js'></script>");
 function homepagebtn_pressed() {
     Bodypage.loadcontent('/_htmls/homepage.html');
-    NavigationBar.set_enable_expanded(true);
+    setTimeout(function () {
+        NavigationBar.set_enable_expanded(true);
+    },10);
+
 }
 function passagebtn_pressed() {
     Bodypage.loadcontent('/_htmls/testbody.html');
-    NavigationBar.set_enable_expanded(false);
+    setTimeout(function () {
+        NavigationBar.set_enable_expanded(false);
+    },10);
 }

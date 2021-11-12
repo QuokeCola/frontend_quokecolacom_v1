@@ -53,3 +53,12 @@
     bottom: 5%;
     display: block;
 }
+
+.pcb_images {
+    position: absolute;
+    height: 30vw;
+    box-shadow: black;
+    transition: all 0.2s;
+    -webkit-filter: drop-shadow(0px 15px 15px rgba(100,100,100,0.1));
+    filter: drop-shadow(-5px 5px 5px rgba(0,0,0,0.3));
+}

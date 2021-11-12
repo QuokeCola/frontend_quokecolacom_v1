@@ -7,7 +7,7 @@
     <link href="../_css/passage_stylesheet.css" rel="stylesheet" type="text/css">
     <title>Title</title>
 </head>
-<body style="margin: 0;display: block;background-color: black" onload="homepage_handwriting_initiate()">
+<body style="margin: 0;display: block;background-color: black; " onload="HomePage = new homepage(); HomePage.initiate();">
     <img id="homepage_banner_img" src="/_images/homepage_background.png" alt="Failed to load homepage banner image.">
     <div id="homepage_title">
         <img id = "homepage_aspect_ratio" class="ratio_width_based_on_height"
@@ -42,11 +42,20 @@
         </div>
     </div>
 <!--    <div style="margin:0px; padding:0px;height: calc(70vh + 90px)"></div>-->
-    <div id = "intro" style="width:90vw; padding: 5vw; background-color: white">
-        <largetitle style = "width: 40vw">I'm Chen <br> A student trying to create <br> funny things</largetitle>
-        <div style="width: 40px; height: 5px; background-color: orangered"></div>
+    <div id = "intro" style="width:90vw; padding: 5vw; display: flex; background-color: white;perspective:5px">
+        <div style="display: block;z-index: 3;">
+            <largetitle style = "width: 40vw">I'm Chen <br> A student trying to create <br> funny things</largetitle>
+            <div style="width: 40px; height: 5px; background-color: orangered"></div>
+        </div>
+        <div id="pcb" style="width: 40vw; height: 40vw; display: flex; ">
+<!--            <img src="/_images/PCBs/Hero_Chassis.png" class="pcb_images" style="left: -20vw;z-index: 3">-->
+            <img id = "pcb1" src="/_images/PCBs/Hero_Gimbal_PCB.png" class="pcb_images" style="left: 45vw;z-index: 3;">
+            <img id = "pcb2" src="/_images/PCBs/Standard_Gimbal.png" class="pcb_images" style="left: 60vw;z-index: 2;">
+<!--            <img src="/_images/PCBs/Standard_Chassis.png" class="pcb_images" style="left: -80vw;z-index: 1">-->
+
+        </div>
     </div>
-    <div id ="homepage_intro" style="height: 20000px"></div>
+<!--    <div id ="homepage_intro" style="height: 20000px"></div>-->
     <script src="../_scripts/homepage.js"></script>
 </body>
 </html>
