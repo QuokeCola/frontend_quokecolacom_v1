@@ -23,3 +23,18 @@ function checkVisible(elm) {
 	var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
 	return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
 }
+
+function throttle(fn, delay) {
+	var timer;
+	return function () {
+		var _this = this;
+		var args = arguments;
+		if (timer) {
+			return;
+		}
+		timer = setTimeout(function () {
+			fn.apply(_this, args);
+			timer = null;
+		}, delay)
+	}
+}
