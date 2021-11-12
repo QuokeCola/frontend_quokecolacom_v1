@@ -55,8 +55,8 @@
 }
 
 .pcb_images {
-    position: absolute;
-    height: 30vw;
+    position: relative;
+    height: 150%;
     box-shadow: black;
     transition: top 1.0s;
     -webkit-filter: drop-shadow(-15px 15px 15px rgba(0,0,0,0.3));
