@@ -6,8 +6,8 @@ function bodypage() {
 
     this.loadcontent = function (url) {
         bodypage_obj.src = url;
-        setTimeout(function () {
+        bodypage_obj.onload = function(){
             bodypage_obj.contentWindow.addEventListener('scroll', NavigationBar.scroll);
-        },10);
+        };
     }
 }

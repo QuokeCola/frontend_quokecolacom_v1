@@ -10,9 +10,9 @@ function HomePage() {
     let pcb2      = document.getElementById("pcb2");
     let pcb3      = document.getElementById("pcb3");
 
-    let pcb1_loc  = ["-150px", "-90px", "-30px"];
-    let pcb2_loc  = ["40px", "70px", "120px"];
-    let pcb3_loc  = ["-300px", "-225px", "-150px"];
+    let pcb1_loc  = ["-100%", "-80%",  "-60%"];
+    let pcb2_loc  = ["-200%", "-170%", "-140%"];
+    let pcb3_loc  = ["-300%", "-260%", "-220%"];
     this.initiate = function () {
         for (let i = 0; i < 10; i++){
             paths[i] = document.getElementById("homepage_line"+i);
