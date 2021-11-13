@@ -54,11 +54,48 @@
     display: block;
 }
 
-.pcb_images {
+.showcase_imgs {
     position: relative;
     height: 150%;
     box-shadow: black;
     transition: top 1.0s;
     -webkit-filter: drop-shadow(-15px 15px 15px rgba(0,0,0,0.3));
     filter: drop-shadow(-15px 15px 15px rgba(0,0,0,0.3));
+}
+
+.showcase_block {
+    width:90vw;
+    padding: 5vw;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.showcase_subblock {
+    display: inline-block;
+    width: 50%;
+    height: 40vh;
+    min-width: 400px;
+    flex-wrap: nowrap;
+}
+
+.break {
+    background-color: red;
+    flex-basis: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.subtitle {
+    margin-left: 0;
+    font-family: JetBrainsMonoNL-Regular, serif;
+    font-weight:normal
+}
+
+.decoration_line {
+    width: 40px;
+    height: 5px;
+    background-color: orangered
 }
