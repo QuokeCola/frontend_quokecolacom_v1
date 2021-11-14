@@ -16,7 +16,7 @@
 <body style="margin: 0;" onLoad="NavigationBar = new navigationbar();Bodypage = new bodypage(); NavigationBar.initiate(); ">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none">
+	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2">
 		<div id="navi_title_obj"		class="navi_title">
 			<div id="navi_title_union"				class="navi_logo_union">
 				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
@@ -69,7 +69,7 @@
 	
 	<!-- main body  -->
 	<iframe id = "bodypage" src="_htmls/homepage.html"
-			style="border-width: 0; width: 100vw; min-height: 100vh; transition: all 0.5s ease-in;" ></iframe>
+			style="border-width: 0; width: 100vw; min-height: 100vh; transition: all 0.5s ease-in; z-index: 1" ></iframe>
 	<script src="/_scripts/common_macro.js"> </script>
 	<script src="/_scripts/bodypage.js"></script>
 	<script src="/_scripts/navi_href.js"></script>
