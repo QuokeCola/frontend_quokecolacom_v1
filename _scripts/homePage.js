@@ -39,15 +39,15 @@ function HomePage() {
     this.scroll = function () {
         let pcb1ScrTop = pcb1.getBoundingClientRect().top;
 
-        if(pcb1ScrTop < 0.3*window.innerHeight) {
+        if(pcb1ScrTop < 0.1*window.innerHeight) {
             if(pcb1.style.top !== pcb1_loc[0])pcb1.style.top = pcb1_loc[0];
             if(pcb2.style.top !== pcb2_loc[0])pcb2.style.top = pcb2_loc[0];
             if(pcb3.style.top !== pcb3_loc[0])pcb3.style.top = pcb3_loc[0];
-        } else if(pcb1ScrTop < 0.5*window.innerHeight) {
+        } else if(pcb1ScrTop < 0.3*window.innerHeight) {
             if(pcb1.style.top !== pcb1_loc[1])pcb1.style.top = pcb1_loc[1];
             if(pcb2.style.top !== pcb2_loc[1])pcb2.style.top = pcb2_loc[1];
             if(pcb3.style.top !== pcb3_loc[1])pcb3.style.top = pcb3_loc[1];
-        } else if(pcb1ScrTop < 0.7*window.innerHeight) {
+        } else if(pcb1ScrTop < 0.5*window.innerHeight) {
             if(pcb1.style.top !== pcb1_loc[2])pcb1.style.top = pcb1_loc[2];
             if(pcb2.style.top !== pcb2_loc[2])pcb2.style.top = pcb2_loc[2];
             if(pcb3.style.top !== pcb3_loc[2])pcb3.style.top = pcb3_loc[2];
