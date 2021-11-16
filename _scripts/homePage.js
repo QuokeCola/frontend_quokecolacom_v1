@@ -9,6 +9,15 @@ function HomePage() {
     let pcb1      = document.getElementById("pcb1");
     let pcb2      = document.getElementById("pcb2");
     let pcb3      = document.getElementById("pcb3");
+    let showcase_subblocks = document.getElementsByClassName('showcase_subblock');
+
+    for (let i = 0; i < showcase_subblocks.length; i++) {
+        if(screen.width < 600) {
+            showcase_subblocks[i].style.minWidth = String(screen.width*0.9) + "px";
+        } else {
+            showcase_subblocks[i].style.minWidth = "500px";
+        }
+    }
 
     let pcb1_loc  = ["-100%", "-80%",  "-60%"];
     let pcb2_loc  = ["-200%", "-170%", "-140%"];
