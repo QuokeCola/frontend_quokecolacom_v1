@@ -41,3 +41,7 @@
 #about_major::before{
     background-image: url("/_images/about/major.svg");
 }
+
+#about_mail::before{
+    background-image: url("/_images/about/mail.svg");
+}
