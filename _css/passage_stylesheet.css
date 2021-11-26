@@ -4,21 +4,31 @@
 @import "/webfonts/SourceSansPro_Regular/stylesheet.css";
 @import "/webfonts/SourceSansPro_SemiBold/stylesheet.css";
 h1 {
-    margin-left: 5vw;
+    margin-left: 0;
     font-family: "SourceSansPro Bold", serif;
     color:		rgba(0,28,68,1.00);
+    font-weight: normal;
 }
 
 h2 {
-    margin-left: 5vw;
+    margin-left: 0;
     font-family: "SourceSansPro Bold", serif;
     color:		rgba(0,28,68,1.00);
+    font-weight: normal;
 }
 
 h3 {
-    margin-left: 5vw;
+    margin-left: 0;
     font-family: "SourceSansPro Bold", serif;
     color:		rgba(0,28,68,1.00);
+    font-weight: normal;
+}
+
+h4 {
+    margin-left: 0;
+    font-family: "SourceSansPro Regular", serif;
+    color:      rgba(0,28,16,1.00);
+    font-weight: normal;
 }
 
 largetitle {

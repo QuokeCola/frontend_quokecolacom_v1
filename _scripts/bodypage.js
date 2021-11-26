@@ -4,6 +4,10 @@
 function bodypage() {
     let bodypage_obj = document.getElementById("bodypage");
 
+    this.initiate = function () {
+        bodypage_obj.style.width = "100%";
+    }
+
     this.loadcontent = function (url) {
         bodypage_obj.style.transition = "all 0.5s ease-in"
         bodypage_obj.style.opacity = "0.0";

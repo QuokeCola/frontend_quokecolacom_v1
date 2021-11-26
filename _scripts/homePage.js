@@ -10,19 +10,25 @@ function HomePage() {
     let pcb2      = document.getElementById("pcb2");
     let pcb3      = document.getElementById("pcb3");
     let showcase_subblocks = document.getElementsByClassName('showcase_subblock');
-
-    for (let i = 0; i < showcase_subblocks.length; i++) {
-        if(screen.width < 600) {
-            showcase_subblocks[i].style.minWidth = String(screen.width*0.9) + "px";
-        } else {
-            showcase_subblocks[i].style.minWidth = "500px";
-        }
-    }
+    let terminalsc= document.getElementById("meta_scrshot");
+    let previousIsPC = getLayoutID();
 
     let pcb1_loc  = ["-100%", "-80%",  "-60%"];
     let pcb2_loc  = ["-200%", "-170%", "-140%"];
     let pcb3_loc  = ["-300%", "-260%", "-220%"];
     this.initiate = function () {
+
+        for (let i = 0; i < showcase_subblocks.length; i++) {
+            if(window.innerWidth < window.innerHeight) {
+                showcase_subblocks[i].style.width = "90%";
+                terminalsc.style.height = "70%";
+            } else {
+                showcase_subblocks[i].style.width = "45%"
+                terminalsc.style.height = "100%";
+            }
+        }
+        document.addEventListener('resize', this.resize);
+        document.addEventListener('orientationchange', this.switch_view);
         for (let i = 0; i < 10; i++){
             paths[i] = document.getElementById("homepage_line"+i);
             paths[i].style.strokeDashoffset = paths[i].getTotalLength();
@@ -60,6 +66,26 @@ function HomePage() {
             if(pcb1.style.top !== pcb1_loc[2])pcb1.style.top = pcb1_loc[2];
             if(pcb2.style.top !== pcb2_loc[2])pcb2.style.top = pcb2_loc[2];
             if(pcb3.style.top !== pcb3_loc[2])pcb3.style.top = pcb3_loc[2];
+        }
+    }
+    this.resize = function () {
+        let currentIsPC = getLayoutID();
+        if (currentIsPC === this.previousIsPC) {
+        } else {
+            this.switch_view();
+        }
+        this.previousIsPC = currentIsPC;
+    }
+
+    this.switch_view = function () {
+        for (let i = 0; i < showcase_subblocks.length; i++) {
+            if(window.innerWidth < window.innerHeight) {
+                showcase_subblocks[i].style.width = "90%";
+                terminalsc.style.height = "70%";
+            } else {
+                showcase_subblocks[i].style.width = "45%"
+                terminalsc.style.height = "100%";
+            }
         }
     }
 }

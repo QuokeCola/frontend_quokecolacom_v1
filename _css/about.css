@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import url("../webfonts/SourceSansPro_Regular/stylesheet.css");
+@import url("../webfonts/SourceSansPro_Black/stylesheet.css");
+@import url("../webfonts/NanumGothic_Bold/stylesheet.css");
+/*universal components*/
+
+#about_personal_info {
+    width: 300px;
+    display: block;
+}
+
+.about_personal_info_line {
+    font-family: "SourceSansPro Regular", serif;
+    display: flex;
+    font-size: 18px;
+    line-height: 18px;
+    padding: 0;
+    align-items: center;
+    margin: 5px 0 5px 0;
+}
+
+.about_personal_info_line::before {
+    content: "  ..";
+    padding-left: 18px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+    height: 18px;
+    color: rgba(0,0,0,0);
+    background-size: 100% 100%;
+}
+
+#about_school{
+    margin: 0 0 0 0;
+}
+
+#about_school::before{
+    background-image: url('/_images/about/edu.svg');
+}
+
+#about_major::before{
+    background-image: url("/_images/about/major.svg");
+}

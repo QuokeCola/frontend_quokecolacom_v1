@@ -13,7 +13,7 @@
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 	<script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body style="margin: 0;" onLoad="NavigationBar = new navigationbar();Bodypage = new bodypage(); NavigationBar.initiate(); ">
+<body style="margin: 0;" onLoad="NavigationBar = new navigationbar();Bodypage = new bodypage(); NavigationBar.initiate(); Bodypage.initiate();">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2">
@@ -39,7 +39,7 @@
 				<button class="navi_pc_page_button"	onclick="homepagebtn_pressed();">HOME</button>
 				<button class="navi_pc_page_button"	onclick="passagebtn_pressed();">PASSAGES</button>
 				<button class="navi_pc_page_button"	>WEBSERVICE</button>
-				<button class="navi_pc_page_button"	>ABOUT&nbsp;</button>
+				<button class="navi_pc_page_button"	onclick="aboutbtn_pressed();">ABOUT&nbsp;</button>
 			</nav>
 		</div>
 
@@ -59,7 +59,7 @@
 				<img src="./_images/_icons/services.svg" 	style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>WEBSERVICE</div>
 			</button>
-			<button id = "navi_mobile_page_button4"		 class="navi_mobile_page_button">
+			<button id = "navi_mobile_page_button4"		 class="navi_mobile_page_button" onclick="aboutbtn_pressed();">
 				<img src="./_images/_icons/about.svg" 		style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
 				<div>ABOUT</div>
 			</button>

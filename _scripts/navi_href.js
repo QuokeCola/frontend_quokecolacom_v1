@@ -15,3 +15,10 @@ function passagebtn_pressed() {
         NavigationBar.set_enable_expanded(false);
     },10);
 }
+
+function aboutbtn_pressed() {
+    Bodypage.loadcontent('/_htmls/about.html');
+    setTimeout(function () {
+        NavigationBar.set_enable_expanded(false);
+    },10);
+}
