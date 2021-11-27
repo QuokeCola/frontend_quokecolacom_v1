@@ -13,10 +13,11 @@
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 	<script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body style="margin: 0" onload = "NavigationBar = new navi_bar(); DynamicLoader = new dynamic_loader(); NavigationBar.initiate(); DynamicLoader.initiate();">
+<body style="margin: 0" onload = "NavigationBar = new navi_bar(); DynamicLoader = new dynamic_loader(); NavigationBar.initiate(); DynamicLoader.initiate();
+								  document.getElementById('navi_background_obj').style.opacity = '1.0'">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2">
+	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2; opacity: 0.0; transition: all 0.5s">
 		<div id="navi_title_obj"		class="navi_title">
 			<div id="navi_title_union"				class="navi_logo_union">
 				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
