@@ -21,7 +21,7 @@ function Pg_intro() {
     this.initiate = function () {
         switch_view();
         window.addEventListener('resize', this.resize);
-        document.addEventListener('orientationchange', this.switch_view);
+        document.addEventListener('orientationchange', switch_view);
         for (let i = 0; i < 10; i++){
             paths[i] = document.getElementById("homepage_line"+i);
             paths[i].style.strokeDashoffset = paths[i].getTotalLength();
@@ -82,12 +82,10 @@ function Pg_intro() {
 
     this.resize = function () {
         let currentIsPC = getLayoutID();
-        console.log(currentIsPC===previousIsPC);
-        if (currentIsPC === this.previousIsPC) {
-        } else {
+        if (currentIsPC !== previousIsPC) {
             switch_view();
         }
-        this.previousIsPC = currentIsPC;
+        previousIsPC = currentIsPC;
     }
 }
 

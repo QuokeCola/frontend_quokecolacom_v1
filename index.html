@@ -13,7 +13,7 @@
 <!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
 	<script>var __adobewebfontsappname__="dreamweaver"</script>
 </head>
-<body style="margin: 0;" onLoad="NavigationBar = new navi_bar();DynamicLoader = new dynamic_loader(); NavigationBar.initiate(); DynamicLoader.initiate();">
+<body style="margin: 0" onload = "NavigationBar = new navi_bar(); DynamicLoader = new dynamic_loader(); NavigationBar.initiate(); DynamicLoader.initiate();">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
 	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2">
@@ -68,8 +68,16 @@
 	</div>
 	
 	<!-- main body  -->
+	<div id="DynamicLoaderLoading" class="loading_animation">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
 	<iframe id = "DynamicLoader" src="_htmls/intro.html"
-			style="border-width: 0; width: 100vw; min-height: 100vh; transition: all 0.5s ease-in; z-index: 1" ></iframe>
+			style="border-width: 0; width: 100vw; min-height: 100vh; transition: all 0.5s ease-in; z-index: 1; opacity: 0.0" ></iframe>
 	<script src="/_scripts/common_macro.js"> </script>
 	<script src="/_scripts/dynamic_loader.js"></script>
 	<script src="/_scripts/navi_href.js"></script>

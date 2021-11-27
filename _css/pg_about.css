@@ -30,10 +30,6 @@
     background-size: 100% 100%;
 }
 
-#about_school{
-    margin: 0 0 0 0;
-}
-
 #about_school::before{
     background-image: url('/_images/pg_about/icons/edu.svg');
 }

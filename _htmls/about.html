@@ -7,14 +7,14 @@
     <link href="../_css/passage_stylesheet.css" rel="stylesheet" type="text/css">
     <link href="../_css/pg_about.css" rel="stylesheet" type="text/css">
 </head>
-<body style="display: flex; flex-wrap: wrap; justify-content: center; font-family: 'SourceSansPro Regular', serif;">
+<body style="display: flex; flex-wrap: wrap; justify-content: center; font-family: 'SourceSansPro Regular', serif;"
+      onload="let AboutPage = new pg_about(); AboutPage.initiate();">
 <div style="width: 100%; height: 120px"></div>
 <div id="about_personal_info">
     <img src="/_images/pg_about/sticker.jpeg" style="width: 100%; border-radius: 50%" alt="personal image">
     <div style="border-bottom-width: 1px; border-bottom-color: #AAAAAA; padding: 10px 0 10px 0; border-bottom-style: solid">
         <h3 style="margin-left: 0">Chen Qian</h3>
-        <div id="about_school" class="about_personal_info_line">&nbsp;Zhejiang University</div>
-        <div class="about_personal_info_line">&nbsp;University of Illinois at Urbana Champaign</div>
+        <div id="about_school" class="about_personal_info_line">&nbsp;Zhejiang University & UIUC</div>
         <div id="about_major" class="about_personal_info_line">&nbsp;Mechanical Engineering</div>
         <div id="about_mail" class="about_personal_info_line">&nbsp;chenq3@illinois.edu</div>
         <div class="about_personal_info_line">&nbsp;QuokeCola@iCloud.com</div>
@@ -48,6 +48,6 @@
     <h4>Nov. 26</h4>
     Introduction pages finished, started to begin markdown renderer.
 </div>
-
+<script src="../_scripts/pg_about.js"></script>
 </body>
 </html>
