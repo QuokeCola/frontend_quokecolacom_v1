@@ -16,11 +16,11 @@
     line-height: 18px;
     padding: 0;
     align-items: center;
-    margin: 5px 0 5px 0;
+    margin: 10px 0 10px 0;
 }
 
 .about_personal_info_line::before {
-    content: "  ..";
+    content: "";
     padding-left: 18px;
     padding-top: 0;
     padding-bottom: 0;
@@ -35,13 +35,27 @@
 }
 
 #about_school::before{
-    background-image: url('/_images/about/edu.svg');
+    background-image: url('/_images/pg_about/icons/edu.svg');
 }
 
 #about_major::before{
-    background-image: url("/_images/about/major.svg");
+    background-image: url("/_images/pg_about/icons/major.svg");
 }
 
 #about_mail::before{
-    background-image: url("/_images/about/mail.svg");
+    background-image: url("/_images/pg_about/icons/mail.svg");
+}
+
+#about_location::before {
+    background-image: url("/_images/pg_about/icons/location.svg");
+}
+
+#about_personal_experience {
+    width: 600px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+h4{
+    color: orangered;
 }
