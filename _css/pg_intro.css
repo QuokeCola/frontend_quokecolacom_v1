@@ -155,7 +155,3 @@
     border-color: orangered;
     color: orangered;
 }
-
-body::-webkit-scrollbar {
-    display: none;
-}

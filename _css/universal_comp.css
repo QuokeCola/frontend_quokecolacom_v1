@@ -108,3 +108,7 @@
 		transform: rotate(950deg);
 	}
 }
+
+body::-webkit-scrollbar {
+	display: none;
+}
