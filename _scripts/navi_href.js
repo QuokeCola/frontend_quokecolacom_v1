@@ -3,14 +3,14 @@
 
 document.write("<script language=javascript src='/_scripts/dynamic_loader.js'></script>");
 function homepagebtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/homepage.html');
+    DynamicLoader.loadcontent('/_htmls/intro.html');
     setTimeout(function () {
         NavigationBar.set_enable_expanded(true);
     },10);
 
 }
 function passagebtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/testbody.html');
+    DynamicLoader.loadcontent('/_htmls/psglist.html');
     setTimeout(function () {
         NavigationBar.set_enable_expanded(false);
     },10);

@@ -12,22 +12,15 @@ function Pg_intro() {
     let showcase_subblocks = document.getElementsByClassName('showcase_subblock');
     let terminalsc= document.getElementById("meta_scrshot");
     let previousIsPC = getLayoutID();
+    let terminal_img_subblock = document.getElementById("TerminalSubblock");
 
     let pcb1_loc  = ["-100%", "-80%",  "-60%"];
     let pcb2_loc  = ["-200%", "-170%", "-140%"];
     let pcb3_loc  = ["-300%", "-260%", "-220%"];
-    this.initiate = function () {
 
-        for (let i = 0; i < showcase_subblocks.length; i++) {
-            if(window.innerWidth < window.innerHeight) {
-                showcase_subblocks[i].style.width = "90%";
-                terminalsc.style.height = "70%";
-            } else {
-                showcase_subblocks[i].style.width = "45%"
-                terminalsc.style.height = "100%";
-            }
-        }
-        document.addEventListener('resize', this.resize);
+    this.initiate = function () {
+        switch_view();
+        window.addEventListener('resize', this.resize);
         document.addEventListener('orientationchange', this.switch_view);
         for (let i = 0; i < 10; i++){
             paths[i] = document.getElementById("homepage_line"+i);
@@ -68,25 +61,33 @@ function Pg_intro() {
             if(pcb3.style.top !== pcb3_loc[2])pcb3.style.top = pcb3_loc[2];
         }
     }
-    this.resize = function () {
-        let currentIsPC = getLayoutID();
-        if (currentIsPC === this.previousIsPC) {
-        } else {
-            this.switch_view();
-        }
-        this.previousIsPC = currentIsPC;
-    }
 
-    this.switch_view = function () {
+    let switch_view = function () {
         for (let i = 0; i < showcase_subblocks.length; i++) {
-            if(window.innerWidth < window.innerHeight) {
-                showcase_subblocks[i].style.width = "90%";
-                terminalsc.style.height = "70%";
-            } else {
-                showcase_subblocks[i].style.width = "45%"
+            if(getLayoutID() === 2) {
+                terminalsc.style.marginTop = "0";
+                showcase_subblocks[i].style.width = "45%";
                 terminalsc.style.height = "100%";
+                terminalsc.style.width = "initial";
+                terminal_img_subblock.style.height = "40vh";
+            } else {
+                showcase_subblocks[i].style.width = "90%";
+                terminalsc.style.width = "100%";
+                terminalsc.style.height= "inherit";
+                terminalsc.style.marginTop = "100px";
+                terminal_img_subblock.style.height = "inherit";
             }
         }
+    }
+
+    this.resize = function () {
+        let currentIsPC = getLayoutID();
+        console.log(currentIsPC===previousIsPC);
+        if (currentIsPC === this.previousIsPC) {
+        } else {
+            switch_view();
+        }
+        this.previousIsPC = currentIsPC;
     }
 }
 
