@@ -40,3 +40,32 @@ largetitle {
     font-family: "JetBrainsMono-Regular", serif;
     font-size: 40px;
 }
+
+.href_link_btn {
+    font-family: JetBrainsMonoNL-Regular, serif;
+    font-size: 18px;
+    border: transparent;
+    background-color: transparent;
+    margin: 15px 0 15px 0;
+    padding: 0;
+    transition: all 0.5s;
+    position: relative;
+    color: rgba(0,28,68,1.00);
+}
+
+.href_link_btn::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,28,68,1.00);
+    transform-origin: bottom left;
+    transition: transform 0.5s cubic-bezier(.85,.2,.13,.89);
+}
+
+.href_link_btn:hover::after {
+    transform: scaleX(1);
+}

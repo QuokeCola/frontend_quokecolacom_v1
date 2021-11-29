@@ -33,6 +33,7 @@
 .showcase_block {
     width:90%;
     padding: 5%;
+    font-family: "JetBrainsMono-Regular", serif;
     display: flex;
     background-color: white;
     justify-content: center;
@@ -43,10 +44,10 @@
     font-size: 15px;
     font-family: "JetBrainsMono-Regular", serif;
     line-height: 30px;
-    display: inline-block;
+    display: flex;
     width: 50%;
     height: 40vh;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .decoration_line {
@@ -61,4 +62,13 @@
     height: 0;
     margin: 0;
     padding: 0;
+}
+
+.websrv_website_logo {
+    height: 15%;
+    padding: 2.5%;
+}
+
+#websrv_contact_btn::after {
+    background-color: orangered;
 }
