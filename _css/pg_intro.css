@@ -91,7 +91,6 @@
     display: inline-block;
     width: 50%;
     height: 40vh;
-    min-width: 400px;
     flex-wrap: nowrap;
 
 }

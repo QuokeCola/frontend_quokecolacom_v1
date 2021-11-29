@@ -22,3 +22,10 @@ function aboutbtn_pressed() {
         NavigationBar.set_enable_expanded(false);
     },10);
 }
+
+function websrvbtn_pressed() {
+    DynamicLoader.loadcontent('/_htmls/webservice.html');
+    setTimeout(function () {
+        NavigationBar.set_enable_expanded(true);
+    },10);
+}
