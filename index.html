@@ -4,6 +4,7 @@
 	<title>QuokeCola's Blog</title>
 	<meta name="description" content="Welcome to QuokeCola's Blog!">
     <meta charset="UTF-8">
+	<meta http-equiv="refresh">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<link href="_css/comp_navibar.css" rel="stylesheet" type="text/css">
 	<link href="_css/universal_comp.css" rel="stylesheet" type="text/css">
@@ -16,7 +17,7 @@
 								  document.getElementById('navi_background_obj').style.opacity = '1.0'">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2; opacity: 0.0; transition: all 0.5s">
+	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2; opacity: 0.0; transition: all 0.5s; transform: translateZ(43px)">
 		<div id="navi_title_obj"		class="navi_title">
 			<div id="navi_title_union"				class="navi_logo_union">
 				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
@@ -77,7 +78,9 @@
 	</div>
 
 	<iframe id = "DynamicLoader" src="_htmls/intro.html"
-			style="border-width: 0; width: 100vw; min-height: 100vh; transition: all 0.5s ease-in; z-index: 1; opacity: 0.0" ></iframe>
+			style="border-width: 0; width: 100vw; min-height: 100vh;
+			transition: all 0.5s ease-in; transform-origin: center;
+			z-index: 1; opacity: 0.0" ></iframe>
 	<script src="/_scripts/common_macro.js"> </script>
 	<script src="/_scripts/dynamic_loader.js"></script>
 	<script src="/_scripts/navi_href.js"></script>
