@@ -51,6 +51,7 @@ largetitle {
     transition: all 0.5s;
     position: relative;
     color: rgba(0,28,68,1.00);
+    text-decoration: none;
 }
 
 .href_link_btn::after{

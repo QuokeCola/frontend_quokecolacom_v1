@@ -61,6 +61,7 @@ h4{
     opacity: 70%;
     transition: all 0.5s cubic-bezier(.25,.26,.02,1);
     margin-top: 0;
+    background-color: transparent;
 }
 
 .about_social_links img{

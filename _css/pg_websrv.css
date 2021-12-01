@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 .href_link_btn::after{
     content: "";
     position: absolute;
