@@ -120,6 +120,16 @@ function navi_bar () {
 		enable_expanded.checked = input;
 	}
 
+	this.set_expanded = function (input) {
+		if(input === true) {
+			set_title_bar_visible(false);
+			set_title_bar_shrink(false);
+		} else if (input === false) {
+			set_title_bar_shrink(true);
+			set_title_bar_visible(true);
+		}
+	}
+
 	/**
 	 * @abstract Set whether the title bar is transparent.
 	 * @param input (True/False), true: blurred title bar; false: transparent titlebar.

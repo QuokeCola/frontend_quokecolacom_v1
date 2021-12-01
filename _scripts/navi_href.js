@@ -3,29 +3,16 @@
 
 document.write("<script language=javascript src='/_scripts/dynamic_loader.js'></script>");
 function homepagebtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/intro.html');
-    setTimeout(function () {
-        NavigationBar.set_enable_expanded(true);
-    },10);
-
+    DynamicLoader.loadcontent('/_htmls/intro.html', true);
 }
 function passagebtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/psglist.html');
-    setTimeout(function () {
-        NavigationBar.set_enable_expanded(false);
-    },10);
+    DynamicLoader.loadcontent('/_htmls/psglist.html', false);
 }
 
 function aboutbtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/about.html');
-    setTimeout(function () {
-        NavigationBar.set_enable_expanded(false);
-    },10);
+    DynamicLoader.loadcontent('/_htmls/about.html', false);
 }
 
 function websrvbtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/webservice.html');
-    setTimeout(function () {
-        NavigationBar.set_enable_expanded(true);
-    },10);
+    DynamicLoader.loadcontent('/_htmls/webservice.html', true);
 }
