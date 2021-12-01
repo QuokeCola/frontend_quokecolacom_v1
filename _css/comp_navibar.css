@@ -10,7 +10,7 @@
 	left: 0;
 	top: 0;
 	background-color: rgba(255,255,255,0.0);
-	transition: all 0.25s cubic-bezier(.74,.07,.85,.44);
+	transition: all 0.25s cubic-bezier(.78,.01,.3,1);
 }
 
 .navi_title::before{

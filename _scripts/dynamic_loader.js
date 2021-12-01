@@ -20,7 +20,7 @@ function dynamic_loader() {
     this.loadcontent = function (url, webpage_expand_property) {
         dynamic_loader.style.transition = "all 0.25s cubic-bezier(.74,.07,.85,.44)";
         dynamic_loader.style.opacity = "0.0";
-        dynamic_loader.style.transform = "perspective(500px) translateZ(42px)";
+        dynamic_loader.style.transform = "perspective(500px) translateZ(78px)";
         if(getLayoutID()===2) {
             navi_background_obj.style.transform = "perspective(500px) translateZ(84px)";
         } else {
@@ -31,8 +31,6 @@ function dynamic_loader() {
         NavigationBar.set_expanded(true);
         setTimeout(function () {
             dynamic_loader.src = url;
-            // dynamic_loader.style.transition = "all 0.0s";
-            // dynamic_loader.style.transform = "perspective(500px) translateZ(-42px)";
             dynamic_loader_anime.style.opacity = "1.0";
         },250);
         dynamic_loader.onload = function(){
