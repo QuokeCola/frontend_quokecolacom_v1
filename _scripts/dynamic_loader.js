@@ -24,6 +24,7 @@ function dynamic_loader() {
         dynamic_loader.style.transform = "perspective(500px) translateZ(78px)";
         if(getLayoutID()===2) {
             navi_background_obj.style.transform = "perspective(500px) translateZ(84px)";
+            NavigationBar.set_transparent(true);
         } else {
             navi_background_obj.style.transform = "perspective(0) translateZ(84px)";
         }
