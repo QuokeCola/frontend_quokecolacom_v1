@@ -7,6 +7,7 @@ function dynamic_loader() {
     let dynamic_loader = document.getElementById("DynamicLoader");
     let dynamic_loader_anime = document.getElementById("DynamicLoaderLoading");
     let navi_background_obj = document.getElementById("navi_background_obj");
+    let mobile_menu_state 	= document.getElementById("navi_mobile_menu_state_obj");
 
     this.initiate = function () {
         dynamic_loader.style.width = "100%";
@@ -44,9 +45,16 @@ function dynamic_loader() {
                 if(getLayoutID()===2) {
                     navi_background_obj.style.transform = "perspective(500px) translateZ(0px)";
                     NavigationBar.set_expanded(webpage_expand_property);
+                    NavigationBar.set_transparent(webpage_expand_property);
                 } else {
                     navi_background_obj.style.transform = "perspective(0) translateZ(0)";
-                    NavigationBar.set_expanded(webpage_expand_property);
+                    if(mobile_menu_state.checked) {
+                        NavigationBar.set_expanded(true);
+                        NavigationBar.set_transparent(false);
+                    } else {
+                        NavigationBar.set_transparent(webpage_expand_property);
+                        NavigationBar.set_expanded(webpage_expand_property);
+                    }
                 }
                 NavigationBar.set_enable_expanded(webpage_expand_property);
                 dynamic_loader_anime.style.display="none";

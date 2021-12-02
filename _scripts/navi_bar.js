@@ -120,12 +120,27 @@ function navi_bar () {
 		enable_expanded.checked = input;
 	}
 
+	/**
+	 * @abstract Set whether the title is expanded.
+	 * @param input (True/False), true: title bar expanded; false: title bar shrinked.
+	 * */
+
 	this.set_expanded = function (input) {
 		if(input === true) {
-			set_title_bar_visible(false);
 			set_title_bar_shrink(false);
 		} else if (input === false) {
 			set_title_bar_shrink(true);
+		}
+	}
+
+	/**
+	 * @abstract Call external to set the transparency of bar
+	 * @param input (True/False), true: transparent titlebar; false: blurred title bar.
+	 * */
+	this.set_transparent = function (input) {
+		if(input === true) {
+			set_title_bar_visible(false);
+		} else if (input === false) {
 			set_title_bar_visible(true);
 		}
 	}
