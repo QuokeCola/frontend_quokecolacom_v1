@@ -1,0 +1,10 @@
+{
+  "name": "quokecola_com",
+  "version": "1.0.0",
+  "dependencies": {
+    "browserfy": "^1.0.0",
+    "highlight.js": "^11.3.1",
+    "marked": "^4.0.6",
+    "npm": "^8.2.0"
+  }
+}

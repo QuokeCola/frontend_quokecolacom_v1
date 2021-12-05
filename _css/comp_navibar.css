@@ -30,8 +30,9 @@
     align-items: center;
 	-webkit-backdrop-filter: blur(0px);
 	transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
-	transition-duration: 0.4s, 0.4s, 0.4s;
-	transition-delay: 0.0s, 0.2s, 0.2s;
+	transition-duration: 0.6s, 0.3s, 0.3s;
+	transition-delay: 0.0s, 0.3s, 0.3s;
+	transition-timing-function: cubic-bezier(.88,.01,.39,1), cubic-bezier(.88,.01,.39,1), cubic-bezier(.88,.01,.39,1);
 }
 
 .navi_titleline {
@@ -71,7 +72,7 @@
 	width: 434px;
 	height: auto;
 	vertical-align: top;
-	transition: 0.4s;
+	transition: 0.6s cubic-bezier(.88,.01,.39,1);
 	border-radius: 7px;
 	justify-content: center;
 }

@@ -44,9 +44,9 @@ function dynamic_loader() {
                 dynamic_loader.style.opacity = "1.0";
                 dynamic_loader.style.transform = "perspective(500px) translateZ(0px)";
                 if(getLayoutID()===2) {
-                    navi_background_obj.style.transform = "perspective(500px) translateZ(0px)";
                     NavigationBar.set_expanded(webpage_expand_property);
                     NavigationBar.set_transparent(webpage_expand_property);
+                    navi_background_obj.style.transform = "perspective(500px) translateZ(0px)";
                 } else {
                     navi_background_obj.style.transform = "perspective(0) translateZ(0)";
                     if(mobile_menu_state.checked) {
@@ -57,8 +57,8 @@ function dynamic_loader() {
                         NavigationBar.set_expanded(webpage_expand_property);
                     }
                 }
-                NavigationBar.set_enable_expanded(webpage_expand_property);
                 dynamic_loader_anime.style.display="none";
+                NavigationBar.set_enable_expanded(webpage_expand_property);
             },250);
         };
     }
