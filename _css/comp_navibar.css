@@ -10,7 +10,7 @@
 	left: 0;
 	top: 0;
 	background-color: rgba(255,255,255,0.0);
-	transition: all 0.25s cubic-bezier(.78,.01,.3,1);
+	transition: all 0.8s cubic-bezier(.78,.01,.3,1);
 }
 
 .navi_title::before{
@@ -32,7 +32,7 @@
 	transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
 	transition-duration: 0.6s, 0.3s, 0.3s;
 	transition-delay: 0.0s, 0.3s, 0.3s;
-	transition-timing-function: cubic-bezier(.88,.01,.39,1), cubic-bezier(.88,.01,.39,1), cubic-bezier(.88,.01,.39,1);
+	transition-timing-function: cubic-bezier(.88,.00,.39,1), cubic-bezier(.88,.00,.39,1), cubic-bezier(.88,.00,.39,1);
 }
 
 .navi_titleline {
@@ -72,7 +72,7 @@
 	width: 434px;
 	height: auto;
 	vertical-align: top;
-	transition: 0.6s cubic-bezier(.88,.01,.39,1);
+	transition: 0.6s cubic-bezier(.88,.00,.39,1);
 	border-radius: 7px;
 	justify-content: center;
 }
