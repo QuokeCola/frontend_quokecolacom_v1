@@ -29,9 +29,12 @@ function navi_bar () {
 	let unblur									= "blur(0px)"
 	let blur									= "blur(20px)"
 	let previousIsPC							= getLayoutID();
-
-	let cubic_func_in		= 'cubic-bezier(.88,.00,.39,1), cubic-bezier(.88,.00,.39,1), cubic-bezier(.88,.00,.39,1)';
-	let cubic_func_out		= 'cubic-bezier(.27,.6,0,.99), cubic-bezier(.27,.6,0,.99), cubic-bezier(.27,.6,0,.99)';
+	let transition_delay_in = '0.0s, 0.3s, 0.3s';
+	let transition_delay_out= '0.0s, 0.0s, 0.0s';
+	let title_func_in 		= 'cubic-bezier(.88,.00,.39,1), cubic-bezier(.5,.5,.5,.5), cubic-bezier(.5,.5,.5,.5)';
+	let title_func_out		= 'cubic-bezier(.27,.6,0,.99),  cubic-bezier(.5,.5,.5,.5), cubic-bezier(.5,.5,.5,.5)'
+	let cubic_func_in		= 'cubic-bezier(.88,.00,.39,1)';
+	let cubic_func_out		= 'cubic-bezier(.27,.6,0,.99)';
 
 	/**
 	 * @description Initiate the navigation bar. Register the event listeners.
@@ -180,15 +183,19 @@ function navi_bar () {
 			title.style.paddingTop = "10px";
 			title.style.paddingBottom = "10px";
 			if(getLayoutID() === 2){
-				title.style.transitionTimingFunction = cubic_func_in;
 				pc_menu_box.style.transitionTimingFunction = cubic_func_in;
+				title.style.transitionDelay = transition_delay_in;
+				title.style.transitionTimingFunction = title_func_in;
+				title.style.animationTimingFunction = cubic_func_in;
 				pc_menu_box.style.width=String(document.body.offsetWidth+30)+"px";
 				pc_menu_box.style.borderRadius = String(pc_bottom_box_shrink_radius)+"px";
 			}
 		} else {
 			if(getLayoutID() === 2) {
-				title.style.transitionTimingFunction = cubic_func_out;
 				pc_menu_box.style.transitionTimingFunction = cubic_func_out;
+				title.style.transitionDelay = transition_delay_out;
+				title.style.transitionTimingFunction = title_func_out;
+				title.style.animationTimingFunction = cubic_func_out;
 				title.style.paddingTop = "20px";
 				title.style.paddingBottom = pc_title_padding_bottom;
 				pc_menu_box.style.width = pc_menu_box_width+"px";
