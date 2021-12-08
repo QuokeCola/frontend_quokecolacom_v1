@@ -17,7 +17,9 @@
 								  document.getElementById('navi_background_obj').style.opacity = '1.0'">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj"		class="navi_background disable_select"		style="pointer-events: none; z-index: 2; opacity: 0.0; transition: all 0.5s; transform: translateZ(43px)">
+	<div id="navi_background_obj"		class="navi_background disable_select"
+		 style="pointer-events: none; z-index: 2; opacity: 0.0;
+		 		transition: all 0.5s; perspective: 0; transform: translateZ(100px)">
 		<div id="navi_title_obj"		class="navi_title">
 			<div id="navi_title_union"				class="navi_logo_union">
 				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
@@ -69,7 +71,7 @@
 	</div>
 	
 	<!-- main body  -->
-	<div id="DynamicLoaderLoading" class="loading_animation" style="perspective: 10px; transform: translateZ(100px)">
+	<div id="DynamicLoaderLoading" class="loading_animation" style="perspective: 10px; transform: translateZ(42px); z-index: 0;">
 		<span></span>
 		<span></span>
 		<span></span>
