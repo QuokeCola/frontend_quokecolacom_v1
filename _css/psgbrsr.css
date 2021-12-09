@@ -254,3 +254,9 @@
 #page_index button:hover {
     background-color: #EEEEEE;
 }
+
+pre{
+    padding: 10px;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
