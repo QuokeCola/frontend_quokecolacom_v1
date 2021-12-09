@@ -6,7 +6,7 @@ function homepagebtn_pressed() {
     DynamicLoader.loadcontent('/_htmls/intro.html', true);
 }
 function passagebtn_pressed() {
-    DynamicLoader.loadcontent('/_htmls/psglist.html', false);
+    DynamicLoader.loadcontent('/_htmls/psgbrsr.html', false);
 }
 
 function aboutbtn_pressed() {

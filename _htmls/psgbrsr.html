@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="../_css/common_override.css" rel="stylesheet" type="text/css">
+    <link href="../_css/psgbrsr.css"         rel="stylesheet" type="text/css">
+    <link href="../_scripts/dependencies/highlight.min.css" rel="stylesheet" type="text/css">
     <title>Passages</title>
 </head>
-<body onload="PassageBrowser = new passage_browser(); PassageBrowser.initiate();">
-<div style="height: 100px"></div>
-<h1 style="color: red">Passages</h1>
-<div id="content"></div>
+<body onload="PassageBrowser = new passage_browser(); PassageBrowser.initiate();" style="margin: 0 7.5% 0 7.5%;
+    display: flex; flex-wrap: wrap">
+<div style="height: 120px;width: 100%"></div>
+<div id="passage_reader">
+</div>
+<div id="tags_selector">
+</div>
 <script src="../_scripts/pg_psg_browser.js"></script>
 </body>
 </html>
