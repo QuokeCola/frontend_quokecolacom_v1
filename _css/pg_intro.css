@@ -2,7 +2,7 @@
 
 .homepage_lines {
     stroke-width: 40;
-    stroke: white;
+    stroke: black;
     transition: all 0.0s;
 }
 
@@ -19,7 +19,7 @@
     background-size: 100% auto;
     background-position-y: center;
     background-attachment: fixed;
-    background-image: url("/_images/pg_intro/intro_bannerbg.png");
+    background-image: url("/_images/pg_intro/intro_bannerbg.jpeg");
     background-position: -9999px 9999px;
 }
 
@@ -39,7 +39,7 @@
 #homepage_title{
     position: absolute;
     display: flex;
-    background-color: rgba(19,32,62,0.7);
+    background-color: rgba(255,255,255,0.7);
     top: 30vh;
     left: 5vw;
     height: 40vh;
@@ -51,7 +51,7 @@
 
 #homepage_hello {
     transition: all 0.0s;
-    stroke: white;
+    stroke: black;
 }
 
 #homepage_title{
