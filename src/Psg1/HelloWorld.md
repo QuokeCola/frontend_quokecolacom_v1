@@ -21,3 +21,17 @@ class hello {
     static char[] world;
 }
 ```
+
+## CSS
+
+Most animation of this website are pure css, which means it can be interrupted and provides seamless experience.
+To load different pages, iframe was used.
+
+## Implement
+
+The project was built with pure Javascript and CSS, which means you almost don't need to configure any environment. Just clone,
+copy to your source folder for nginx and the website should be deployed.
+
+## Future work
+As this is my first javascript project, some early modules were not well designed, make it hard to modify. In the future 
+these modules (like navigation bar) might be refactored.
