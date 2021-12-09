@@ -1,23 +1,12 @@
 [
   {
     "title": "Hello, World!",
-    "pic": "/src/Psg1/intro_bannerbg.png",
-    "time": "12-08-2021 12:00",
+    "pic": "/src/Psg1/title_pic.jpeg",
+    "time": "12-09-2021 14:34",
     "src": "/src/Psg1/HelloWorld.md",
     "class": [
-      "test1",
-      "test2",
-      "test3"
-    ]
-  },
-  {
-    "title": "Passage 2",
-    "pic": "/src/Psg1/intro_bannerbg.png",
-    "time": "12-09-2021 11:59",
-    "src": "/src/Psg1/HelloWorld.md",
-    "class": [
-      "test1",
-      "test2"
+      "website",
+      "javascript"
     ]
   }
 ]

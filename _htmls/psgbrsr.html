@@ -11,14 +11,16 @@
 <body onload="ArticlesBrowser = new articles_browser(); ArticlesBrowser.initiate();" style="margin: 0 7.5% 0 7.5%;
     display: flex; flex-wrap: wrap;align-items: center">
 <div style="height: 120px;width: 100%"></div>
+<div id = article_titlepic><div></div></div>
+<div id="tags_selector" class="pc_tag_selector">
+    <h2><br>Tags</h2>
+</div>
 <div id="articles_backbutton" onclick="ArticlesBrowser.load_list(ArticlesBrowser.curr_tag, ArticlesBrowser.curr_page)"></div>
 <h1 id="list_title" style="margin-left: 5px"></h1>
 <div class="break"></div>
 <div id="articles_reader"></div>
-<div id="tags_selector" class="pc_tag_selector">
-    <h2><br>Tags</h2>
-</div>
-<div id=""></div>
+<div class="break"></div>
+<div id="page_index"></div>
 <script src="../_scripts/pg_psg_browser.js"></script>
 </body>
 </html>
