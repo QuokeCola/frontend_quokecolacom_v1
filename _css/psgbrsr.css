@@ -130,6 +130,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.25s;
+
 }
 
 .articles_block h3 {
@@ -196,7 +197,8 @@
 #article_titlepic{
     background-size: 100%;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
+    background-repeat: no-repeat;
     width: 100%;
     height: 50%;
     position: fixed;
@@ -217,8 +219,8 @@
 .article_container {
     display: block;
     font-family: SourceSansPro Regular, serif;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     opacity: 0;
     transform: translateZ(-1px);
     transition: all 0.5s cubic-bezier(0,0.4,0.1,1.0);
@@ -230,7 +232,7 @@
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
-    justify-content: center;
+    justify-content: left;
     perspective: 10px;
 }
 
