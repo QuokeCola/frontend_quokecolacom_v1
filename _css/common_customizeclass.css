@@ -10,6 +10,13 @@
 	display: none;
 }
 
+.break{
+	flex-basis: 100%;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
 .ratio_width_based_on_height {
 	height: 100%;
 	width: auto;

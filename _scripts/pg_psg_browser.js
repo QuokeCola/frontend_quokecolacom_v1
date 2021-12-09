@@ -3,9 +3,11 @@ document.write("<script language=javascript src='/_scripts/common_macro.js'></sc
 document.write("<script language=javascript src='/_scripts/dependencies/marked.min.js'></script>");
 document.write("<script language=javascript src='/_scripts/dependencies/highlight.min.js'></script>");
 
-function passage_browser(){
-    let passage_reader          = document.getElementById("passage_reader");
-    let passage_tag_selector    = document.getElementById("tags_selector");
+function articles_browser(){
+    let articles_reader          = document.getElementById("articles_reader");
+    let articles_tag_selector    = document.getElementById("tags_selector");
+    let articles_list_title      = document.getElementById("list_title");
+    let articles_back_btn        = document.getElementById("articles_backbutton");
     let psglist_loc = "/src/psglists.json"
     let psg_request = new XMLHttpRequest();
     const max_item_num= 20;
@@ -13,9 +15,10 @@ function passage_browser(){
     let load_list_executing = false;
     let load_list_temptag   = null;
     let load_list_temppage  = null;
-    // For return from passage.
-    let curr_tag = 'all';
-    let curr_page = 1;
+    // For return from articles.
+    this.curr_tag = 'All articles';
+    this.curr_page = 1;
+    var _thisRef = this;
     let topline_colors = [  'orangered','orchid','darkcyan','deeppink','darkslateblue','darksalmon','CadetBlue','CornflowerBlue',
                             'Gold', 'GreenYellow','IndianRed','LightCoral'];
 
@@ -25,9 +28,9 @@ function passage_browser(){
         psg_request.send(null);
         psg_request.onload = function () {
             if (psg_request.status === 200) {
+                console.log(psg_request.responseText);
                 psglist_json = JSON.parse(psg_request.responseText);
-                console.log(typeof psglist_json[0]);
-                load_list('all',1);
+                load_list('All articles',1);
                 load_tag();
             }
         }
@@ -39,7 +42,7 @@ function passage_browser(){
 
     let load_tag = function () {
         try{
-            let tag_list = [];
+            let tag_list = ['All articles',];
             for (let i = 0; i < psglist_json.length; i++) {
                 for(let j = 0; j < psglist_json[i].class.length; j++){
                     if(!tag_list.includes(psglist_json[i].class[j])){
@@ -53,7 +56,7 @@ function passage_browser(){
                 div.onclick = function () {
                     load_list(tag_list[i], 1);
                 }
-                passage_tag_selector.appendChild(div);
+                articles_tag_selector.appendChild(div);
             }
         } catch (TypeError) {}
     }
@@ -63,8 +66,13 @@ function passage_browser(){
     }
 
     let load_list = async function (searchtag, pagenum) {
-        curr_tag = searchtag;
-        curr_page= pagenum;
+        articles_reader.style.display = "flex";
+        articles_back_btn.style.width="0px";
+        articles_back_btn.style.borderRadius="0px";
+        articles_back_btn.style.backgroundSize="1px 30px";
+        articles_list_title.innerText = searchtag;
+        _thisRef.curr_tag = searchtag;
+        _thisRef.curr_page= pagenum;
         if(!load_list_executing){
             load_list_executing = true;
             load_list_temptag = null;
@@ -75,23 +83,14 @@ function passage_browser(){
             return;
         }
         /**Blocks fade out sequentially*/
-        if(passage_reader.childElementCount > 0) {
-            for (let i = 0; i < passage_reader.childElementCount; i++) {
-                passage_reader.children[i].style.opacity = "0";
-                passage_reader.children[i].style.transform="translateZ(-1)";
-                passage_reader.children[i].style.filter="blur(10px)";
-                await sleep(250/passage_reader.childElementCount);
-            }
-        }
-        await sleep(250);
-        passage_reader.innerHTML = '';
+        await _thisRef.clear_components();
 
         /**Adding Elements to main view*/
-        if(searchtag==='all') {
+        if(searchtag==='All articles') {
             for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num > psglist_json.length)?
                 (pagenum*max_item_num+max_item_num):psglist_json.length); i++){
                 try{
-                    passage_reader.appendChild(make_link_div(psglist_json[i]));
+                    articles_reader.appendChild(make_link_div(psglist_json[i]));
                 } catch (TypeError) {
 
                 }
@@ -101,14 +100,12 @@ function passage_browser(){
             for (let i = 0; i < psglist_json.length; i++) {
                 if(psglist_json[i].class.includes(searchtag)){
                     index.push(i);
-                    console.log(searchtag);
                 }
             }
-            console.log(index);
             for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num > index.length)?
                 (pagenum*max_item_num+max_item_num):index.length); i++){
                 try{
-                    passage_reader.appendChild(make_link_div(psglist_json[index[i]]));
+                    articles_reader.appendChild(make_link_div(psglist_json[index[i]]));
                 } catch (TypeError) {
 
                 }
@@ -116,25 +113,28 @@ function passage_browser(){
         }
         load_list_executing = false;
         if(load_list_temptag!==null || load_list_temppage!==null) {
-            passage_reader.innerHTML = '';
+            articles_reader.innerHTML = '';
             await load_list(load_list_temptag, load_list_temppage);
             return;
         }
         /**Blocks show up sequentially*/
-        for (let i = 0; i < passage_reader.childElementCount; i++) {
-            await sleep(250/passage_reader.childElementCount);
-            passage_reader.children[i].style.opacity = "1.0";
-            passage_reader.children[i].style.transform="translateZ(0px)";
-            passage_reader.children[i].style.filter="blur(0px)";
+        for (let i = 0; i < articles_reader.childElementCount; i++) {
+            await sleep(250/articles_reader.childElementCount);
+            articles_reader.children[i].style.opacity = "1.0";
+            articles_reader.children[i].style.transform="translateZ(0px)";
         }
     }
 
     function make_link_div(json_obj) {
         /**Create block element*/
         let block = document.createElement("div");
-        block.classList.add("passage_block");
+        block.classList.add("articles_block");
         block.onclick = function () {
             console.log(json_obj.src);
+            articles_back_btn.style.width = "40px";
+            articles_back_btn.style.borderRadius = "5px";
+            articles_back_btn.style.backgroundSize = "30px 30px";
+            _thisRef.load_articles(json_obj.src);
         }
         /**Create topline element*/
         let topLine = document.createElement("div");
@@ -169,9 +169,31 @@ function passage_browser(){
         return block;
     }
 
-    this.load_passage = function (link) {
-        passage_reader.innerHTML=marked.parse(url(link));
-        hljs.highlightAll();
+    this.clear_components = async function() {
+        if(articles_reader.childElementCount > 0) {
+            for (let i = 0; i < articles_reader.childElementCount; i++) {
+                articles_reader.children[i].style.opacity = "0";
+                articles_reader.children[i].style.transform="translateZ(2)";
+                await sleep(250/articles_reader.childElementCount);
+            }
+            await sleep(501);
+        }
+        articles_reader.innerHTML = '';
+    }
+
+    this.load_articles = async function (link) {
+        await _thisRef.clear_components();
+        let mdFile = new XMLHttpRequest();
+        mdFile.open("get", link);
+        mdFile.send(null);
+        mdFile.onload = function () {
+            if (mdFile.status === 200) {
+                articles_reader.style.display = "block";
+                console.log(mdFile.responseText);
+                articles_reader.innerHTML=marked.parse(mdFile.responseText);
+                hljs.highlightAll();
+            }
+        }
     }
 
 }

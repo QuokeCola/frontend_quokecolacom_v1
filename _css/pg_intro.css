@@ -96,14 +96,6 @@
 
 }
 
-.break {
-    background-color: red;
-    flex-basis: 100%;
-    height: 0;
-    margin: 0;
-    padding: 0;
-}
-
 .subtitle {
     margin-left: 0;
     font-family: JetBrainsMonoNL-Regular, serif;

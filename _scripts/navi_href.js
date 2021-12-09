@@ -5,7 +5,7 @@ document.write("<script language=javascript src='/_scripts/dynamic_loader.js'></
 function homepagebtn_pressed() {
     DynamicLoader.loadcontent('/_htmls/intro.html', true);
 }
-function passagebtn_pressed() {
+function articlebtn_pressed() {
     DynamicLoader.loadcontent('/_htmls/psgbrsr.html', false);
 }
 
