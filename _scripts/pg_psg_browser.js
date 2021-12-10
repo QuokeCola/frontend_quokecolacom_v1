@@ -284,8 +284,7 @@ function articles_browser(){
             if (mdFile.status === 200) {
                 article_container = document.createElement("div");
                 article_container.classList.add("article_container");
-                article_container.innerHTML=marked.parse(mdFile.responseText).replace(/<a href=/g, '<a target="_top" href=');
-
+                article_container.innerHTML=marked.parse(mdFile.responseText);
                 articles_reader.appendChild(article_container);
                 hljs.highlightAll();
                 _thisRef.show_components();
