@@ -92,7 +92,7 @@
     display: inline-block;
     width: 50%;
     height: 40vh;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
 }
 
