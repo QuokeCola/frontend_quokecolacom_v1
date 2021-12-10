@@ -36,8 +36,6 @@
     transition: 0.5s;
     line-height: 40px;
     padding: 0 15px 0 15px;
-    backdrop-filter: blur(0);
-    -webkit-backdrop-filter: blur(0);
     background-color: rgba(220,220,220,0.0);
     border-radius: 10px;
     border-color: transparent;
@@ -53,8 +51,6 @@
 }
 
 .pc_tag_selector button:hover{
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     background-color: rgba(255,255,255,0.5);
     border-color: rgba(200,200,200,0.5);
 }
@@ -84,8 +80,6 @@
     transition: 0.5s;
     line-height: 40px;
     padding: 0 15px 0 15px;
-    backdrop-filter: blur(0);
-    -webkit-backdrop-filter: blur(0);
     background-color: rgba(220,220,220,0.0);
     border-radius: 10px;
     border-color: transparent;
@@ -93,8 +87,6 @@
 }
 
 .mobile_tag_selector button:hover{
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     background-color: rgba(255,255,255,0.5);
     border-color: rgba(200,200,200,0.5);
 }
@@ -106,7 +98,7 @@
     margin-right: 5px;
     margin-bottom: 10px;
     width: 300px;
-    border: #AAAAAA solid 1px;
+    border: #DDDDDD solid 1px;
     user-select: none;
     -webkit-user-select: none;
     transition: all 0.5s cubic-bezier(0.4,0,0.0,1);
