@@ -8,19 +8,15 @@
 
 #articles_reader {
     width: 70%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #DDDDDD;
+    border-top: rgba(0,28,16,0.20) 1px solid;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     perspective: 10px;
-    min-height: 250px;
-    border-radius: 15px;
+    min-height: 300px;
     padding: 15px 0 15px 0;
     transition: all 0.5s cubic-bezier(0.2, 0, 0.8, 1.0);
-    background-color: rgba(255,255,255, 0.8);
 }
 
 .pc_tag_selector{
@@ -241,6 +237,7 @@
     padding-bottom: 20px;
     justify-content: left;
     perspective: 10px;
+    transition: all 0.25s;
 }
 
 #page_index button {
@@ -266,6 +263,10 @@
 
 pre{
     padding: 10px;
-    background-color: #EEEEEE;
+    background-color: rgba(200,200,200,0.2);
     border-radius: 10px;
+}
+
+pre .hljs{
+    background-color: transparent;
 }

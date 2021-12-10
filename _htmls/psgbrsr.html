@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
 <head>
     <meta charset="UTF-8">
     <link href="../_css/common_override.css" rel="stylesheet" type="text/css">
@@ -11,12 +11,12 @@
 <body onload="ArticlesBrowser = new articles_browser(); ArticlesBrowser.initiate();" style="margin: 0 7.5% 0 7.5%;
     display: flex; flex-wrap: wrap;align-items: center">
 <div style="height: 120px;width: 100%"></div>
-<div id =article_titlepic><div></div></div>
+<div id = "article_titlepic"><div></div></div>
 <div id="tags_selector" class="pc_tag_selector">
     <h2><br>Tags</h2>
 </div>
 <div id="articles_backbutton" onclick="ArticlesBrowser.load_list(ArticlesBrowser.curr_tag, ArticlesBrowser.curr_page)"></div>
-<h1 id="list_title" style="margin-left: 5px" onclick="ArticlesBrowser.load_list(ArticlesBrowser.curr_tag, ArticlesBrowser.curr_page)"></h1>
+<h1 id="list_title" style="margin-left: 5px; font-family: JetBrainsMono-Regular, serif; color: rgba(0,28,68,1.00);" onclick="ArticlesBrowser.load_list(ArticlesBrowser.curr_tag, ArticlesBrowser.curr_page)"></h1>
 <div class="break"></div>
 <div id="articles_reader"></div>
 <div class="break"></div>

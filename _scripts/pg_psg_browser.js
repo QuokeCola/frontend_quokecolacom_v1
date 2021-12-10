@@ -151,8 +151,11 @@ function articles_browser(){
     }
 
     let load_list = async function (searchtag, pagenum) {
+        article_page_idx.style.opacity = "1.0";
+        scrollToTop();
         articles_list_title.style.pointerEvents="none";
         article_title_pic.style.opacity = "0.0";
+        article_title_pic.style.filter = "blur(0px)";
         articles_back_btn.style.width="0px";
         articles_back_btn.style.borderRadius="0px";
         articles_back_btn.style.backgroundSize="1px 30px";
@@ -214,6 +217,7 @@ function articles_browser(){
             articles_back_btn.style.backgroundSize = "30px 30px";
             article_title_pic.style.backgroundImage= "url('"+json_obj?.pic+"')";
             article_title_pic.style.opacity = "1.0";
+            article_title_pic.style.filter = "blur(40px)";
             _thisRef.load_articles(json_obj.src);
         }
         /**Create topline element*/
@@ -270,6 +274,7 @@ function articles_browser(){
     }
 
     this.load_articles = async function (link) {
+        article_page_idx.style.opacity = "0.0";
         await _thisRef.clear_components();
         let mdFile = new XMLHttpRequest();
         articles_list_title.style.pointerEvents="all";
@@ -284,6 +289,14 @@ function articles_browser(){
                 hljs.highlightAll();
                 _thisRef.show_components();
             }
+        }
+    }
+
+    const scrollToTop = () => {
+        let sTop = document.documentElement.scrollTop || document.body.scrollTop
+        if (sTop > 0) {
+            window.requestAnimationFrame(scrollToTop);
+            window.scrollTo(0, sTop - sTop / 8);
         }
     }
 
