@@ -151,6 +151,7 @@ function articles_browser(){
     }
 
     let load_list = async function (searchtag, pagenum) {
+        articles_list_title.style.pointerEvents="none";
         article_title_pic.style.opacity = "0.0";
         articles_back_btn.style.width="0px";
         articles_back_btn.style.borderRadius="0px";
@@ -271,6 +272,7 @@ function articles_browser(){
     this.load_articles = async function (link) {
         await _thisRef.clear_components();
         let mdFile = new XMLHttpRequest();
+        articles_list_title.style.pointerEvents="all";
         mdFile.open("get", link);
         mdFile.send(null);
         mdFile.onload = function () {

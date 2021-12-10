@@ -183,11 +183,18 @@
     height: calc(150px - 24px);
 }
 
+#list_title{
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    cursor: default;
+}
+
 #articles_backbutton{
     background-image: url("/_images/pg_psg/back.svg");
     background-size: 0px 30px;
     background-position: center center;
-    background-color: rgba(255,255,255,0.8);
+    background-color: transparent;
     width: 0px;
     height: 40px;
     border-radius: 0px;
