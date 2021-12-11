@@ -215,7 +215,9 @@ function articles_browser(){
             articles_back_btn.style.width = "40px";
             articles_back_btn.style.borderRadius = "5px";
             articles_back_btn.style.backgroundSize = "30px 30px";
-            article_title_pic.style.backgroundImage= "url('"+json_obj?.pic+"')";
+            try{
+                article_title_pic.style.backgroundImage= "url('"+json_obj.pic+"')";
+            }catch (error){}
             article_title_pic.style.opacity = "1.0";
             article_title_pic.style.filter = "blur(40px)";
             _thisRef.load_articles(json_obj.src);
@@ -227,24 +229,28 @@ function articles_browser(){
         /**Create picture element*/
         let pic = document.createElement("div");
         pic.classList.add("title_pic");
-        picsrc = "url('"+json_obj?.pic+"')";
-        pic.style.backgroundImage = picsrc;
+        let picsrc;
         /**Create title element*/
         let title = document.createElement("h3");
         title.append("h3");
-        title.innerText = json_obj?.title;
         /**Create class list element*/
         let class_list = document.createElement("div");
         class_list.classList.add("class_list");
-        for (let j = 0; j < json_obj.class?.length; j++) {
-            let tag = document.createElement("div");
-            tag.innerText = json_obj?.class[j];
-            class_list.appendChild(tag);
-        }
         /**Create time element*/
         let time = document.createElement("div");
         time.classList.add("pub_time");
-        time.innerText = json_obj?.time;
+        try {
+            picsrc = "url('" + json_obj.pic + "')";
+            title.innerText = json_obj.title;
+            for (let j = 0; j < json_obj.class.length; j++) {
+                let tag = document.createElement("div");
+                tag.innerText = json_obj.class[j];
+                class_list.appendChild(tag);
+            }
+            time.innerText = json_obj.time;
+        } catch (error) {
+        }
+        pic.style.backgroundImage = picsrc;
         block.appendChild(topLine);
         block.appendChild(pic);
         block.appendChild(title);

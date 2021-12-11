@@ -30,7 +30,7 @@ function dynamic_loader() {
             navi_background_obj.style.transitionTimingFunction = floating_func_in;
             NavigationBar.set_transparent(true);
         } else {
-            navi_background_obj.style.transform = "perspective(auto) translateZ(84px)";
+            navi_background_obj.style.transform = "perspective(0) translateZ(100px)";
         }
         dynamic_loader.style.filter = "blur(10px)";
         dynamic_loader_anime.style.display = "block";
@@ -53,7 +53,7 @@ function dynamic_loader() {
                     NavigationBar.set_transparent(webpage_expand_property);
                     navi_background_obj.style.transform = "perspective(500px) translateZ(0px)";
                 } else {
-                    navi_background_obj.style.transform = "perspective(auto) translateZ(84px)";
+                    navi_background_obj.style.transform = "perspective(0px) translateZ(100px)";
                     if(mobile_menu_state.checked) {
                         NavigationBar.set_expanded(true);
                         NavigationBar.set_transparent(false);
