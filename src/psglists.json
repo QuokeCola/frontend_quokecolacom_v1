@@ -1,5 +1,15 @@
 [
   {
+    "title": "3D printer extruder",
+    "pic": "/src/Psg2/Remove3.jpg",
+    "time": "12-11-2021 8:00",
+    "src": "/src/Psg2/Extruder.md",
+    "class": [
+      "3D printer",
+      "Mechanical Design"
+    ]
+  },
+  {
     "title": "Hello, World!",
     "pic": "/src/Psg1/title_pic.jpeg",
     "time": "12-09-2021 14:34",

@@ -30,14 +30,14 @@ function articles_browser(){
     let topline_colors = [  'orangered','orchid','darkcyan','deeppink','darkslateblue','darksalmon','CadetBlue','CornflowerBlue',
                             'Gold', 'GreenYellow','IndianRed','LightCoral'];
 
-    this.initiate = function () {
+    this.initiate = async function () {
         // Compile
         psg_request.open("get", psglist_loc);
         psg_request.send(null);
         psg_request.onload = function () {
             if (psg_request.status === 200) {
                 psglist_json = JSON.parse(psg_request.responseText);
-                load_list('All articles',1);
+                _thisRef.load_list('All articles',1);
                 load_tag();
             }
         }
@@ -86,15 +86,14 @@ function articles_browser(){
                 let div = document.createElement("button");
                 div.innerText = tag_list[i];
                 div.onclick = function () {
-                    load_list(tag_list[i], 1);
+                    _thisRef.load_list(tag_list[i], 1);
                 }
                 articles_tag_selector.appendChild(div);
             }
         } catch (TypeError) {}
     }
 
-    let load_pg_idx = async function () {
-        await _thisRef.clear_article_page_idx();
+    let load_pg_idx = function () {
         let articles_count = psglist_json.length;
         if(_thisRef.curr_tag ==='All articles') {
             try{
@@ -116,12 +115,36 @@ function articles_browser(){
             }
             btn.onclick = function (){
                 _thisRef.curr_page = i;
-                load_list(_thisRef.curr_tag, i);
+                _thisRef.load_list(_thisRef.curr_tag, i);
                 load_pg_idx();
             }
             article_page_idx.appendChild(btn);
         }
-        await _thisRef.show_article_page_idx();
+    }
+
+    let load_pg_content = function (searchtag, pagenum){
+        /**Adding Elements to main view*/
+        if(searchtag==='All articles') {
+            for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num < psglist_json.length)?
+                (pagenum*max_item_num):psglist_json.length); i++){
+                try{
+                    articles_reader.appendChild(make_link_div(psglist_json[i]));
+                } catch (TypeError) {}
+            }
+        } else {
+            curr_load_indexes = [];
+            for (let i = 0; i < psglist_json.length; i++) {
+                if(psglist_json[i].class.includes(searchtag)){
+                    curr_load_indexes.push(i);
+                }
+            }
+            for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num < curr_load_indexes.length)?
+                pagenum*max_item_num:curr_load_indexes.length); i++){
+                try{
+                    articles_reader.appendChild(make_link_div(psglist_json[curr_load_indexes[i]]));
+                } catch (TypeError) {}
+            }
+        }
     }
 
     this.clear_article_page_idx = async function() {
@@ -146,11 +169,7 @@ function articles_browser(){
         }
     }
 
-    this.load_list = function (search_tag, page_num) {
-        load_list(search_tag,page_num);
-    }
-
-    let load_list = async function (searchtag, pagenum) {
+    this.load_list = async function (searchtag, pagenum) {
         article_page_idx.style.opacity = "1.0";
         scrollToTop();
         articles_list_title.style.pointerEvents="none";
@@ -162,7 +181,6 @@ function articles_browser(){
         articles_list_title.innerText = searchtag;
         _thisRef.curr_tag = searchtag;
         _thisRef.curr_page= pagenum;
-        load_pg_idx();
         if(!load_list_executing){
             load_list_executing = true;
             load_list_temptag = null;
@@ -172,39 +190,21 @@ function articles_browser(){
             load_list_temppage= pagenum;
             return;
         }
-        /**Blocks fade out sequentially*/
-        await _thisRef.clear_components();
 
-        /**Adding Elements to main view*/
-        if(searchtag==='All articles') {
-            for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num < psglist_json.length)?
-                (pagenum*max_item_num):psglist_json.length); i++){
-                try{
-                    articles_reader.appendChild(make_link_div(psglist_json[i]));
-                } catch (TypeError) {}
-            }
-        } else {
-            curr_load_indexes = [];
-            for (let i = 0; i < psglist_json.length; i++) {
-                if(psglist_json[i].class.includes(searchtag)){
-                    curr_load_indexes.push(i);
-                }
-            }
-            for(let i = (pagenum-1) * max_item_num; i<((pagenum*max_item_num < curr_load_indexes.length)?
-                pagenum*max_item_num:curr_load_indexes.length); i++){
-                try{
-                    articles_reader.appendChild(make_link_div(psglist_json[curr_load_indexes[i]]));
-                } catch (TypeError) {}
-            }
-        }
+        /**Blocks fade out sequentially*/
+        await Promise.all([_thisRef.clear_article_page_idx(), _thisRef.clear_components()]);
+
+        load_pg_content(searchtag, pagenum);
+        load_pg_idx();
+
         load_list_executing = false;
         if(load_list_temptag!==null || load_list_temppage!==null) {
             articles_reader.innerHTML = '';
-            await load_list(load_list_temptag, load_list_temppage);
+            await _thisRef.load_list(load_list_temptag, load_list_temppage);
             return;
         }
         /**Blocks show up sequentially*/
-        await _thisRef.show_components();
+        await Promise.all([_thisRef.show_components(),_thisRef.show_article_page_idx()]);
     }
 
     function make_link_div(json_obj) {
@@ -219,7 +219,7 @@ function articles_browser(){
                 article_title_pic.style.backgroundImage= "url('"+json_obj.pic+"')";
             }catch (error){}
             article_title_pic.style.opacity = "1.0";
-            article_title_pic.style.filter = "blur(40px)";
+            article_title_pic.style.filter = "blur(10px)";
             _thisRef.load_articles(json_obj.src);
         }
         /**Create topline element*/
@@ -290,6 +290,7 @@ function articles_browser(){
             if (mdFile.status === 200) {
                 article_container = document.createElement("div");
                 article_container.classList.add("article_container");
+                article_container.style.width = "100%";
                 article_container.innerHTML=marked.parse(mdFile.responseText);
                 articles_reader.appendChild(article_container);
                 hljs.highlightAll();
