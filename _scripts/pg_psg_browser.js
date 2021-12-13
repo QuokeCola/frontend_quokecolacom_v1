@@ -280,6 +280,7 @@ function articles_browser(){
     }
 
     this.load_articles = async function (link) {
+        scrollToTop();
         article_page_idx.style.opacity = "0.0";
         await _thisRef.clear_components();
         let mdFile = new XMLHttpRequest();
