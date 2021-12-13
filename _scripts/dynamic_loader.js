@@ -36,6 +36,11 @@ function dynamic_loader() {
         dynamic_loader_anime.style.display = "block";
         NavigationBar.set_expanded(true);
         setTimeout(function () {
+            try{
+                dynamic_loader.contentWindow.location.reload()
+                dynamic_loader.contentWindow.document.write('');
+                dynamic_loader.contentWindow.document.clear();
+            }catch(e){}
             dynamic_loader.src = url;
             dynamic_loader_anime.style.opacity = "1.0";
         },400);

@@ -317,3 +317,10 @@
     transform:rotate(-45deg)
 }
 
+.dynamic_loader{
+	border-width: 0; width: 100vw; height: 100vh;
+	transition: all 0.5s ease-in; transform-origin: center;
+	background-color: white;
+	z-index: 1; opacity: 0.0; margin: 0; padding: 0; position: absolute; top: 0; left: 0
+}
+
