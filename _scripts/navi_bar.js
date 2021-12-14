@@ -4,8 +4,8 @@
 document.write("<script language=javascript src='/_scripts/common_macro.js'></script>");
 function navi_bar () {
 	/*** Parameters ***/
-	let container_box		= document.getElementById("navi_background_obj");
-	let title 				= document.getElementById("navi_title_obj");
+	let container_box		= document.getElementById("nav_obj");
+	let title 				= document.getElementById("nav_topStrip_obj");
 	let enable_expanded 	= document.getElementById("navi_enable_expanded");
 	let mobile_menu_button 	= document.getElementById("navi_mobile_menu_button");
 	let mobile_menu_state 	= document.getElementById("navi_mobile_menu_state_obj");

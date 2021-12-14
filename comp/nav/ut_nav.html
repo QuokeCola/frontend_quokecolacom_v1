@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation</title>
+    <link href="/comp/nav/styles/nav.css" rel="stylesheet" type="text/css">
+    <link href="/comp/nav/styles/nav-top-strip.css" rel="stylesheet" type="text/css">
+    <link href="/comp/nav/styles/nav-button-box.css" rel="stylesheet" type="text/css">
+    <link href="/comp/nav/styles/mobile-menu-button.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="let nav_controller = new NavViewController();">
+    <input	id="nav-mobileMenuState"	style="display: none"	type="checkbox"/>
+    <div class="nav">
+        <input	id="nav-pcShrinkState"  style="display: none"   type="checkbox"/>
+        <div id = "nav-topStrip-obj" class="nav-topStrip nav-pcTopStrip">
+            <div id = "nav-titleCustomize" class="nav-websiteTitle-container">
+                <div id="nav-title" class="nav-websiteTitle-caption">QUOKECOLA</div>
+                <div id="nav-decorationLine" class="nav-websiteTitle-decorationLine"></div>
+            </div>
+            <label	id="nav-expand-btn"	class="nav-mobileExpandBtn"	for="nav-mobileMenuState">
+				<span class="nav-mobileExpandBtn-Bread nav-mobileExpandBtn-Bread-top">
+					<span class="nav-mobileExpandBtn-Line nav-mobileExpandBtn-Line-top"></span>
+				</span>
+                <span class="nav-mobileExpandBtn-Bread nav-mobileExpandBtn-Bread-bottom">
+					<span class="nav-mobileExpandBtn-Line nav-mobileExpandBtn-Line-bottom"></span>
+				</span>
+            </label>
+        </div>
+        <div id = "nav-buttonBox-obj" class="nav-buttonBox nav-pcButtonBox"></div>
+    </div>
+    <div style="background-image: url('/_images/pg_intro/intro_bannerbg.jpeg'); background-size: 100%;width: 100%;height: 2000px"></div>
+</body>
+
+<script src="./scripts/nav.js"></script>
+</html>

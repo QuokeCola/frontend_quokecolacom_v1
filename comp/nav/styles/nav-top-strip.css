@@ -1,0 +1,51 @@
+.nav-topStrip::before{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-topStrip {
+    display: flex;
+    align-items: center;
+}
+
+.nav-pcTopStrip {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: var(--theme-shallow-color);
+    padding: var(--pc-topStrip-padding-shrink);
+
+    transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
+    transition-duration: 0.6s, 0.3s, 0.3s, 0.3s;
+    transition-delay: 0.0s, 0.3s, 0.3s, 0.3s;
+    transition-timing-function: cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1);
+}
+
+#nav-pcShrinkState:checked ~ .nav-pcTopStrip {
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    background-color: transparent;
+    padding: var(--pc-topStrip-padding-expand) !important;
+    transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
+    transition-duration: 0.6s, 0.3s, 0.3s, 0.3s;
+    transition-delay: 0.0s, 0.0s, 0.0s, 0.0s;
+    transition-timing-function: cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1);
+}
+
+.nav-mobileTopStrip{
+    background-color: var(--theme-color);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 10px 20px 10px;
+    transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
+    transition-duration: 0.6s, 0.3s, 0.3s, 0.3s;
+    transition-delay: 0.0s, 0.3s, 0.3s, 0.3s;
+    transition-timing-function: cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1), cubic-bezier(.2,.00,.1,1);
+}
+
+#nav-mobileMenuState:checked ~ * .nav-mobileTopStrip{
+    padding: 25px 10px 25px 10px;
+    transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;
+    transition-duration: 0.6s, 0.3s, 0.3s, 0.3s;
+    transition-delay: 0.0s, 0.0s, 0.0s, 0.0s;
+    transition-timing-function: cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1), cubic-bezier(.4,.00,.2,1);
+}

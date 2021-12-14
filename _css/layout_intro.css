@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.showcase_images {
+    position: relative;
+    height: 150%;
+    box-shadow: black;
+    transition: top 1.0s;
+}
+
+.intro-block {
+    width:90%;
+    padding: 5vw;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.intro-subBlock {
+    display: inline-block;
+    width: 50%;
+    height: 40vh;
+    flex-wrap: wrap;
+}
+
+.subtitle {
+    margin-left: 0;
+    font-size: 15px;
+    font-family: JetBrainsMonoNL-Regular, serif;
+    font-weight:normal
+}
+
+.decoration_line {
+    width: 40px;
+    height: 5px;
+    background-color: orangered
+}
+
+.attached_info {
+    font-family: JetBrainsMonoNL-Regular, serif;
+    font-size: 12px;
+    padding: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: orangered;
+    color: orangered;
+}

@@ -16,11 +16,11 @@
 								  document.getElementById('navi_background_obj').style.opacity = '1.0';">
 	<!-- navigation box  -->
 	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj"		class="navi_background disable_select"
+	<div id="nav_obj" class="nav disable_select"
 		 style="pointer-events: none; z-index: 2; opacity: 0.0;
 		 		transition: all 0.5s; perspective: 0; transform: translateZ(100px)">
-		<div id="navi_title_obj"		class="navi_title">
-			<div id="navi_title_union"				class="navi_logo_union">
+		<div id="nav_topStrip_obj" class="nav-topStrip">
+			<div id="navi_title_union"				class="nav_logo">
 				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
 				<div id="navi_titleline_obj"		class="navi_titleline"></div>
 			</div>
@@ -36,13 +36,11 @@
 				</span>
 			</label>
 		</div>
-		<div id="navi_pc_box_placeholder" style="display: flex; justify-content: center; height: 60px">
-			<nav id="navi_pc_menu_box"	class="navi_pc_page_button_box">
-				<button class="navi_pc_page_button"	onclick="homepagebtn_pressed();">HOME</button>
-				<button class="navi_pc_page_button"	onclick="articlebtn_pressed();">ARTICLES</button>
-				<button class="navi_pc_page_button"	onclick="websrvbtn_pressed();">WEBSERVICE</button>
-				<button class="navi_pc_page_button"	onclick="aboutbtn_pressed();">ABOUT&nbsp;</button>
-			</nav>
+		<div id="navi_pc_menu_box"	class="navi_pc_page_button_box">
+			<button class="navi_pc_page_button"	onclick="homepagebtn_pressed();">HOME</button>
+			<button class="navi_pc_page_button"	onclick="articlebtn_pressed();">ARTICLES</button>
+			<button class="navi_pc_page_button"	onclick="websrvbtn_pressed();">WEBSERVICE</button>
+			<button class="navi_pc_page_button"	onclick="aboutbtn_pressed();">ABOUT&nbsp;</button>
 		</div>
 
 		<nav id="navi_mobile_page_button_background"	class = "navi_mobile_page_button_box">

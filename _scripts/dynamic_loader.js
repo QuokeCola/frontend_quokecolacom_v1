@@ -12,9 +12,12 @@ function dynamic_loader() {
     let floating_func_in    = 'cubic-bezier(.88,.00,.39,1)';
     let floating_func_out 	= 'cubic-bezier(.27,.6,0,.99)';
 
+    let _thisRef = this;
+
     this.initiate = function () {
         dynamic_loader.style.width = "100%";
         dynamic_loader.style.opacity = "1.0";
+        dynamic_loader.onload = _thisRef.onloadFunc;
         dynamic_loader_anime.style.opacity = "0.0";
         setTimeout(function () {
             dynamic_loader_anime.style.display = "none";
@@ -36,15 +39,22 @@ function dynamic_loader() {
         dynamic_loader_anime.style.display = "block";
         NavigationBar.set_expanded(true);
         setTimeout(function () {
+            let parentElement = dynamic_loader.parentElement;
             try{
                 dynamic_loader.contentWindow.location.reload()
                 dynamic_loader.contentWindow.document.write('');
-                dynamic_loader.contentWindow.document.clear();
+                dynamic_loader.contentWindow.close();
+                dynamic_loader.parentElement.removeChild(dynamic_loader);
             }catch(e){}
+            dynamic_loader = document.createElement("iframe");
             dynamic_loader.src = url;
+            dynamic_loader.onload = _thisRef.onloadFunc;
+            dynamic_loader.classList.add("dynamic_loader");
+            parentElement.appendChild(dynamic_loader);
             dynamic_loader_anime.style.opacity = "1.0";
         },400);
-        dynamic_loader.onload = function(){
+
+        this.onloadFunc = function(){
             setTimeout(function () {
                 dynamic_loader.style.filter = "blur(0)";
                 dynamic_loader_anime.style.opacity = "0.0";
