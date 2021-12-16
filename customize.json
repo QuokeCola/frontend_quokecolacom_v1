@@ -4,7 +4,7 @@
   "complementaryColor" : "orangered",
   "subpages": [
     {
-      "title": "INTRO",
+      "title": "HOME",
       "type": "introPage",
       "src": "/src/home/home.html"
     },
