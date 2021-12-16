@@ -1,4 +1,5 @@
 {
+  "$schema": "/customize_schema.json",
   "title": "QuokeCola",
   "themeColor": "19,32,62",
   "complementaryColor" : "orangered",

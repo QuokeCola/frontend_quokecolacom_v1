@@ -1,4 +1,13 @@
-[
+[  {
+    "title": "Website Update",
+    "pic": "Psg6/Screen%20Shot%202021-12-16%20at%201.55.21%20PM.png",
+    "time": "12-16-2021 15:19",
+    "src": "Psg6/WebsiteUpdateOverview.md",
+    "class": [
+      "website",
+      "javascript"
+    ]
+  },
   {
     "title": "VBUS on ChibiOS",
     "pic": "Psg5/mad.gif",

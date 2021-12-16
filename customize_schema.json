@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://www.quokecola.com/customize.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "title": "QuokeCola",
+      "themeColor": "19,32,62",
+      "complementaryColor": "orangered",
+      "subpages": [
+        {
+          "title": "HOME",
+          "type": "introPage",
+          "src": "/src/home/home.html"
+        },
+        {
+          "title": "ARTICLES",
+          "type": "contentPage",
+          "src": "/comp/article_browser/article_browser.html"
+        },
+        {
+          "title": "WEBSERVICE",
+          "type": "introPage",
+          "src": "/src/webSrv/webSrv.html"
+        },
+        {
+          "title": "ABOUT",
+          "type": "contentPage",
+          "src": "/src/about/about.html"
+        }
+      ],
+      "markdown_root": "/src/md/"
+    }
+  ],
+  "required": [
+    "title",
+    "themeColor",
+    "complementaryColor",
+    "subpages",
+    "markdown_root"
+  ],
+  "properties": {
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "The title schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "QuokeCola"
+      ]
+    },
+    "themeColor": {
+      "$id": "#/properties/themeColor",
+      "type": "string",
+      "title": "The themeColor schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "19,32,62"
+      ]
+    },
+    "complementaryColor": {
+      "$id": "#/properties/complementaryColor",
+      "type": "string",
+      "title": "The complementaryColor schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "orangered"
+      ]
+    },
+    "subpages": {
+      "$id": "#/properties/subpages",
+      "type": "array",
+      "title": "The subpages schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          {
+            "title": "HOME",
+            "type": "introPage",
+            "src": "/src/home/home.html"
+          },
+          {
+            "title": "ARTICLES",
+            "type": "contentPage",
+            "src": "/comp/article_browser/article_browser.html"
+          }
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/subpages/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/subpages/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "title": "HOME",
+                "type": "introPage",
+                "src": "/src/home/home.html"
+              }
+            ],
+            "required": [
+              "title",
+              "type",
+              "src"
+            ],
+            "properties": {
+              "title": {
+                "$id": "#/properties/subpages/items/anyOf/0/properties/title",
+                "type": "string",
+                "title": "The title schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "HOME"
+                ]
+              },
+              "type": {
+                "$id": "#/properties/subpages/items/anyOf/0/properties/type",
+                "type": "string",
+                "title": "The type schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "introPage"
+                ],
+                "enum":[
+                  "introPage",
+                  "contentPage"
+                ]
+              },
+              "src": {
+                "$id": "#/properties/subpages/items/anyOf/0/properties/src",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+
+    "markdown_root": {
+      "$id": "#/properties/markdown_root",
+      "type": "string",
+      "format": "uri-reference",
+      "title": "The markdown_root schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "/src/md/"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

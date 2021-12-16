@@ -58,7 +58,6 @@ class ContentContainerController{
                         window.dispatchEvent(tgNavEvent);
                         /***For wake up article browser**/
                         if(event.detail.src.title === "ARTICLES") {
-
                             let ABEvent = new CustomEvent("wakeArticleBrowserRequest");
                             window.dispatchEvent(ABEvent);
                         }

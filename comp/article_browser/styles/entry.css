@@ -30,7 +30,7 @@
 }
 
 #article-back-btn{
-    background-image: url("/_images/pg_psg/back.svg");
+    background-image: url("/comp/article_browser/images/back.svg");
     background-size: 0px 30px;
     background-position: center center;
     background-color: transparent;
