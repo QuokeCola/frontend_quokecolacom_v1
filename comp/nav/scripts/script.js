@@ -74,12 +74,12 @@ class NavViewController{
                 "rgba("+this._customized_json.themeColor+",0.8)");
             document.documentElement.style.setProperty("--complementary-color",
                 this._customized_json.complementaryColor);
-            setTimeout(function (){
+            this.obj_button_box.ontransitionend = function (){
                 _thisRef.style_button_box_pc_content_width = _thisRef._get_pc_button_box_inner_width()+"px";
                 document.documentElement.style.setProperty("--pc-buttonBox-width-shrink",
                     _thisRef.style_button_box_pc_content_width);
                 _thisRef.refresh_UI();
-            },20);
+            }
 
         }catch (e) {
             console.log(e);
