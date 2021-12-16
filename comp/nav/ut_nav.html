@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Navigation</title>
-    <link href="/comp/nav/styles/nav.css" rel="stylesheet" type="text/css">
-    <link href="/comp/nav/styles/nav-top-strip.css" rel="stylesheet" type="text/css">
-    <link href="/comp/nav/styles/nav-button-box.css" rel="stylesheet" type="text/css">
-    <link href="/comp/nav/styles/mobile-menu-button.css" rel="stylesheet" type="text/css">
+    <link href="./styles/entry.css" rel="stylesheet" type="text/css">
 </head>
-<body onload="let nav_controller = new NavViewController();">
+<body onload="">
     <input	id="nav-mobileMenuState"	style="display: none"	type="checkbox"/>
     <div class="nav">
         <input	id="nav-pcShrinkState"  style="display: none"   type="checkbox"/>
@@ -28,8 +25,22 @@
         </div>
         <div id = "nav-buttonBox-obj" class="nav-buttonBox nav-pcButtonBox"></div>
     </div>
-    <div style="background-image: url('/_images/pg_intro/intro_bannerbg.jpeg'); background-size: 100%;width: 100%;height: 2000px"></div>
+    <div class="content-container"></div>
 </body>
 
-<script src="./scripts/nav.js"></script>
+<script src="scripts/script.js"></script>
+<script src="/comp/content_container/scripts/HTML_Parser.js"></script>
+<script>document.body.onload = function () {
+    let json = new XMLHttpRequest();
+    let _customized_json;
+    json.open("get", "/customize.json");
+    json.send(null);
+    json.onload = function (){
+        if (json.status === 200) {
+            _customized_json = JSON.parse(json.responseText);
+            let nav_controller = new NavViewController(_customized_json);
+        }
+    }
+}
+</script>
 </html>

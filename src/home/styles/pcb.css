@@ -1,0 +1,23 @@
+.chapter .sub-block .PCB-imgs{
+    height: 110%;
+    position: absolute;
+}
+
+#pcb-chapter{
+    background-image: url("/src/home/images/PCB_Bg.png");
+    background-position: center bottom;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+#pcb1 {
+    transform: translateX(50px) translateY(-100px) translateZ(400px);
+}
+
+#pcb2 {
+    transform: translateX(0px) translateZ(250px);
+}
+
+#pcb3 {
+    transform: translateX(150px) translateY(150px) translateZ(100px);
+}

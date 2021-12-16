@@ -1,0 +1,27 @@
+@import "svgs.css";
+@import "pcb.css";
+.banner-bg .home-banner-card{
+    --size: calc(35vh);
+    width: var(--size);
+    height: var(--size);
+    margin: auto 30px 30px 30px;
+    padding: 15px;
+    border-radius: 7px;
+
+    background-color: rgba(245,245,247,0.9);
+    /*backdrop-filter: blur(20px);*/
+    /*-webkit-backdrop-filter: blur(20px);*/
+
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+}
+
+.banner-bg{
+    background-image: url("/src/home/images/banner_bg.png")!important;
+    object-fit: cover;
+    background-size: 100% auto;
+}
+
+.chapter:last-child {
+    overflow: hidden;
+}

@@ -2,14 +2,14 @@
 <html lang="en" style="scroll-behavior: smooth">
 <head>
     <meta charset="UTF-8">
-    <link href="../_css/common_override.css" rel="stylesheet" type="text/css">
-    <link href="../_css/common_customizeclass.css" rel="stylesheet" type="text/css">
-    <link href="../_css/psgbrsr.css"         rel="stylesheet" type="text/css">
-    <link href="../_scripts/dependencies/highlight.min.css" rel="stylesheet" type="text/css">
     <title>Articles</title>
 </head>
-<body onload="ArticlesBrowser = new articles_browser(); ArticlesBrowser.initiate();" style="margin: 0 7.5% 0 7.5%;
+<body onload="" style="margin: 0 7.5% 0 7.5%;
     display: flex; flex-wrap: wrap;align-items: center">
+<link href="../_scripts/dependencies/highlight.min.css" rel="stylesheet" type="text/css">
+<link href="../_css/common_override.css" rel="stylesheet" type="text/css">
+<link href="../_css/common_customizeclass.css" rel="stylesheet" type="text/css">
+<link href="../_css/psgbrsr.css"         rel="stylesheet" type="text/css">
 <div style="height: 120px;width: 100%"></div>
 <div id = "article_titlepic"><div></div></div>
 <div id="tags_selector" class="pc_tag_selector">
@@ -22,5 +22,9 @@
 <div class="break"></div>
 <div id="page_index"></div>
 <script src="../_scripts/pg_psg_browser.js"></script>
+<script>
+    ArticlesBrowser = new articles_browser();
+    ArticlesBrowser.initiate();
+</script>
 </body>
 </html>

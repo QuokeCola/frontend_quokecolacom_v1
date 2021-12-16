@@ -1,0 +1,27 @@
+{
+  "title": "QuokeCola",
+  "themeColor": "19,32,62",
+  "complementaryColor" : "orangered",
+  "subpages": [
+    {
+      "title": "INTRO",
+      "type": "introPage",
+      "src": "/src/home/home.html"
+    },
+    {
+      "title": "ARTICLES",
+      "type": "contentPage",
+      "src": "/comp/article_browser/article_browser.html"
+    },
+    {
+      "title": "WEBSERVICE",
+      "type": "introPage",
+      "src": "/src/webSrv/webSrv.html"
+    },
+    {
+      "title": "ABOUT",
+      "type": "contentPage",
+      "src": "/_htmls/about.html"
+    }
+  ]
+}

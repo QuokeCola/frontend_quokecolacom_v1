@@ -6,8 +6,8 @@ document.write("<script language=javascript src='/_scripts/dependencies/highligh
 function articles_browser(){
     let articles_reader          = document.getElementById("articles_reader");
     let articles_tag_selector    = document.getElementById("tags_selector");
-    let articles_list_title      = document.getElementById("list_title");
-    let articles_back_btn        = document.getElementById("articles_backbutton");
+    let articles_list_title      = document.getElementById("list-title");
+    let articles_back_btn        = document.getElementById("article-back-btn");
     let article_title_pic        = document.getElementById("article_titlepic");
     let article_page_idx         = document.getElementById("page_index");
     let article_page_idx_max_cnt = 10;
@@ -41,6 +41,7 @@ function articles_browser(){
                 load_tag();
             }
         }
+        console.log('hello');
         switch_view();
         window.addEventListener('resize', this.resize);
         document.addEventListener('orientationchange', switch_view);

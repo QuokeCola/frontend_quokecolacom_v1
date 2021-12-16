@@ -1,0 +1,113 @@
+.home-banner-card svg:nth-child(1) {
+    left: 0;
+    width: 70%;
+    height: 50%;
+    padding-bottom: 5%;
+}
+
+.home-banner-card div:nth-child(2) {
+    width: 80%;
+    height: 1px;
+    background-color: #000000
+}
+
+.home-banner-card svg:nth-child(3) {
+    padding-top: 5%;
+    width: 90%;
+    height: 25%;
+}
+
+.home-slogan-stroke {
+    stroke-width: 50px;
+    opacity: 1.0;
+    stroke: #000000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-opacity: 1.0;
+    fill: none;
+}
+
+.home-banner-card svg:nth-child(1) .home-slogan-stroke:nth-child(1) {
+    --stroke-length : 2100;
+    animation: 2.5s letter-animation;
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(1) {
+    --stroke-length : 6100;
+    animation: 1.0s cubic-bezier(0.2, 0.0, 0.5,0.5) forwards letter-animation;
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(2) {
+    --stroke-length : 12000;
+    animation: 1.5s 1.0s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(3) {
+    --stroke-length : 6000;
+    animation: 0.5s 2.5s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(4) {
+    --stroke-length : 2000;
+    animation: 0.5s 2.5s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(5) {
+    --stroke-length : 10000;
+    animation: 0.7s 2.8s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(6) {
+    --stroke-length : 10000;
+    animation: 0.1s 3.5s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(7) {
+    --stroke-length : 1500;
+    animation: 0.15s 3.6s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(8) {
+    --stroke-length : 14000;
+    animation: 2.0s 3.85s ease-out forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(9) {
+    --stroke-length : 14000;
+    animation: 0.5s 5.0s linear forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+.home-banner-card svg:nth-child(3) .home-slogan-stroke:nth-child(10) {
+    --stroke-length : 1000;
+    animation: 0.5s 5.5s ease-out forwards letter-animation;
+    stroke-dashoffset: var(--stroke-length);
+    stroke-dasharray: var(--stroke-length);
+}
+
+@keyframes letter-animation {
+    0% {
+        stroke-dashoffset: var(--stroke-length);
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+

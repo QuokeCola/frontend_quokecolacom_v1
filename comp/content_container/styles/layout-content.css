@@ -1,0 +1,15 @@
+.content-container-pc .floating-panel{
+    width: 20%;
+}
+
+.content-container-pc .main-view{
+    width: 80%;
+}
+
+.content-container-mobile .floating-panel{
+    width: 100%;
+}
+
+.content-container-mobile .floating-panel{
+    width: 100%;
+}

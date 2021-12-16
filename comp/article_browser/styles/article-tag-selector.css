@@ -1,0 +1,31 @@
+.article-tag-selector{
+    width: 100%;
+}
+
+.article-tag-selector button{
+    text-align: left;
+    border-width: 1px;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: JetBrainsMono-Regular, serif;
+    transition: 0.25s;
+    line-height: 40px;
+    padding: 0 15px 0 15px;
+    background-color: rgba(220,220,220,0.0);
+    border-radius: 10px;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.article-tag-selector h2{
+    font-family: JetBrainsMono-Regular, serif;
+    font-size: 20px;
+    line-height: 40px;
+    color: var(--theme-color);
+    margin: 0 15px 0 15px;
+}
+
+.article-tag-selector button:hover{
+    background-color: rgba(245,245,247,0.5);
+    border-color: rgba(200,200,200,0.5);
+}

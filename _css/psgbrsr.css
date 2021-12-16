@@ -19,14 +19,14 @@
     transition: all 0.5s cubic-bezier(0.2, 0, 0.8, 1.0);
 }
 
-.pc_tag_selector{
+.article-tag-selector{
     position: fixed;
     width: 17%;
     right: 7.5%;
     top: 120px;
 }
 
-.pc_tag_selector button{
+.article-tag-selector button{
     text-align: left;
     width: 100%;
     border-width: 1px;
@@ -42,7 +42,7 @@
     border-style: solid;
 }
 
-.pc_tag_selector h2{
+.article-tag-selector h2{
     font-family: JetBrainsMono-Regular, serif;
     font-size: 20px;
     line-height: 40px;
@@ -50,7 +50,7 @@
     margin: 0 15px 0 15px;
 }
 
-.pc_tag_selector button:hover{
+.article-tag-selector button:hover{
     background-color: rgba(245,245,247,0.5);
     border-color: rgba(200,200,200,0.5);
 }
@@ -91,7 +91,7 @@
     border-color: rgba(200,200,200,0.5);
 }
 
-.articles_block {
+.article-link-block {
     overflow: hidden;
     border-radius: 5px;
     margin-left: 5px;
@@ -106,12 +106,12 @@
     opacity: 0;
 }
 
-.articles_block .top_line{
+.article-link-block .top_line{
     height: 5px;
     width: 300px;
 }
 
-.articles_block .title_pic{
+.article-link-block .title_pic{
     height: 150px;
     width: 100%;
     background-size: 100%;
@@ -121,7 +121,7 @@
 
 }
 
-.articles_block h3 {
+.article-link-block h3 {
     margin: 5% 5% 5% 5%;
     overflow:hidden;
     text-overflow: ellipsis;
@@ -131,13 +131,13 @@
     pointer-events: none;
 }
 
-.articles_block .class_list {
+.article-link-block .class_list {
     display: flex;
     flex-wrap: wrap;
     margin: 5% 5% 5% 5%;
 }
 
-.articles_block .class_list div{
+.article-link-block .class_list div{
     font-size: 12px;
     font-family: JetBrainsMonoNL-Regular, serif;
     background-color: #DDDDDD;
@@ -149,7 +149,7 @@
     pointer-events: none;
 }
 
-.articles_block .pub_time{
+.article-link-block .pub_time{
     background-color: #DDDDDD;
     font-family: JetBrainsMonoNL-Regular, serif;
     color: #6a737d;
@@ -162,23 +162,23 @@
     padding-right: 12px;
 }
 
-.articles_block:hover .pub_time{
+.article-link-block:hover .pub_time{
     height: 24px;
     vertical-align: middle;
 }
 
-.articles_block:hover .title_pic{
+.article-link-block:hover .title_pic{
     height: calc(150px - 24px);
 }
 
-#list_title{
+#list-title{
     user-select: none;
     -webkit-user-select: none;
     pointer-events: none;
     cursor: default;
 }
 
-#articles_backbutton{
+#article-back-btn{
     background-image: url("/_images/pg_psg/back.svg");
     background-size: 0px 30px;
     background-position: center center;

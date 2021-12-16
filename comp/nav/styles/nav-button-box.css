@@ -27,35 +27,37 @@
     pointer-events: auto;
 }
 
-.nav-pcButtonBox{
+.nav-pc .nav-buttonBox{
     width: var(--pc-buttonBox-width-expand);
     border-radius: var(--pc-buttonBox-radius-expand);
 
     background-color: var(--theme-color);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    transition-timing-function: cubic-bezier(.2,.00,.1,1);
+    transition-timing-function: cubic-bezier(.8,.00,.2,1);
 }
 
-#nav-pcShrinkState:checked ~ .nav-pcButtonBox{
+.nav-pc #nav-pcShrinkState:checked ~ .nav-buttonBox{
     width: var(--pc-buttonBox-width-shrink);
     border-radius: var(--pc-buttonBox-radius-shrink);
-    transition-timing-function: cubic-bezier(.4,.00,.2,1);
+    transition-timing-function: cubic-bezier(.8,.00,.2,1);
 }
 
-.nav-pcButtonBox button{
+.nav-pc .nav-buttonBox button{
+    pointer-events: all;
     height: 60px;
     padding: 0 20px 0 20px;
 }
-.nav-pcButtonBox button:hover{
+
+.nav-pc .nav-buttonBox button:hover{
     background-color: rgba(255,255,255,0.1);
     border-bottom: 5px inset var(--complementary-color);
     padding-top: 5px;
 }
 
-.nav-mobileButtonBox{
+.nav-mobile .nav-buttonBox{
     width: 100%;
-    border-radius: 0!important;
+    border-radius: 0;
 
     flex-wrap: wrap;
     backdrop-filter: blur(0px);
@@ -68,7 +70,7 @@
     transition-duration: 0.5s, 0.4s, 0.5s, 0.25s, 0.25s;
     transition-timing-function: ease-in-out, ease-in, ease-in-out, ease-in, ease-in;
 }
-.nav-mobileButtonBox button{
+.nav-mobile .nav-buttonBox button{
     color: black;
     text-align: left;
     width: 100%;
@@ -76,20 +78,33 @@
     padding: 10px 0 10px 0;
     border-top: #555555 solid 1px;
 }
-.nav-mobileButtonBox button:first-child{
+.nav-mobile .nav-buttonBox button:first-child{
     border-top-style: none;
 }
-.nav-mobileButtonBox button:hover{
+.nav-mobile .nav-buttonBox button:hover{
     color: #555555;
 }
 
-
-#nav-mobileMenuState:checked ~ * .nav-mobileButtonBox{
+.nav-mobile #nav-mobileMenuState:checked ~ .nav-buttonBox{
     background-color: rgba(245,245,247,.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     opacity: 1.0;
 }
-#nav-mobileMenuState:checked ~ * .nav-mobileButtonBox button{
+.nav-mobile #nav-mobileMenuState:checked ~ .nav-buttonBox button{
     padding: 30px 0 30px 0;
+}
+
+#loading-state:checked + .nav-pc .nav-buttonBox{
+    width: var(--pc-buttonBox-width-shrink)!important;
+    border-radius: var(--pc-buttonBox-radius-shrink)!important;
+    transition-timing-function: cubic-bezier(.8,.00,.2,1);
+}
+
+.nav-pc .nav-buttonBox button{
+    pointer-events: all;
+}
+
+#loading-state:checked + .nav-pc .nav-buttonBox button{
+    pointer-events: none;
 }

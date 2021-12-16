@@ -1,0 +1,53 @@
+.banner-bg {
+    background-image: url("/src/webSrv/images/banner_bg.jpg")!important;
+    background-size: auto 100% !important;
+    background-position-x: center!important;
+    background-position-y: top!important;
+    background-color: black!important;
+    object-fit: inherit!important;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    z-index: -1;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-bg:after{
+    display: none!important;
+}
+
+.chapter {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: transparent;
+}
+
+.banner-bg::after{
+    display: none;
+}
+
+.chapter:last-child {
+    overflow: hidden;
+}
+
+#webSrv-logo-block{
+    display: flex; flex-wrap: wrap;
+    justify-content: center; align-content: center; vertical-align: middle; align-items: center
+}
+
+.webSrv-logos {
+    height: 15%;
+    padding: 2.5%;
+}
+
+#contact_btn {
+    color: orangered;
+    text-decoration: none
+}
+
+#contact_btn:after{
+    background-color: orangered;
+}

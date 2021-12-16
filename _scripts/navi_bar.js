@@ -12,7 +12,7 @@ function navi_bar () {
 	let mobile_menu_box		= document.getElementById("navi_mobile_page_button_background");
 	let mobile_menu_title	= document.getElementById("navi_mobile_menu_title");
 	let pc_decoration 		= document.getElementById("navi_pc_decoration_obj");
-	let pc_box_placeholder 	= document.getElementById("navi_pc_box_placeholder");
+	let pc_box_placeholder 	= document.getElementById("navi_pc_menu_box");
 	let pc_menu_box 		= document.getElementById("navi_pc_menu_box");
 	let dynamic_loader 		= document.getElementById("DynamicLoader");
 

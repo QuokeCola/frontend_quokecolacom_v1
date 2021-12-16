@@ -1,0 +1,116 @@
+.banner-bg {
+    width: 100%;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    height: calc(70vh + 95px);
+    transform-style: flat;
+    -webkit-transform-style: flat;
+    overflow: hidden;
+
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-attachment: fixed;
+    display: flex;
+
+    z-index: -1;
+    object-fit: cover;
+    background-size: 100% auto;
+    background-position: -9999px 9999px;
+}
+
+.banner-bg::after{
+    /**fuck css hack for mobile browser**/
+    background-position-y: center;
+    content: "";
+    background-image: inherit;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.chapter {
+    width:90%;
+    padding: 5vw;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.chapter .sub-block{
+    display: inline-block;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.8,0.0,0.2,1.0);
+}
+
+.content-container-pc .chapter .sub-block {
+    width: 50%;
+    height: 40vh;
+}
+
+.content-container-mobile .chapter .sub-block {
+    width: 100%;
+    height: 40vh;
+}
+
+.active{
+    transform-origin: center;
+    -webkit-transform-origin: center;
+    transform: rotateY(180deg) translateZ(50px);
+    background-color: rgb(245,245,247);
+    border-radius: 20px;
+    box-shadow: #6a737d 0px 15px 15px;
+    top: 0;
+    left: 0;
+}
+
+.sub-block h1{
+    color: var(--theme-color);
+    font-family: "JetBrainsMono-Regular", serif;
+    font-size: 40px;
+    font-weight:normal;
+}
+
+.sub-block .decoration-line{
+    width: 40px;
+    height: 5px;
+    margin-bottom: 15px;
+    background-color: var(--complementary-color);
+}
+
+.sub-block h2{
+    color: black;
+    font-size: 15px;
+    font-family: JetBrainsMono-ExtraLight, serif;
+    font-weight:normal;
+    border: none;
+}
+
+.chapter:nth-child(2n) {
+    background-color: rgb(245,245,247);
+    z-index: 0;
+}
+
+.note {
+    font-family: JetBrainsMonoNL-Regular, serif;
+    font-size: 12px;
+    padding: 3px;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: var(--complementary-color);
+    color: var(--complementary-color);
+
+    width:fit-content;
+    width:-moz-fit-content;
+}

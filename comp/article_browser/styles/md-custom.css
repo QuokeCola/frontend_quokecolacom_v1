@@ -1,0 +1,27 @@
+pre{
+    padding: 10px;
+    background-color: rgba(200,200,200,0.2);
+    border-radius: 10px;
+}
+
+pre .hljs{
+    background-color: transparent;
+}
+
+p img{
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0,28,68,0.3);
+    transition: all 0.5s;
+    border: #DDDDDD 1px solid;
+    width: 100%;
+}
+
+p img:hover{
+    box-shadow: 0 12px 12px rgba(0,28,68,0.3);
+}
+
+p code{
+    background-color: rgba(200,200,200,0.2);
+    padding: 4px;
+    border-radius: 4px;
+}
