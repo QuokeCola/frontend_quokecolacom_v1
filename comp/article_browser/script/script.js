@@ -3,6 +3,7 @@ document.write("<script language=javascript src='/comp/article_browser/dependenc
 document.write("<script language=javascript src='/comp/article_browser/dependencies/highlight.min.js'></script>");
 
 class ArticleBrowser{
+    obj_content_container    = document.getElementById("content-container");
     articles_reader          = document.getElementById("articles_reader");
     articles_tag_selector    = document.getElementById("tags_selector");
     articles_list_title      = document.getElementById("list-title");
@@ -12,7 +13,8 @@ class ArticleBrowser{
     article_page_idx_max_cnt = 10;
     curr_load_indexes = []
 
-    psglist_loc = "/src/psglists.json"
+    md_root = "";
+    psglist_loc = "psglists.json"
     psg_request = new XMLHttpRequest();
     max_item_num= 10;
     psglist_json;
@@ -28,10 +30,11 @@ class ArticleBrowser{
     topline_colors = [  'orangered','orchid','darkcyan','deeppink','darkslateblue','darksalmon','CadetBlue','CornflowerBlue',
         'Gold', 'GreenYellow','IndianRed','LightCoral'];
 
-    constructor () {
+    constructor (url) {
+        this.md_root = url;
         let _thisRef = this;
         // Compile
-        _thisRef.psg_request.open("get", this.psglist_loc);
+        _thisRef.psg_request.open("get", this.md_root+this.psglist_loc);
         _thisRef.psg_request.send(null);
         _thisRef.psg_request.onload = function () {
             if (_thisRef.psg_request.status === 200) {
@@ -212,11 +215,11 @@ class ArticleBrowser{
             _thisRef.articles_back_btn.style.borderRadius = "5px";
             _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
             try{
-                _thisRef.article_title_pic.style.backgroundImage= "url('"+json_obj.pic+"')";
+                _thisRef.article_title_pic.style.backgroundImage= "url('"+_thisRef.md_root+json_obj.pic+"')";
             }catch (error){}
             _thisRef.article_title_pic.style.opacity = "1.0";
             _thisRef.article_title_pic.style.filter = "blur(10px)";
-            _thisRef.load_articles(json_obj.src);
+            _thisRef.load_articles(_thisRef.md_root+json_obj.src);
         }
         /**Create topline element*/
         let topLine = document.createElement("div");
@@ -236,7 +239,7 @@ class ArticleBrowser{
         let time = document.createElement("div");
         time.classList.add("pub_time");
         try {
-            picsrc = "url('" + json_obj.pic + "')";
+            picsrc = "url('" +_thisRef.md_root+json_obj.pic + "')";
             title.innerText = json_obj.title;
             for (let j = 0; j < json_obj.class.length; j++) {
                 let tag = document.createElement("div");
@@ -297,12 +300,24 @@ class ArticleBrowser{
         }
     }
 
-    scrollToTop = () => {
-        let sTop = document.documentElement.scrollTop || document.body.scrollTop
-        if (sTop > 0) {
-            window.requestAnimationFrame(scrollToTop);
-            window.scrollTo(0, sTop - sTop / 8);
+    scrollToTop() {
+
+        const scl2top = () => {
+            let sTop = this.obj_content_container.scrollTop;
+            console.log(sTop);
+            if (sTop > 0) {
+                window.requestAnimationFrame(scl2top);
+                this.obj_content_container.scrollTo(0, sTop - sTop / 8);
+            }
         }
+        window.requestAnimationFrame(scl2top);
+        // this.obj_content_container.scrollTo({left:0,top:0,behavior:"smooth"});
+        // let _thisRef = this;
+        // let sTop = _thisRef.obj_content_container.scrollTop || document.body.scrollTop
+        // if (sTop > 0) {
+        //     _thisRef.obj_content_container.requestAnimationFrame(_thisRef.scrollToTop);
+        //     _thisRef.obj_content_container.scrollTo(0, sTop - sTop / 8);
+        // }
     }
 
 }

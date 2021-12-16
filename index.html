@@ -1,86 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>QuokeCola's Blog</title>
-	<meta name="description" content="Welcome to QuokeCola's Blog!">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-	<link href="_css/comp_navibar.css" rel="stylesheet" type="text/css">
-	<link href="_css/common_customizeclass.css" rel="stylesheet" type="text/css">
-	<link href="webfonts/SourceSansPro_Bold/stylesheet.css" rel="stylesheet" type="text/css">
-	<link href="webfonts/SourceSansPro_SemiBold/stylesheet.css" rel="stylesheet" type="text/css">
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-	<script>var __adobewebfontsappname__="dreamweaver"</script>
+    <title>Navigation</title>
+    <link href="/comp/nav/styles/entry.css" rel="stylesheet" type="text/css">
+    <link href="/comp/content_container/styles/entry.css" rel="stylesheet" type="text/css">
+    <link href="_fonts/fonts-include.css" rel="stylesheet" type="text/css">
 </head>
-<body style="margin: 0; background-color: rgb(42,61,96 )" onload = "NavigationBar = new navi_bar(); DynamicLoader = new dynamic_loader(); NavigationBar.initiate(); DynamicLoader.initiate();
-								  document.getElementById('navi_background_obj').style.opacity = '1.0';">
-	<!-- navigation box  -->
-	<input id="navi_enable_expanded"	class="invisible_checkbox"	type="checkbox">
-	<div id="navi_background_obj" class="nav disable_select"
-		 style="pointer-events: none; z-index: 2; opacity: 0.0;
-		 		transition: all 0.5s; perspective: 0; transform: translateZ(100px)">
-		<div id="nav_topStrip_obj" class="nav-topStrip">
-			<div id="navi_title_union"				class="nav_logo">
-				<p style="margin-bottom: 0; margin-top: 0">QUOKECOLA</p>
-				<div id="navi_titleline_obj"		class="navi_titleline"></div>
-			</div>
-			<h3		id="navi_pc_decoration_obj"		class="navi_pc_decoration">&lt;/&gt;</h3>
-			<input	id="navi_mobile_menu_state_obj"	class="invisible_checkbox"			type="checkbox"/>
-			<label	id="navi_mobile_menu_button"	class="navi_mobile_menu_button_box"	for="navi_mobile_menu_state_obj"
-					  onclick="window.NavigationBar.mobile_menu_button_clk()" style="pointer-events: auto">
-				<span id = "navi_mobile_menu_button_bread_top_obj"		class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_top">
-					<span id="navi_mobile_menu_button_line_top_obj"		class="navi_mobile_menu_button_line navi_mobile_menu_button_line_top"></span>
+<body id = "body" style="margin: 0; perspective: 40px; height: 100%; width: 100%; perspective-origin: center center; font-family: JetBrainsMono-Medium, serif; font-style: normal">
+<input	id="loading-state" style="display: none"	type="checkbox"/>
+<div id = "nav" class="nav nav-pc">
+    <input	id="nav-mobileMenuState" class=""	style="display: none"	type="checkbox"/>
+    <input  id="nav-pcShrinkState"   class=""   style="display: none"   type="checkbox"/>
+    <div id = "nav-topStrip-obj" class="nav-topStrip">
+    <div id = "nav-titleCustomize" class="nav-websiteTitle-container">
+      <div id="nav-title" class="nav-websiteTitle-caption">QUOKECOLA</div>
+      <div id="nav-decorationLine" class="nav-websiteTitle-decorationLine"></div>
+    </div>
+    <label	id="nav-expand-btn"	class="nav-mobileExpandBtn"	for="nav-mobileMenuState">
+				<span class="nav-mobileExpandBtn-Bread nav-mobileExpandBtn-Bread-top">
+					<span class="nav-mobileExpandBtn-Line nav-mobileExpandBtn-Line-top"></span>
 				</span>
-				<span id = "navi_mobile_menu_button_bread_bottom_obj"	class="navi_mobile_menu_button_bread navi_mobile_menu_button_bread_bottom">
-					<span id="navi_mobile_menu_button_line_bottom_obj"	class="navi_mobile_menu_button_line navi_mobile_menu_button_line_bottom"></span>
+      <span class="nav-mobileExpandBtn-Bread nav-mobileExpandBtn-Bread-bottom">
+					<span class="nav-mobileExpandBtn-Line nav-mobileExpandBtn-Line-bottom"></span>
 				</span>
-			</label>
-		</div>
-		<div id="navi_pc_menu_box"	class="navi_pc_page_button_box">
-			<button class="navi_pc_page_button"	onclick="homepagebtn_pressed();">HOME</button>
-			<button class="navi_pc_page_button"	onclick="articlebtn_pressed();">ARTICLES</button>
-			<button class="navi_pc_page_button"	onclick="websrvbtn_pressed();">WEBSERVICE</button>
-			<button class="navi_pc_page_button"	onclick="aboutbtn_pressed();">ABOUT&nbsp;</button>
-		</div>
-
-		<nav id="navi_mobile_page_button_background"	class = "navi_mobile_page_button_box">
-			<div style="width: 100%; height: 0"></div>
-			<h4 id = "navi_mobile_menu_title"		class="navi_mobile_menu_title">NAVIGATION</h4>
-			<div style="width: 100%; height: 0"></div>
-			<button id = "navi_mobile_page_button1"		class="navi_mobile_page_button" onclick="homepagebtn_pressed();">
-				<img src="_images/comp_navibar/icons/main.svg" style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
-				<div>HOME</div>
-			</button>
-			<button id = "navi_mobile_page_button2"		class="navi_mobile_page_button" onclick="articlebtn_pressed();">
-				<img src="_images/comp_navibar/icons/passages.svg" style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
-				<div>ARTICLES</div>
-			</button>
-			<button id = "navi_mobile_page_button3"		 class="navi_mobile_page_button" onclick="websrvbtn_pressed();">
-				<img src="_images/comp_navibar/icons/services.svg" style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
-				<div>WEBSERVICE</div>
-			</button>
-			<button id = "navi_mobile_page_button4"		 class="navi_mobile_page_button" onclick="aboutbtn_pressed();">
-				<img src="_images/comp_navibar/icons/about.svg" style="width: 20px; height: 20px; opacity: 0.8" alt=""/>
-				<div>ABOUT</div>
-			</button>
-			<h5 class="navi_mobile_description">CODED BY QUOKECOLA</h5>
-		</nav>
-	</div>
-	
-	<!-- main body  -->
-	<div id="DynamicLoaderLoading" class="loading_animation" style="perspective: 10px; transform: translateZ(42px); z-index: 0;">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-	</div>
-
-	<iframe id = "DynamicLoader" src="_htmls/intro.html"
-			class = "dynamic_loader"></iframe>
-	<script src="/_scripts/common_macro.js"> </script>
-	<script src="/_scripts/dynamic_loader.js"></script>
-	<script src="/_scripts/navi_href.js"></script>
-	<script src="/_scripts/navi_bar.js"></script>
+    </label>
+  </div>
+    <div id = "nav-buttonBox-obj" class="nav-buttonBox"></div>
+</div>
+<div id = "content-container" class="content-container content-container-pc">
+</div>
 </body>
+<script src="/main_exec.js"></script>
+<script>
+</script>
 </html>

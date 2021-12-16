@@ -29,3 +29,11 @@
     background-color: rgba(245,245,247,0.5);
     border-color: rgba(200,200,200,0.5);
 }
+
+.content-container-pc .article-tag-selector button{
+    width: 100%;
+}
+
+.content-container-mobile .article-tag-selector button{
+    width: auto;
+}

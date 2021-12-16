@@ -1,15 +1,29 @@
 .content-container-pc .floating-panel{
     width: 20%;
+    min-width: 230px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 100px;
+    transform: translateX(75vw);
 }
 
 .content-container-pc .main-view{
+    top: 120px;
+    left: 0;
+    position: absolute;
+    margin-left: 5%;
+    width: 65%;
+}
+
+.content-container-mobile .floating-panel{
+    position: relative;
+    padding-top: 60px;
+    margin-left: 10%;
     width: 80%;
 }
 
-.content-container-mobile .floating-panel{
-    width: 100%;
-}
-
-.content-container-mobile .floating-panel{
-    width: 100%;
+.content-container-mobile .main-view{
+    position: relative;
+    margin-left: 10%;
+    width: 80%;
 }

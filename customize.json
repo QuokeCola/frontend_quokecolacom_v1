@@ -21,7 +21,8 @@
     {
       "title": "ABOUT",
       "type": "contentPage",
-      "src": "/_htmls/about.html"
+      "src": "/src/about/about.html"
     }
-  ]
+  ],
+  "markdown_root": "/src/md/"
 }

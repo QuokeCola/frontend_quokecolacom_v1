@@ -35,10 +35,17 @@ class ContentContainerController{
     }
 
     async handle_reload_CC_evt(event) {
+        let time = new Date();
         let _thisRef = this;
         this.obj_loading_state.checked = true;
+        let _transition_end_time = 0;
         try {
             this.obj_content_container.ontransitionend = function () {
+                if(time.getTime()-_transition_end_time > 2) {
+                    _transition_end_time = time.getTime();
+                } else {
+                    return;
+                }
                 let target_html = new HTML_Parser(event.detail.src.src);
                 target_html.onload = function () {
                     _thisRef.obj_content_container.innerHTML = target_html.body.innerHTML;
@@ -51,6 +58,7 @@ class ContentContainerController{
                         window.dispatchEvent(tgNavEvent);
                         /***For wake up article browser**/
                         if(event.detail.src.title === "ARTICLES") {
+
                             let ABEvent = new CustomEvent("wakeArticleBrowserRequest");
                             window.dispatchEvent(ABEvent);
                         }

@@ -1,6 +1,6 @@
 @charset "UTF-8";
-@import url("/webfonts/SourceSansPro_Regular/stylesheet.css");
-@import url("/webfonts/SourceSansPro_SemiBold/stylesheet.css");
+@import url("/_fonts/SourceSansPro_Regular/stylesheet.css");
+@import url("/_fonts/SourceSansPro_SemiBold/stylesheet.css");
 @import url("/comp/nav/styles/nav-top-strip.css");
 @import url("/comp/nav/styles/nav-button-box.css");
 @import url("/comp/nav/styles/nav-mobile-menu-trigger.css");
@@ -22,7 +22,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    transition: all 0.8s cubic-bezier(.2,.00,.0,1);
+    transition: all 0.6s cubic-bezier(.2,.00,.0,1);
     justify-content: center;
     pointer-events: none;
     perspective: 100px;
@@ -38,7 +38,7 @@
 }
 
 #loading-state:checked + .nav-pc{
-    transition: all 0.8s cubic-bezier(0.8,.00,.7,1);
+    transition: all 0.6s cubic-bezier(0.8,.00,.7,1);
     transform: translateZ(5px);
 }
 
