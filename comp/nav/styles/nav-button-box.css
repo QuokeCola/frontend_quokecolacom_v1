@@ -12,7 +12,7 @@
     vertical-align: top;
     margin:0 auto;
 
-    transition: 0.6s cubic-bezier(.88,.00,.39,1);
+    transition: all 0.6s cubic-bezier(.88,.00,.39,1);
 }
 .nav-buttonBox button {
     color: white;
@@ -68,7 +68,7 @@
     transition-property: width, background-color,opacity, backdrop-filter, -webkit-backdrop-filter;
     transition-delay: 0.0s, 0.1s, 0.0s, 0.0s, 0.0s;
     transition-duration: 0.5s, 0.4s, 0.5s, 0.25s, 0.25s;
-    transition-timing-function: ease-in-out, ease-in, ease-in-out, ease-in, ease-in;
+    transition-timing-function: ease-in-out, ease-in, ease-in-out, linear, linear;
 }
 
 .nav-mobile .nav-buttonBox button{
@@ -93,6 +93,11 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     opacity: 1.0;
+
+    transition-property: width, background-color,opacity, backdrop-filter, -webkit-backdrop-filter;
+    transition-delay: 0.0s, 0.1s, 0.0s, 0.0s, 0.0s;
+    transition-duration: 0.5s, 0.4s, 0.5s, 0.5s, 0.5s;
+    transition-timing-function: ease-in-out, ease-in, ease-in-out, linear, linear;
 }
 .nav-mobile #nav-mobileMenuState:checked ~ .nav-buttonBox button{
     padding: 30px 0 30px 0;
