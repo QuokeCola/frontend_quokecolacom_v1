@@ -40,6 +40,10 @@ class ContentContainerController{
         this.obj_loading_state.checked = true;
         let _transition_end_time = 0;
         try {
+            let tgNavEvent = new CustomEvent("toggleNavShrinkRequest", {
+                detail: {value: event.detail.src.type === "introPage"}
+            });
+            window.dispatchEvent(tgNavEvent);
             this.obj_content_container.ontransitionend = function () {
                 if(time.getTime()-_transition_end_time > 2) {
                     _transition_end_time = time.getTime();
@@ -52,16 +56,11 @@ class ContentContainerController{
                     setTimeout(function () {
                         _thisRef.obj_loading_state.checked = false;
                         _thisRef.obj_content_container.ontransitionend = null;
-                        let tgNavEvent = new CustomEvent("toggleNavShrinkRequest", {
-                            detail: {value: event.detail.src.type === "introPage"}
-                        });
-                        window.dispatchEvent(tgNavEvent);
                         /***For wake up article browser**/
                         if(event.detail.src.title === "ARTICLES") {
                             let ABEvent = new CustomEvent("wakeArticleBrowserRequest");
                             window.dispatchEvent(ABEvent);
                         }
-
 
                     }, 30);
                 }

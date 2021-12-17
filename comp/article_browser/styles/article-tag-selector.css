@@ -2,6 +2,13 @@
     width: 100%;
 }
 
+.content-container-pc .article-tag-selector{
+    margin-top: -200px;
+}
+.content-container-mobile .article-tag-selector{
+    margin-top: -300px;
+}
+
 .article-tag-selector button{
     text-align: left;
     border-width: 1px;

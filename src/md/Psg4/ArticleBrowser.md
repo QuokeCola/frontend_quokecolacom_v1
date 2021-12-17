@@ -48,6 +48,6 @@ Each each struct have the properties including `title`, `pic`, `time`, `src`, `c
 The source code was a little messy, but
 
 
-![If it works, it works](/src/Psg4/If%20it%20works,%20it%20works.jpg "If it works, it works")
+![If it works, it works](/src/md/Psg4/If%20it%20works,%20it%20works.jpg "If it works, it works")
 
 <center>Don't worry, I will tide them up one day :D</center>

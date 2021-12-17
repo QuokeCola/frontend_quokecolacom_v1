@@ -301,23 +301,19 @@ class ArticleBrowser{
     }
 
     scrollToTop() {
-
-        const scl2top = () => {
-            let sTop = this.obj_content_container.scrollTop;
-            console.log(sTop);
-            if (sTop > 0) {
-                window.requestAnimationFrame(scl2top);
-                this.obj_content_container.scrollTo(0, sTop - sTop / 8);
+        if(window.chrome === undefined) {
+            const scl2top = () => {
+                let sTop = this.obj_content_container.scrollTop;
+                console.log(sTop);
+                if (sTop > 1) {
+                    window.requestAnimationFrame(scl2top);
+                    this.obj_content_container.scrollTo(0, sTop - sTop / 8);
+                }
             }
+            window.requestAnimationFrame(scl2top);
+        } else {
+            this.obj_content_container.scrollTo(0,0);
         }
-        window.requestAnimationFrame(scl2top);
-        // this.obj_content_container.scrollTo({left:0,top:0,behavior:"smooth"});
-        // let _thisRef = this;
-        // let sTop = _thisRef.obj_content_container.scrollTop || document.body.scrollTop
-        // if (sTop > 0) {
-        //     _thisRef.obj_content_container.requestAnimationFrame(_thisRef.scrollToTop);
-        //     _thisRef.obj_content_container.scrollTo(0, sTop - sTop / 8);
-        // }
     }
 
 }
