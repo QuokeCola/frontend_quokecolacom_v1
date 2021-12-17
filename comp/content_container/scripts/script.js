@@ -37,6 +37,10 @@ class ContentContainerController{
     async handle_reload_CC_evt(event) {
         let time = new Date();
         let _thisRef = this;
+        this.scrollToTop();
+        while (this.obj_content_container.scrollTop >= 10) {
+            await sleep(10);
+        }
         this.obj_loading_state.checked = true;
         let _transition_end_time = 0;
         try {
@@ -44,8 +48,8 @@ class ContentContainerController{
                 detail: {value: event.detail.src.type === "introPage"}
             });
             window.dispatchEvent(tgNavEvent);
-            this.obj_content_container.ontransitionend = function () {
-                if(time.getTime()-_transition_end_time > 2) {
+            _thisRef.obj_content_container.ontransitionend = function () {
+                if(time.getTime()-_transition_end_time > 702) {
                     _transition_end_time = time.getTime();
                 } else {
                     return;
@@ -55,18 +59,35 @@ class ContentContainerController{
                     _thisRef.obj_content_container.innerHTML = target_html.body.innerHTML;
                     setTimeout(function () {
                         _thisRef.obj_loading_state.checked = false;
-                        _thisRef.obj_content_container.ontransitionend = null;
+                        _thisRef.obj_content_container.ontransitionend = function (){
+                        };
                         /***For wake up article browser**/
                         if(event.detail.src.title === "ARTICLES") {
                             let ABEvent = new CustomEvent("wakeArticleBrowserRequest");
                             window.dispatchEvent(ABEvent);
                         }
-
                     }, 30);
                 }
             }
         } catch (e) {
             console.log(e);
+        }
+    }
+
+    scrollToTop() {
+        if(window.chrome === undefined) {
+            const scl2top = () => {
+                let sTop = this.obj_content_container.scrollTop;
+                console.log(sTop);
+                if (sTop > 1) {
+                    console.log(sTop);
+                    window.requestAnimationFrame(scl2top);
+                    this.obj_content_container.scrollTo(0, sTop - sTop / 8);
+                }
+            }
+            window.requestAnimationFrame(scl2top);
+        } else {
+            this.obj_content_container.scrollTo(0,0);
         }
     }
 }

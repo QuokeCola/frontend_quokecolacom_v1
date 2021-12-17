@@ -56,6 +56,7 @@ class NavViewController{
     initialize_UI() {
         let _thisRef = this;
         try{
+            let time = new Date();
             // Generate Buttons
             for(let i = 0; i < this._customized_json.subpages.length; i++){
                 let button = document.createElement("button");
@@ -74,7 +75,13 @@ class NavViewController{
                 "rgba("+this._customized_json.themeColor+",0.8)");
             document.documentElement.style.setProperty("--complementary-color",
                 this._customized_json.complementaryColor);
+            let currTime = time.getTime();
             this.obj_button_box.ontransitionend = function (){
+                if(time.getTime() - currTime>701) {
+                    currTime = time.getTime();
+                } else {
+                    return;
+                }
                 _thisRef.style_button_box_pc_content_width = _thisRef._get_pc_button_box_inner_width()+"px";
                 document.documentElement.style.setProperty("--pc-buttonBox-width-shrink",
                     _thisRef.style_button_box_pc_content_width);
