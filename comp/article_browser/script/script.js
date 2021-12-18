@@ -193,7 +193,7 @@ class ArticleBrowser{
 
         /**Blocks fade out sequentially*/
         await Promise.all([this.clear_article_page_idx(), this.clear_components()]);
-
+        this.gradient_mask.style.height = "100vh";
         this.load_pg_content(searchtag, pagenum);
         this.load_pg_idx();
 
@@ -216,10 +216,9 @@ class ArticleBrowser{
             _thisRef.articles_back_btn.style.width = "40px";
             _thisRef.articles_back_btn.style.borderRadius = "5px";
             _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
-            _thisRef.gradient_mask.style.height = "200vh";
+            _thisRef.gradient_mask.style.height = "100vh";
             try{
                 _thisRef.article_title_pic.style.setProperty("--background-img", "url('"+_thisRef.md_root+json_obj.pic+"')");
-                // _thisRef.article_title_pic.style.backgroundImage= "url('"+_thisRef.md_root+json_obj.pic+"')";
             }catch (error){}
             _thisRef.article_title_pic.style.opacity = "1.0";
             _thisRef.article_title_pic.style.filter = "blur(10px)";
@@ -276,10 +275,12 @@ class ArticleBrowser{
 
     async show_components (){
         let _thisRef = this;
+        this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         for (let i = 0; i < this.articles_reader.childElementCount; i++) {
             await sleep(250/this.articles_reader.childElementCount);
             this.articles_reader.children[i].style.opacity = "1.0";
             this.articles_reader.children[i].style.transform="translateZ(0px)";
+            this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         }
         this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         setTimeout(function (){
@@ -305,7 +306,6 @@ class ArticleBrowser{
                 _thisRef.articles_reader.appendChild(article_container);
                 hljs.highlightAll();
                 _thisRef.show_components();
-
             }
         }
     }
