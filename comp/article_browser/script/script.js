@@ -10,6 +10,7 @@ class ArticleBrowser{
     articles_back_btn        = document.getElementById("article-back-btn");
     article_title_pic        = document.getElementById("article_titlepic");
     article_page_idx         = document.getElementById("page_index");
+    gradient_mask            = document.getElementById("article-title-pic-mask");
     article_page_idx_max_cnt = 10;
     curr_load_indexes = []
 
@@ -50,6 +51,7 @@ class ArticleBrowser{
                 _thisRef.articles_back_btn        = document.getElementById("article-back-btn");
                 _thisRef.article_title_pic        = document.getElementById("article_titlepic");
                 _thisRef.article_page_idx         = document.getElementById("page_index");
+                _thisRef.gradient_mask            = document.getElementById("article-title-pic-mask");
                 _thisRef.load_list(_thisRef.curr_tag, _thisRef.curr_page);
                 _thisRef.load_tag();
                 _thisRef.articles_back_btn.onclick = function () {
@@ -214,8 +216,10 @@ class ArticleBrowser{
             _thisRef.articles_back_btn.style.width = "40px";
             _thisRef.articles_back_btn.style.borderRadius = "5px";
             _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
+            _thisRef.gradient_mask.style.height = "100vh";
             try{
-                _thisRef.article_title_pic.style.backgroundImage= "url('"+_thisRef.md_root+json_obj.pic+"')";
+                _thisRef.article_title_pic.style.setProperty("--background-img", "url('"+_thisRef.md_root+json_obj.pic+"')");
+                // _thisRef.article_title_pic.style.backgroundImage= "url('"+_thisRef.md_root+json_obj.pic+"')";
             }catch (error){}
             _thisRef.article_title_pic.style.opacity = "1.0";
             _thisRef.article_title_pic.style.filter = "blur(10px)";
@@ -296,6 +300,10 @@ class ArticleBrowser{
                 _thisRef.articles_reader.appendChild(article_container);
                 hljs.highlightAll();
                 _thisRef.show_components();
+                setTimeout(function (){
+                    _thisRef.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
+                },400);
+
             }
         }
     }
@@ -304,7 +312,6 @@ class ArticleBrowser{
         if(window.chrome === undefined) {
             const scl2top = () => {
                 let sTop = this.obj_content_container.scrollTop;
-                console.log(sTop);
                 if (sTop > 1) {
                     window.requestAnimationFrame(scl2top);
                     this.obj_content_container.scrollTo(0, sTop - sTop / 8);
