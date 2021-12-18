@@ -78,7 +78,6 @@ class ContentContainerController{
         if(window.chrome === undefined) {
             const scl2top = () => {
                 let sTop = this.obj_content_container.scrollTop;
-                console.log(sTop);
                 if (sTop > 1) {
                     console.log(sTop);
                     window.requestAnimationFrame(scl2top);

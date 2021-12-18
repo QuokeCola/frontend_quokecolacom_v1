@@ -21,7 +21,9 @@ class NavViewController{
         });
 
         window.addEventListener("orientationchange", function () {
-            _thisRef.refresh_UI();
+            setTimeout(function () {
+                _thisRef.refresh_UI();
+            }, 200);
         })
 
         window.addEventListener("toggleNavShrinkRequest", evt => {
@@ -75,19 +77,24 @@ class NavViewController{
                 "rgba("+this._customized_json.themeColor+",0.8)");
             document.documentElement.style.setProperty("--complementary-color",
                 this._customized_json.complementaryColor);
-            let currTime = time.getTime();
+            let currTime = 0;
+            console.log('transition register');
             this.obj_button_box.ontransitionend = function (){
+                console.log('transition end: '+ time.getTime());
                 if(time.getTime() - currTime>701) {
                     currTime = time.getTime();
+                    console.log('First trigger');
                 } else {
                     return;
                 }
+                console.log('Passed condition trigger');
                 _thisRef.style_button_box_pc_content_width = _thisRef._get_pc_button_box_inner_width()+"px";
                 document.documentElement.style.setProperty("--pc-buttonBox-width-shrink",
                     _thisRef.style_button_box_pc_content_width);
+                console.log('refreshing UI');
                 _thisRef.refresh_UI();
+                _thisRef.obj_button_box.ontransitionend = null;
             }
-
         }catch (e) {
             console.log(e);
         }
@@ -96,6 +103,7 @@ class NavViewController{
     refresh_UI() {
         document.documentElement.style.setProperty("--pc-buttonBox-width-expand",
             window.innerWidth+"px");
+        console.log(getLayoutID());
         if(getLayoutID()===2){
             this.obj_nav.classList.replace("nav-mobile", "nav-pc");
             this.scroll();
