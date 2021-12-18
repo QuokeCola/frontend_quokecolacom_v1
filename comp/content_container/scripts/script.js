@@ -9,7 +9,9 @@ class ContentContainerController{
             _thisRef.resize();
         })
         window.addEventListener("orientationchange", function () {
-            _thisRef.resize();
+            setTimeout(function () {
+                _thisRef.resize();
+            }, 200);
         })
         window.addEventListener("updateCCRequest", evt => {
             this.handle_reload_CC_evt(evt);
