@@ -9,6 +9,7 @@ class NavViewController{
     obj_button_box = document.getElementById("nav-buttonBox-obj");
     obj_pc_shrink_state = document.getElementById("nav-pcShrinkState");
     obj_content_container = document.getElementById("content-container");
+    obj_loading_state = document.getElementById("loading-state");
 
     style_button_box_pc_content_width;
 
@@ -71,7 +72,6 @@ class NavViewController{
                 }
                 this.obj_button_box.appendChild(button);
             }
-            _thisRef.style_button_box_pc_content_width = _thisRef._get_pc_button_box_inner_width()+"px";
             document.documentElement.style.setProperty("--theme-color",
                 "rgba("+this._customized_json.themeColor+",0.9)");
             document.documentElement.style.setProperty("--theme-shallow-color",
@@ -79,12 +79,13 @@ class NavViewController{
             document.documentElement.style.setProperty("--complementary-color",
                 this._customized_json.complementaryColor);
             let currTime = 0;
-            this.obj_button_box.ontransitionend = function (){
-                if(time.getTime() - currTime > 701) {
+            this.obj_nav.ontransitionend = function (){
+                if((time.getTime() - currTime > 601)&&!_thisRef.obj_loading_state.checked) {
                     currTime = time.getTime();
                 } else {
                     return;
                 }
+                _thisRef.style_button_box_pc_content_width = _thisRef._get_pc_button_box_inner_width()+"px";
                 document.documentElement.style.setProperty("--pc-buttonBox-width-shrink",
                     _thisRef.style_button_box_pc_content_width);
                 _thisRef.refresh_UI();
