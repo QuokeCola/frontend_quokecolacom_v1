@@ -212,18 +212,6 @@ class ArticleBrowser{
         let _thisRef = this;
         let block = document.createElement("div");
         block.classList.add("article-link-block");
-        block.onclick = function () {
-            _thisRef.articles_back_btn.style.width = "40px";
-            _thisRef.articles_back_btn.style.borderRadius = "5px";
-            _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
-            _thisRef.gradient_mask.style.height = "100vh";
-            try{
-                _thisRef.article_title_pic.style.setProperty("--background-img", "url('"+_thisRef.md_root+json_obj.pic+"')");
-            }catch (error){}
-            _thisRef.article_title_pic.style.opacity = "1.0";
-            _thisRef.article_title_pic.style.filter = "blur(10px)";
-            _thisRef.load_articles(_thisRef.md_root+json_obj.src);
-        }
         /**Create topline element*/
         let topLine = document.createElement("div");
         topLine.classList.add("top_line");
@@ -258,6 +246,24 @@ class ArticleBrowser{
         block.appendChild(title);
         block.appendChild(class_list);
         block.appendChild(time);
+
+        block.onclick = function (evt) {
+            _thisRef.articles_back_btn.style.width = "40px";
+            _thisRef.articles_back_btn.style.borderRadius = "5px";
+            _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
+            _thisRef.gradient_mask.style.height = "100vh";
+            try{
+                _thisRef.article_title_pic.style.setProperty("--background-img", "url('"+_thisRef.md_root+json_obj.pic+"')");
+            }catch (error){}
+            _thisRef.article_title_pic.style.opacity = "1.0";
+            _thisRef.article_title_pic.style.filter = "blur(10px)";
+            _thisRef.load_articles(_thisRef.md_root+json_obj.src);
+            console.log("x: "+ evt.offsetX + ", y: "+evt.offsetY);
+            let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
+            let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight*2;
+            console.log("x: "+x+", y: "+y);
+            block.style.transform = "rotateX("+(-y/10)+"deg) rotateY("+(x/10)+"deg)";
+        }
         return block;
     }
 
