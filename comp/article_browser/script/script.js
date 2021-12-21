@@ -262,7 +262,7 @@ class ArticleBrowser{
             let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
             let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight*2;
             console.log("x: "+x+", y: "+y);
-            block.style.transform = "rotateX("+(-y/10)+"deg) rotateY("+(x/10)+"deg)";
+            block.style.transform = "rotateX("+(-y/10)+"deg) rotateY("+(x/5)+"deg)";
         }
         return block;
     }
