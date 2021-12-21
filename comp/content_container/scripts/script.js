@@ -2,6 +2,7 @@ class ContentContainerController{
     obj_content_container = document.getElementById("content-container");
     obj_loading_state = document.getElementById("loading-state");
     previousLayoutID = getLayoutID();
+    current_CSS_list = [];
 
     constructor() {
         let _thisRef = this;
@@ -17,18 +18,18 @@ class ContentContainerController{
             this.handle_reload_CC_evt(evt);
         })
 
-        this.refreshUI();
+        this.rearrangeUI();
     }
 
     resize() {
         let currentLayoutID = getLayoutID();
         if(this.previousLayoutID !== currentLayoutID) {
-            this.refreshUI();
+            this.rearrangeUI();
         }
         this.previousLayoutID = currentLayoutID;
     }
 
-    refreshUI() {
+    rearrangeUI() {
         if(getLayoutID()===2) {
             this.obj_content_container.classList.replace("content-container-mobile","content-container-pc");
         } else {
@@ -44,20 +45,36 @@ class ContentContainerController{
             await sleep(10);
         }
         this.obj_loading_state.checked = true;
-        let _transition_end_time = 0;
+        let _transition_start_time = 0;
         try {
             let tgNavEvent = new CustomEvent("toggleNavShrinkRequest", {
                 detail: {value: event.detail.src.type === "introPage"}
             });
             window.dispatchEvent(tgNavEvent);
             _thisRef.obj_content_container.ontransitionend = function () {
-                if(time.getTime()-_transition_end_time > 702) {
-                    _transition_end_time = time.getTime();
+                if(time.getTime()-_transition_start_time > 702) { /**Check for multiple properties*/
+                    _transition_start_time = time.getTime();
                 } else {
                     return;
                 }
+                /**Remove previous CSS nodes*/
+                for(let i = 0; i < _thisRef.current_CSS_list.length; i++) {
+                    document.head.removeChild(_thisRef.current_CSS_list[i]);
+                }
+                /**Refresh the list*/
+                _thisRef.current_CSS_list = [];
                 let target_html = new HTML_Parser(event.detail.src.src);
                 target_html.onload = function () {
+                    for(let i = 0; i < target_html.rel_css.length; i++) {
+                        if(!(target_html.rel_css[i] === "/comp/content_container/styles/entry.css")) { // Exception for universal components
+                            let new_CSS_node = document.createElement("link" );
+                            new_CSS_node.href = target_html.rel_css[i];
+                            new_CSS_node.rel = "stylesheet";
+                            new_CSS_node.type = "text/css";
+                            _thisRef.current_CSS_list.push(new_CSS_node);
+                            document.head.appendChild(new_CSS_node);
+                        }
+                    }
                     _thisRef.obj_content_container.innerHTML = target_html.body.innerHTML;
                     setTimeout(function () {
                         _thisRef.obj_loading_state.checked = false;
@@ -81,7 +98,6 @@ class ContentContainerController{
             const scl2top = () => {
                 let sTop = this.obj_content_container.scrollTop;
                 if (sTop > 1) {
-                    console.log(sTop);
                     window.requestAnimationFrame(scl2top);
                     this.obj_content_container.scrollTo(0, sTop - sTop / 8);
                 }

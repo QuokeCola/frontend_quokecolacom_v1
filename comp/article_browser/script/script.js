@@ -4,12 +4,12 @@ document.write("<script language=javascript src='/comp/article_browser/dependenc
 
 class ArticleBrowser{
     obj_content_container    = document.getElementById("content-container");
-    articles_reader          = document.getElementById("articles_reader");
-    articles_tag_selector    = document.getElementById("tags_selector");
+    articles_reader          = document.getElementById("articles-reader");
+    articles_tag_selector    = document.getElementById("tags-selector");
     articles_list_title      = document.getElementById("list-title");
     articles_back_btn        = document.getElementById("article-back-btn");
-    article_title_pic        = document.getElementById("article_titlepic");
-    article_page_idx         = document.getElementById("page_index");
+    article_title_pic        = document.getElementById("article-title-pic");
+    article_page_idx         = document.getElementById("page-index");
     gradient_mask            = document.getElementById("article-title-pic-mask");
     article_page_idx_max_cnt = 10;
     curr_load_indexes = []
@@ -45,12 +45,12 @@ class ArticleBrowser{
 
         addEventListener('wakeArticleBrowserRequest', function () {
             try{
-                _thisRef.articles_reader          = document.getElementById("articles_reader");
-                _thisRef.articles_tag_selector    = document.getElementById("tags_selector");
+                _thisRef.articles_reader          = document.getElementById("articles-reader");
+                _thisRef.articles_tag_selector    = document.getElementById("tags-selector");
                 _thisRef.articles_list_title      = document.getElementById("list-title");
                 _thisRef.articles_back_btn        = document.getElementById("article-back-btn");
-                _thisRef.article_title_pic        = document.getElementById("article_titlepic");
-                _thisRef.article_page_idx         = document.getElementById("page_index");
+                _thisRef.article_title_pic        = document.getElementById("article-title-pic");
+                _thisRef.article_page_idx         = document.getElementById("page-index");
                 _thisRef.gradient_mask            = document.getElementById("article-title-pic-mask");
                 _thisRef.load_list(_thisRef.curr_tag, _thisRef.curr_page);
                 _thisRef.load_tag();

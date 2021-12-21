@@ -17,6 +17,9 @@
     --pc-buttonBox-radius-shrink:   7px;
     --pc-transition-time-function-in: cubic-bezier(0.2,0.5,0,1);
     --pc-transition-time-function-out: cubic-bezier(1,0,0.8,0.5);
+    --pc-button-onclick-transform: rotateX(0deg) rotateX(0deg);
+    --pc-button-onclick-rotate-x: 0;
+    --pc-button-onclick-rotate-y: 0;
 }
 
 .nav{

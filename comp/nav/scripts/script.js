@@ -64,11 +64,17 @@ class NavViewController{
             for(let i = 0; i < this._customized_json.subpages.length; i++){
                 let button = document.createElement("button");
                 button.innerText = this._customized_json.subpages[i].title;
-                button.onclick = function () {
+                button.onclick = function (evt) {
                     let Event = new CustomEvent("updateCCRequest", {
                         detail:{src: _thisRef._customized_json.subpages[i]}
                     });
                     window.dispatchEvent(Event);
+                    let x = (evt.offsetX - _thisRef.obj_button_box.clientWidth/2)/_thisRef.obj_button_box.clientWidth;
+                    let y = (evt.offsetY - _thisRef.obj_button_box.clientHeight/2)/_thisRef.obj_button_box.clientHeight*3;
+                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-x",
+                        String(-y)+"deg");
+                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-y",
+                        String(x)+"deg");
                 }
                 this.obj_button_box.appendChild(button);
             }
