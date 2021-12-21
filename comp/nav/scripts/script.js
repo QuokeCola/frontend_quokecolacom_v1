@@ -5,11 +5,11 @@ class NavViewController{
 
     _enable_expand = true;
 
-    obj_nav       = document.getElementById("nav");
-    obj_button_box = document.getElementById("nav-buttonBox-obj");
-    obj_pc_shrink_state = document.getElementById("nav-pcShrinkState");
+    obj_nav               = document.getElementById("nav");
+    obj_button_box        = document.getElementById("nav-buttonBox-obj");
+    obj_pc_shrink_state   = document.getElementById("nav-pcShrinkState");
     obj_content_container = document.getElementById("content-container");
-    obj_loading_state = document.getElementById("loading-state");
+    obj_loading_state     = document.getElementById("loading-state");
 
     style_button_box_pc_content_width;
 
@@ -69,12 +69,6 @@ class NavViewController{
                         detail:{src: _thisRef._customized_json.subpages[i]}
                     });
                     window.dispatchEvent(Event);
-                    let x = (evt.offsetX - _thisRef.obj_button_box.clientWidth/2)/_thisRef.obj_button_box.clientWidth;
-                    let y = (evt.offsetY - _thisRef.obj_button_box.clientHeight/2)/_thisRef.obj_button_box.clientHeight*3;
-                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-x",
-                        String(-y)+"deg");
-                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-y",
-                        String(x)+"deg");
                 }
                 this.obj_button_box.appendChild(button);
             }
@@ -96,7 +90,19 @@ class NavViewController{
                     _thisRef.style_button_box_pc_content_width);
                 _thisRef.refresh_UI();
                 _thisRef.obj_button_box.ontransitionend = null;
+                let btn_box_width = Number(_thisRef.style_button_box_pc_content_width.replace("px",""));
+                _thisRef.obj_button_box.onclick = function (evt) {
+                    let x_origin = evt.screenX - _thisRef.obj_button_box.getBoundingClientRect().left;
+                    let x = (2*x_origin - btn_box_width)/btn_box_width/4;
+                    let y = (evt.offsetY - _thisRef.obj_button_box.clientHeight/2)/_thisRef.obj_button_box.clientHeight*2;
+                    console.log("x: "+x+", y: "+y);
+                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-x",
+                        String(-y)+"deg");
+                    document.documentElement.style.setProperty("--pc-button-onclick-rotate-y",
+                        String(x)+"deg");
+                }
             }
+
         }catch (e) {
             console.log(e);
         }
