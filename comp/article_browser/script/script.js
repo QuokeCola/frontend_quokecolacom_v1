@@ -23,6 +23,9 @@ class ArticleBrowser{
     load_list_temptag   = null;
     load_list_temppage  = null;
 
+    _mouse_down = false;
+    _mousemove_trigger_time = 0;
+
     previousIsPC = getLayoutID();
 
     // For return from articles.
@@ -201,6 +204,10 @@ class ArticleBrowser{
         this.load_pg_content(searchtag, pagenum);
         this.load_pg_idx();
 
+        this.obj_content_container.onmouseup = function () {
+            _thisRef._mouse_down = false;
+        }
+
         this.load_list_executing = false;
         if(this.load_list_temptag!==null || this.load_list_temppage!==null) {
             this.articles_reader.innerHTML = '';
@@ -252,7 +259,7 @@ class ArticleBrowser{
         block.appendChild(time);
 
         block.onmouseup = function () {
-            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+            block.style.transform = "rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1.0)";
             _thisRef.articles_back_btn.style.width = "40px";
             _thisRef.articles_back_btn.style.borderRadius = "5px";
             _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
@@ -264,17 +271,35 @@ class ArticleBrowser{
             _thisRef.article_title_pic.style.opacity = "1.0";
             _thisRef.article_title_pic.style.filter = "blur(10px)";
             _thisRef.load_articles(_thisRef.md_root+json_obj.src);
+            _thisRef._mouse_down = false;
         }
 
-        block.onmousedown = function (evt) {
-            let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
-            let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
-            block.style.transform = "rotateX("+(-y/5)+"deg) rotateY("+(x/5)+"deg) scale(0.9)";
+        block.onmousemove = function (evt) {
+            if(!_thisRef._mouse_down) {
+                let _timer = new Date();
+                if(_timer.getTime() - _thisRef._mousemove_trigger_time > 400) {
+                    _thisRef._mousemove_trigger_time = _timer.getTime();
+                } else {
+                    return;
+                }
+                let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
+                let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
+                block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/5+"deg) scale(1.0) translateZ(0.5px)";
+            }
         }
 
         block.onmouseleave = function (){
-            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg)";
+            block.style.transform = "rotateX(0deg) rotateY(0deg) scale(1.0) translateZ(0.0px)";
         }
+
+        block.onmousedown = function (evt) {
+            _thisRef._mouse_down = true;
+            let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
+            let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
+            block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/5+"deg) scale(0.9) translateZ(0px)";
+            console.log("x: " + x +", y: " + y);
+        }
+
         return block;
     }
 
@@ -282,7 +307,6 @@ class ArticleBrowser{
         if(this.articles_reader.childElementCount > 0) {
             for (let i = 0; i < this.articles_reader.childElementCount; i++) {
                 this.articles_reader.children[i].style.opacity = "0";
-                this.articles_reader.children[i].style.transform="translateZ(-2px)";
                 await sleep(250/this.articles_reader.childElementCount);
             }
             await sleep(501);

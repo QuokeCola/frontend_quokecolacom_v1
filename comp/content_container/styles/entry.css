@@ -28,6 +28,7 @@
     transition: all 0.6s var(--pc-transition-time-function-out);
     transform: translateZ(-4px) rotateX(calc(var(--pc-button-onclick-rotate-x)/3)) rotateY(calc(var(--pc-button-onclick-rotate-y)/3));
     opacity: 0.0;
+    border-radius: 60px;
     filter: blur(10px);
     -webkit-filter: blur(10px);
 }

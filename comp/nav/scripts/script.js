@@ -92,8 +92,8 @@ class NavViewController{
                 _thisRef.obj_button_box.ontransitionend = null;
                 let btn_box_width = Number(_thisRef.style_button_box_pc_content_width.replace("px",""));
                 _thisRef.obj_button_box.onclick = function (evt) {
-                    let x_origin = evt.screenX - _thisRef.obj_button_box.getBoundingClientRect().left;
-                    let x = (2*x_origin - btn_box_width)/btn_box_width/4;
+                    let x_origin = evt.screenX - window.innerWidth/2;
+                    let x = (x_origin)/btn_box_width/2;
                     let y = (evt.offsetY - _thisRef.obj_button_box.clientHeight/2)/_thisRef.obj_button_box.clientHeight*2;
                     console.log("x: "+x+", y: "+y);
                     document.documentElement.style.setProperty("--pc-button-onclick-rotate-x",
