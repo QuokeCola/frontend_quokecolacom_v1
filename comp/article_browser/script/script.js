@@ -152,7 +152,7 @@ class ArticleBrowser{
             for (let i = 0; i < this.articles_reader.childElementCount; i++) {
                 try {
                     this.article_page_idx.children[i].style.opacity = "0";
-                    this.article_page_idx.children[i].style.transform="translateZ(2)";
+                    this.article_page_idx.children[i].style.transform="translateZ(2px)";
                     await sleep(250/this.article_page_idx.childElementCount);
                 } catch (TypeError) {}
             }
@@ -170,10 +170,14 @@ class ArticleBrowser{
     }
 
     async load_list (searchtag, pagenum) {
+        let _thisRef = this;
         this.article_page_idx.style.opacity = "1.0";
         this.scrollToTop();
         this.articles_list_title.style.pointerEvents="none";
         this.article_title_pic.style.opacity = "0.0";
+        setTimeout(function () {
+            _thisRef.gradient_mask.style.opacity = "0.0";
+        },500);
         this.article_title_pic.style.filter = "blur(0px)";
         this.articles_back_btn.style.width="0px";
         this.articles_back_btn.style.borderRadius="0px";
@@ -256,6 +260,7 @@ class ArticleBrowser{
             try{
                 _thisRef.article_title_pic.style.setProperty("--background-img", "url('"+_thisRef.md_root+json_obj.pic+"')");
             }catch (error){}
+            _thisRef.gradient_mask.style.opacity = "1.0";
             _thisRef.article_title_pic.style.opacity = "1.0";
             _thisRef.article_title_pic.style.filter = "blur(10px)";
             _thisRef.load_articles(_thisRef.md_root+json_obj.src);
@@ -263,12 +268,12 @@ class ArticleBrowser{
 
         block.onmousedown = function (evt) {
             let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
-            let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight*2;
-            block.style.transform = "scale(0.9) rotateX("+(-y/10)+"deg) rotateY("+(x/5)+"deg) translateZ(0.4px)";
+            let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
+            block.style.transform = "rotateX("+(-y/5)+"deg) rotateY("+(x/5)+"deg) scale(0.9)";
         }
 
         block.onmouseleave = function (){
-            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg)";
         }
         return block;
     }
@@ -277,7 +282,7 @@ class ArticleBrowser{
         if(this.articles_reader.childElementCount > 0) {
             for (let i = 0; i < this.articles_reader.childElementCount; i++) {
                 this.articles_reader.children[i].style.opacity = "0";
-                this.articles_reader.children[i].style.transform="translateZ(2)";
+                this.articles_reader.children[i].style.transform="translateZ(-2px)";
                 await sleep(250/this.articles_reader.childElementCount);
             }
             await sleep(501);
