@@ -248,7 +248,7 @@ class ArticleBrowser{
         block.appendChild(time);
 
         block.onmouseup = function () {
-            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg)";
+            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg) translateZ(0px)";
             _thisRef.articles_back_btn.style.width = "40px";
             _thisRef.articles_back_btn.style.borderRadius = "5px";
             _thisRef.articles_back_btn.style.backgroundSize = "30px 30px";
@@ -264,12 +264,11 @@ class ArticleBrowser{
         block.onmousedown = function (evt) {
             let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
             let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight*2;
-            console.log("x: "+x+", y: "+y);
-            block.style.transform = "scale(0.95) rotateX("+(-y/10)+"deg) rotateY("+(x/5)+"deg)";
+            block.style.transform = "scale(0.9) rotateX("+(-y/10)+"deg) rotateY("+(x/5)+"deg) translateZ(0.4px)";
         }
 
         block.onmouseleave = function (){
-            block.style.transform = "translateZ(0px) rotateX(0deg) rotateY(0deg)";
+            block.style.transform = "scale(1.0) rotateX(0deg) rotateY(0deg) translateZ(0px)";
         }
         return block;
     }

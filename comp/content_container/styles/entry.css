@@ -26,9 +26,10 @@
 
 #loading-state:checked ~ .content-container-pc {
     transition: all 0.6s var(--pc-transition-time-function-out);
-    transform: translateZ(-2px) rotateX(calc(var(--pc-button-onclick-rotate-x)/3)) rotateY(calc(var(--pc-button-onclick-rotate-y)/3));
+    transform: translateZ(-4px) rotateX(calc(var(--pc-button-onclick-rotate-x)/3)) rotateY(calc(var(--pc-button-onclick-rotate-y)/3));
     opacity: 0.0;
     filter: blur(10px);
+    border-radius: 60px;
     -webkit-filter: blur(10px);
 }
 
@@ -37,6 +38,7 @@
     transform: translateZ(-2px);
     opacity: 0.0;
     filter: blur(10px);
+    border-radius: 15px;
     -webkit-filter: blur(10px);
 }
 
