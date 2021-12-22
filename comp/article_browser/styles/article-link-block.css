@@ -10,6 +10,8 @@
     transition: all 0.5s cubic-bezier(0.4,0,0.0,1);
     transform: translateZ(-2px);
     opacity: 0;
+    pointer-events: auto;
+    -webkit-user-drag: none;
 }
 
 .content-container-pc .article-link-block{
