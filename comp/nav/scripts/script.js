@@ -95,7 +95,6 @@ class NavViewController{
                     let x_origin = evt.screenX - window.innerWidth/2;
                     let x = (x_origin)/btn_box_width/2;
                     let y = (evt.offsetY - _thisRef.obj_button_box.clientHeight/2)/_thisRef.obj_button_box.clientHeight*2;
-                    console.log("x: "+x+", y: "+y);
                     document.documentElement.style.setProperty("--pc-button-onclick-rotate-x",
                         String(-y)+"deg");
                     document.documentElement.style.setProperty("--pc-button-onclick-rotate-y",

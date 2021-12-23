@@ -24,7 +24,6 @@ class ArticleBrowser{
     load_list_temppage  = null;
 
     _mouse_down = false;
-    _mousemove_trigger_time = 0;
 
     previousIsPC = getLayoutID();
 
@@ -276,15 +275,9 @@ class ArticleBrowser{
 
         block.onmousemove = function (evt) {
             if(!_thisRef._mouse_down) {
-                let _timer = new Date();
-                if(_timer.getTime() - _thisRef._mousemove_trigger_time > 400) {
-                    _thisRef._mousemove_trigger_time = _timer.getTime();
-                } else {
-                    return;
-                }
                 let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
                 let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
-                block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/5+"deg) scale(1.0) translateZ(0.5px)";
+                block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/5+"deg) scale(1.0) translateZ(0px)";
             }
         }
 
@@ -296,8 +289,7 @@ class ArticleBrowser{
             _thisRef._mouse_down = true;
             let x = (evt.offsetX - block.clientWidth/2)/block .clientWidth;
             let y = (evt.offsetY - block.clientHeight/2)/block.clientHeight;
-            block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/5+"deg) scale(0.9) translateZ(0px)";
-            console.log("x: " + x +", y: " + y);
+            block.style.transform = "rotateX("+parseInt(String(-y*10))/10/2.5+"deg) rotateY("+parseInt(String(x*10))/10/2.5+"deg) scale(0.9) translateZ(0px)";
         }
 
         return block;
@@ -318,11 +310,13 @@ class ArticleBrowser{
         let _thisRef = this;
         this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         for (let i = 0; i < this.articles_reader.childElementCount; i++) {
+            if(i > 0) this.articles_reader.children[i-1].style.transition = "all 0.25s cubic-bezier(0.4,0,0.6,1)";
             await sleep(250/this.articles_reader.childElementCount);
             this.articles_reader.children[i].style.opacity = "1.0";
             this.articles_reader.children[i].style.transform="translateZ(0px)";
             this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         }
+        this.articles_reader.children[this.articles_reader.children.length-1].style.transition = "all 0.25s cubic-bezier(0.4,0,0.6,1)";
         this.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         setTimeout(function (){
             _thisRef.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
