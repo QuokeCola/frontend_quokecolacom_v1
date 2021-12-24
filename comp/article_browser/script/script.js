@@ -3,37 +3,39 @@ document.write("<script language=javascript src='/comp/article_browser/dependenc
 document.write("<script language=javascript src='/comp/article_browser/dependencies/highlight.min.js'></script>");
 
 class ArticleBrowser{
-    obj_content_container    = document.getElementById("content-container");
-    articles_reader          = document.getElementById("articles-reader");
-    articles_tag_selector    = document.getElementById("tags-selector");
-    articles_list_title      = document.getElementById("list-title");
-    articles_back_btn        = document.getElementById("article-back-btn");
-    article_title_pic        = document.getElementById("article-title-pic");
-    article_page_idx         = document.getElementById("page-index");
-    gradient_mask            = document.getElementById("article-title-pic-mask");
-    article_page_idx_max_cnt = 10;
-    curr_load_indexes = []
-
-    md_root = "";
-    psglist_loc = "psglists.json"
-    psg_request = new XMLHttpRequest();
-    max_item_num= 10;
-    psglist_json;
-    load_list_executing = false;
-    load_list_temptag   = null;
-    load_list_temppage  = null;
-
-    _mouse_down = false;
-
-    previousIsPC = getLayoutID();
-
-    // For return from articles.
-    curr_tag = 'All articles';
-    curr_page = 1;
-    topline_colors = [  'orangered','orchid','darkcyan','deeppink','darkslateblue','darksalmon','CadetBlue','CornflowerBlue',
-        'Gold', 'GreenYellow','IndianRed','LightCoral'];
 
     constructor (url) {
+
+        this.obj_content_container    = document.getElementById("content-container");
+        this.articles_reader          = document.getElementById("articles-reader");
+        this.articles_tag_selector    = document.getElementById("tags-selector");
+        this.articles_list_title      = document.getElementById("list-title");
+        this.articles_back_btn        = document.getElementById("article-back-btn");
+        this.article_title_pic        = document.getElementById("article-title-pic");
+        this.article_page_idx         = document.getElementById("page-index");
+        this.gradient_mask            = document.getElementById("article-title-pic-mask");
+        this.article_page_idx_max_cnt = 10;
+        this.curr_load_indexes = []
+
+        this.md_root = "";
+        this.psglist_loc = "psglists.json"
+        this.psg_request = new XMLHttpRequest();
+        this.max_item_num= 10;
+        this.psglist_json = null;
+        this.load_list_executing = false;
+        this.load_list_temptag   = null;
+        this.load_list_temppage  = null;
+
+        this._mouse_down = false;
+
+        this.previousIsPC = getLayoutID();
+
+        // For return from articles.
+        this.curr_tag = 'All articles';
+        this.curr_page = 1;
+        this.topline_colors = [  'orangered','orchid','darkcyan','deeppink','darkslateblue','darksalmon','CadetBlue','CornflowerBlue',
+            'Gold', 'GreenYellow','IndianRed','LightCoral'];
+
         this.md_root = url;
         let _thisRef = this;
         // Compile

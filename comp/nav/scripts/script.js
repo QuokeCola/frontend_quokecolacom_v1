@@ -1,19 +1,20 @@
 class NavViewController{
-    _customized_json;
-    _scroll_shrink_threshold = 5;
-    _previousLayoutID = 0;
-
-    _enable_expand = true;
-
-    obj_nav               = document.getElementById("nav");
-    obj_button_box        = document.getElementById("nav-buttonBox-obj");
-    obj_pc_shrink_state   = document.getElementById("nav-pcShrinkState");
-    obj_content_container = document.getElementById("content-container");
-    obj_loading_state     = document.getElementById("loading-state");
-
-    style_button_box_pc_content_width;
 
     constructor(customize_json) {
+
+        this._scroll_shrink_threshold = 5;
+        this._previousLayoutID = 0;
+
+        this._enable_expand = true;
+
+        this.obj_nav               = document.getElementById("nav");
+        this.obj_button_box        = document.getElementById("nav-buttonBox-obj");
+        this.obj_pc_shrink_state   = document.getElementById("nav-pcShrinkState");
+        this.obj_content_container = document.getElementById("content-container");
+        this.obj_loading_state     = document.getElementById("loading-state");
+
+        this.style_button_box_pc_content_width = "420px";
+
         let _thisRef = this;
         this._customized_json = customize_json;
         this.initialize_UI();

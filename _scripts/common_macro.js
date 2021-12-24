@@ -40,15 +40,15 @@ function throttle(fn, delay) {
 }
 
 class HTML_Parser {
-	_url;
-	_XMLRequest = new XMLHttpRequest();
-	rel_css = [];
-	rel_js  = [];
 	constructor(url) {
-		let _thisRef = this;
+		this._XMLRequest = new XMLHttpRequest();
+		this.rel_css = [];
+		this.rel_js  = [];
 		this._url = url;
+		let _thisRef = this;
 		this._XMLRequest.open("get", url);
 		this._XMLRequest.send(null);
+		this.onload = null;
 		this._XMLRequest.onload = function () {
 			if(_thisRef._XMLRequest.status === 200) {
 				let parser = new DOMParser();
@@ -82,8 +82,6 @@ class HTML_Parser {
 			}
 		}
 	}
-
-	onload;
 }
 
 function sleep(ms) {

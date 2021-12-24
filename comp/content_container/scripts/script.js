@@ -1,10 +1,11 @@
 class ContentContainerController{
-    obj_content_container = document.getElementById("content-container");
-    obj_loading_state = document.getElementById("loading-state");
-    previousLayoutID = getLayoutID();
-    current_CSS_list = [];
 
     constructor() {
+        this.obj_content_container = document.getElementById("content-container");
+        this.obj_loading_state = document.getElementById("loading-state");
+        this.previousLayoutID = getLayoutID();
+        this.current_CSS_list = [];
+
         let _thisRef = this;
         window.addEventListener("resize", function () {
             _thisRef.resize();
