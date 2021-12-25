@@ -20,6 +20,20 @@ class ContentContainerController{
         })
 
         this.rearrangeUI();
+
+        window.onpopstate = function (ev){
+            try {
+                let Event = new CustomEvent("updateCCRequest", {
+                    detail:{src: ev.state}
+                });
+                setTimeout( function () {
+                    window.dispatchEvent(Event);
+                }, 100);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
     }
 
     resize() {
@@ -76,6 +90,7 @@ class ContentContainerController{
                             document.head.appendChild(new_CSS_node);
                         }
                     }
+                    window.history.pushState(event.detail.src, target_html.title, "#"+target_html.title);
                     _thisRef.obj_content_container.innerHTML = target_html.body.innerHTML;
                     setTimeout(function () {
                         _thisRef.obj_loading_state.checked = false;

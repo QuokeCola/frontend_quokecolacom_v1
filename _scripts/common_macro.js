@@ -44,6 +44,7 @@ class HTML_Parser {
 		this._XMLRequest = new XMLHttpRequest();
 		this.rel_css = [];
 		this.rel_js  = [];
+		this.title = "";
 		this._url = url;
 		let _thisRef = this;
 		this._XMLRequest.open("get", url);
@@ -55,7 +56,7 @@ class HTML_Parser {
 				let result = parser.parseFromString(_thisRef._XMLRequest.responseText,"text/html");
 				_thisRef.header = result.documentElement.children[0];
 				_thisRef.body = result.documentElement.children[1];
-
+				_thisRef.title = result.title;
 				for (let i = 0; i < _thisRef.header.childNodes.length; i++) {
 					try{
 						if (_thisRef.header.childNodes[i].nodeName === "LINK" && _thisRef.header.childNodes[i].type ==="text/css"){
