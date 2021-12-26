@@ -90,7 +90,7 @@ class ContentContainerController{
                             document.head.appendChild(new_CSS_node);
                         }
                     }
-                    window.history.pushState(event.detail.src, target_html.title, "#"+target_html.title);
+                    window.history.pushState(event.detail.src, event.detail.src.title, "#"+event.detail.src.title);
                     _thisRef.obj_content_container.innerHTML = target_html.body.innerHTML;
                     setTimeout(function () {
                         _thisRef.obj_loading_state.checked = false;

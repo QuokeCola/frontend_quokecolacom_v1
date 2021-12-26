@@ -14,12 +14,20 @@ document.body.onload = function () {
             var nav_controller = new NavViewController(_customized_json);
             var cc_controller = new ContentContainerController();
             var article_browser = new ArticleBrowser(_customized_json.markdown_root);
+            var current_sub_page_index = 0;
+            // console.log(window.location.href);
+            for (let i = 0; i < _customized_json.subpages.length; i++) {
+                if (window.location.href.indexOf(_customized_json.subpages[i].title)!==-1) {
+                    current_sub_page_index = i;
+                }
+            }
             let Event = new CustomEvent("updateCCRequest", {
-                detail:{src: _customized_json.subpages[0]}
+                detail:{src: _customized_json.subpages[current_sub_page_index]}
             });
             window.dispatchEvent(Event);
         }
     }
+
     let string =
         "      ___           ___           ___           ___           ___                    ___           ___                    \n" +
         "     /\\  \\         /\\  \\         /\\  \\         /\\  \\         /\\  \\                  /\\  \\         |\\__\\                   \n" +
