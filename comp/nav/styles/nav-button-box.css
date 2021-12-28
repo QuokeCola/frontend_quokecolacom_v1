@@ -32,10 +32,10 @@
     width: var(--pc-buttonBox-width-expand);
     border-radius: var(--pc-buttonBox-radius-expand);
     background-color: var(--theme-color);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     transition-timing-function: cubic-bezier(.8,.00,.2,1);
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: initial;
 }
 
 .nav-pc #nav-pcShrinkState:checked ~ .nav-buttonBox{
@@ -61,8 +61,8 @@
     border-radius: 0;
 
     transition-property: width, background-color,opacity, backdrop-filter, -webkit-backdrop-filter;
-    transition-delay: 0.0s, 0.1s, 0.0s, 0.0s, 0.0s;
-    transition-duration: 0.5s, 0.4s, 0.5s, 0.25s, 0.25s;
+    transition-delay: 0.0s, 0.0s, 0.25s, 0.25s, 0.25s;
+    transition-duration: 0.5s, 0.25s, 0.25s, 0.25s, 0.25s;
     transition-timing-function: ease-in-out, ease-in, ease-in-out, linear, linear;
 
     flex-wrap: wrap;
@@ -96,8 +96,8 @@
     opacity: 1.0;
 
     transition-property: width, background-color,opacity, backdrop-filter, -webkit-backdrop-filter;
-    transition-delay: 0.0s, 0.1s, 0.0s, 0.0s, 0.0s;
-    transition-duration: 0.5s, 0.4s, 0.5s, 0.5s, 0.5s;
+    transition-delay: 0.0s, 0.25s, 0.0s, 0.15s, 0.15s;
+    transition-duration: 0.5s, 0.25s, 0.15s, 0.25s, 0.25s;
     transition-timing-function: ease-in-out, ease-in, ease-in-out, linear, linear;
 }
 .nav-mobile #nav-mobileMenuState:checked ~ .nav-buttonBox button{
@@ -110,6 +110,7 @@
     border-radius: var(--pc-buttonBox-radius-shrink)!important;
     transition-timing-function: cubic-bezier(.8,.00,.2,1);
     transform: rotateX(var(--pc-button-onclick-rotate-x)) rotateY(var(--pc-button-onclick-rotate-y));
+    -webkit-backdrop-filter: blur(9px);
 }
 
 .nav-pc .nav-buttonBox button{

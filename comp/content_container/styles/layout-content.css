@@ -3,7 +3,7 @@
     min-width: 230px;
     position: sticky;
     position: -webkit-sticky;
-    top: 100px;
+    top: 150px;
     transform: translateX(75vw);
 }
 
@@ -17,7 +17,7 @@
 
 .content-container-mobile .floating-panel{
     position: relative;
-    padding-top: 60px;
+    padding-top: 80px;
     margin-left: 10%;
     width: 80%;
 }
