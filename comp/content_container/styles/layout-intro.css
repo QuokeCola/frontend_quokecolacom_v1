@@ -9,8 +9,7 @@
     overflow: hidden;
 
     background-repeat: no-repeat;
-    background-position-y: center;
-    background-attachment: fixed;
+    background-position-y: top;
     display: flex;
 
     z-index: -1;

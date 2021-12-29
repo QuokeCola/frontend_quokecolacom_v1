@@ -79,15 +79,22 @@ class ContentContainerController{
                 /**Refresh the list*/
                 _thisRef.current_CSS_list = [];
                 let target_html = new HTML_Parser(event.detail.src.src);
-                target_html.onload = function () {
+                target_html.onload = async function () {
                     for(let i = 0; i < target_html.rel_css.length; i++) {
                         if(!(target_html.rel_css[i] === "/comp/content_container/styles/entry.css")) { // Exception for universal components
                             let new_CSS_node = document.createElement("link" );
+                            let CSS_onload = false;
                             new_CSS_node.href = target_html.rel_css[i];
                             new_CSS_node.rel = "stylesheet";
                             new_CSS_node.type = "text/css";
+                            new_CSS_node.onload = function () {
+                                CSS_onload = true;
+                            }
                             _thisRef.current_CSS_list.push(new_CSS_node);
                             document.head.appendChild(new_CSS_node);
+                            while(!CSS_onload){
+                                await sleep(50);
+                            }
                         }
                     }
                     window.history.pushState(event.detail.src, event.detail.src.title, "#"+event.detail.src.title);

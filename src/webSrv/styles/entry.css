@@ -1,32 +1,24 @@
 .banner-bg {
-    background-image: url("/src/webSrv/images/banner_bg.jpg")!important;
-    background-size: auto 100% !important;
-    background-position-x: center!important;
-    background-position-y: top!important;
+    box-shadow: 0 -50px 50px 50px #000000 inset;
     background-color: black!important;
-    object-fit: inherit!important;
 
     background-repeat: no-repeat;
     background-attachment: fixed;
+
+    background-size: cover!important;
+    background-position: center bottom calc(30vh - 100px)!important;
     display: flex;
     z-index: -1;
+
+    background-image: url("/src/webSrv/images/banner_bg.jpg")!important;
 
     align-items: center;
     justify-content: center;
 }
-
-.banner-bg:after{
-    display: none!important;
-}
-
 .chapter {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     background-color: transparent;
-}
-
-.banner-bg::after{
-    display: none;
 }
 
 .chapter:last-child {

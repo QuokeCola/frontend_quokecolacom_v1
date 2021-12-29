@@ -21,8 +21,8 @@
 }
 
 .nav-pc #nav-pcShrinkState:checked + .nav-topStrip {
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: initial;
+    -webkit-backdrop-filter: initial;
     background-color: transparent;
     padding: var(--pc-topStrip-padding-expand);
     transition-property: padding, background-color, -webkit-backdrop-filter, backdrop-filter;

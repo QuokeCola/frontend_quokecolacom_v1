@@ -17,9 +17,14 @@
 }
 
 .banner-bg{
+    background-color: black!important;
+    background-repeat: no-repeat;
+
     background-image: url("/src/home/images/banner_bg.png")!important;
-    object-fit: cover;
-    background-size: 100% auto;
+    background-size: cover!important;
+    background-position: center bottom!important;
+    display: flex;
+    z-index: -1;
 }
 
 .chapter:last-child {

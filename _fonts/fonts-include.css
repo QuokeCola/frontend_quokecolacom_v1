@@ -5,17 +5,17 @@
 @import "/_fonts/SourceSansPro_Regular/stylesheet.css";
 @import "/_fonts/SourceSansPro_SemiBold/stylesheet.css";
 
-@import "/_fonts/NanumGothic_Bold/stylesheet.css";
+@import "/_fonts/Nanum_Gothic/stylesheet.css";
 
 h1 {
     margin-left: 0;
-    font-family: "SourceSansPro Bold", serif;
+    font-family: "JetBrainsMono-SemiBold", serif;
     font-weight: normal;
 }
 
 h2 {
     margin-left: 0;
-    font-family: "SourceSansPro Bold", serif;
+    font-family: "JetBrainsMono-SemiBold", serif;
     font-weight: normal;
     border-bottom: rgba(0,28,16,0.20) 1px solid;
 }
@@ -24,7 +24,7 @@ h3 {
     margin-left:   0;
     margin-top:    10px;
     margin-bottom: 10px;
-    font-family:   "SourceSansPro Bold", serif;
+    font-family:   "JetBrainsMono-SemiBold", serif;
     color:		   rgba(0,28,68,1.00);
     font-weight:   normal;
 }
@@ -33,7 +33,7 @@ h4 {
     margin-left: 0;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: "SourceSansPro Regular", serif;
+    font-family: "JetBrainsMono-SemiBold", serif;
     color:       rgba(0,28,16,1.00);
     font-weight: normal;
 }
