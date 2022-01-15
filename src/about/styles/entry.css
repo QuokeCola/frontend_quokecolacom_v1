@@ -3,9 +3,9 @@
 }
 
 .about_personal_info_line {
-    font-family: "SourceSansPro Regular", serif;
+    font-family: "JetBrainsMono-ExtraLight", serif;
     display: flex;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 18px;
     padding: 0;
     align-items: center;

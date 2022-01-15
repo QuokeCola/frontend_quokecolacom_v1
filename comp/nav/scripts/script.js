@@ -121,9 +121,11 @@ class NavViewController{
 
     _get_pc_button_box_inner_width () {
         let width = 0;
+        let margin = parseFloat(window.getComputedStyle(this.obj_button_box.children[0]).marginLeft.replace("px",""));
+        console.log(margin);
         for (let i = 0; i < this.obj_button_box.children.length; i++){
             let bound = this.obj_button_box.children[i].getBoundingClientRect();
-            width = width+bound.width;
+            width = width+bound.width+margin*2;
         }
         return width;
     }

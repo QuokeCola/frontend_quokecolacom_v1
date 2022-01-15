@@ -323,6 +323,10 @@ class ArticleBrowser{
         setTimeout(function (){
             _thisRef.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
         },501);
+
+        setTimeout(function (){
+            _thisRef.gradient_mask.style.height = _thisRef.obj_content_container.scrollHeight+"px";
+        },1001);
     }
 
     async load_articles (link) {

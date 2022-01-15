@@ -32,6 +32,8 @@
 }
 
 .nav-mobile .nav-topStrip{
+    transform: initial;
+    perspective: 0;
     background-color: var(--theme-shallow-color);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -41,8 +43,6 @@
 
 .nav-mobile #nav-mobileMenuState:checked ~ .nav-topStrip {
     background-color: var(--theme-color);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
     padding: 25px 10px 25px 10px;
     transition: all 0.6s cubic-bezier(.5,.00,.5,1);
 }

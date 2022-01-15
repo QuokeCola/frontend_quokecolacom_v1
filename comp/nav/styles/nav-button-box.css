@@ -3,7 +3,6 @@
     height: 100%;
 }
 .nav-buttonBox {
-    overflow:hidden;
     font-size: 0;
     display:flex;
     justify-content: center;
@@ -11,6 +10,10 @@
     height: auto;
     vertical-align: top;
     margin:0 auto;
+
+    perspective: 0;
+    transform-style: initial;
+    overflow: visible;
 
     transition: all 0.6s cubic-bezier(.88,.00,.39,1);
 }
@@ -28,7 +31,6 @@
 }
 
 .nav-pc .nav-buttonBox{
-
     width: var(--pc-buttonBox-width-expand);
     border-radius: var(--pc-buttonBox-radius-expand);
     background-color: var(--theme-color);
@@ -42,18 +44,54 @@
     width: var(--pc-buttonBox-width-shrink);
     border-radius: var(--pc-buttonBox-radius-shrink);
     transition-timing-function: cubic-bezier(.8,.00,.2,1);
+    perspective: 100px;
+    transform-style: preserve-3d;
+    overflow: visible;
 }
 
 .nav-pc .nav-buttonBox button{
     pointer-events: all;
+    margin: 0;
     height: 60px;
     padding: 0 20px 0 20px;
+    border-width: 0;
+    border-radius: 0;
+    border-style: solid;
+    transform: translateZ(0px);
 }
 
 .nav-pc .nav-buttonBox button:hover{
     background-color: rgba(255,255,255,0.1);
     border-bottom: 5px inset var(--complementary-color);
     padding-top: 5px;
+}
+
+.nav-pc #nav-pcShrinkState:checked ~ #nav-buttonBox-obj button{
+    height: 44px;
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.nav-pc #nav-pcShrinkState:checked ~ #nav-buttonBox-obj button:hover{
+    background-color: rgba(255,255,255,0.1);
+    padding: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255,255,255, 0.2);
+    transform: translateZ(5px);
+}
+
+.nav-pc #nav-pcShrinkState:checked ~ #nav-buttonBox-obj button:active{
+    height: 44px;
+    margin: 5px 10px 5px 10px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    border-style: solid;
+    transform: translateZ(10px);
 }
 
 .nav-mobile .nav-buttonBox{
@@ -70,6 +108,9 @@
     opacity: 0.0;
     -webkit-backdrop-filter: blur(2px);
     background-color: rgba(245,245,247,.0);
+    perspective: initial;
+    transform-style: initial;
+    overflow: visible;
 }
 
 .nav-mobile .nav-buttonBox button{
