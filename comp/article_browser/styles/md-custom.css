@@ -25,3 +25,13 @@ p code{
     padding: 4px;
     border-radius: 4px;
 }
+
+table tr td, table tr th, table{
+    border: black 1px solid;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}

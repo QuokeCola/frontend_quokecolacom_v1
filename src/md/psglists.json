@@ -1,8 +1,30 @@
 [
   {
+    "title": "Project of Last Year, Haptic Device",
+    "pic": "Psg9/image001.png",
+    "time": "02-12-2022 00:59",
+    "src": "Psg9/Haptic2RR-Arm.md",
+    "class": [
+      "Mechanical Design",
+      "Electrical Design",
+      "ChibiOS",
+      "STM32"
+    ]
+  },
+  {
+    "title": "meta-team.github.io",
+    "pic": "Psg8/Loading.png",
+    "time": "02-07-2022 12:40",
+    "src": "Psg8/MetaTeamGitHubIO.md",
+    "class": [
+      "website",
+      "frontend projects"
+    ]
+  },
+  {
     "title": "Recent Projects Preview",
     "pic": "Psg7/263592D56E7C40A0956A58EA78ED92A0.png",
-    "time": "01-22-2021 2:38",
+    "time": "01-22-2022 2:38",
     "src": "Psg7/RecentProjectsUpdatePreview.md",
     "class": [
       "Mechanical Design",
