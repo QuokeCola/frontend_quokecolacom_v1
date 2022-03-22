@@ -20,9 +20,9 @@
     background-color: black!important;
     background-repeat: no-repeat;
 
-    background-image: url("/src/home/images/banner_bg.png")!important;
+    background-image: url("/src/home/images/banner_bg-feb26.jpeg")!important;
     background-size: cover!important;
-    background-position: center bottom!important;
+    background-position: center top!important;
     display: flex;
     z-index: -1;
 }
